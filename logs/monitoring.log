@@ -2316,3 +2316,66 @@ INFO 2025-11-15 18:46:18 autoreload 13132 22704 Watching for file changes with S
 INFO 2025-11-15 18:46:19 basehttp 23184 12868 "GET / HTTP/1.1" 302 0
 INFO 2025-11-15 18:46:19 basehttp 23184 12868 "GET /home/ HTTP/1.1" 200 54996
 INFO 2025-11-15 18:47:32 basehttp 23184 12868 "GET /home/ HTTP/1.1" 200 46014
+INFO 2025-11-16 13:25:16 autoreload 12020 17372 Watching for file changes with StatReloader
+INFO 2025-11-16 13:25:18 basehttp 12020 13772 "GET / HTTP/1.1" 302 0
+INFO 2025-11-16 13:25:18 basehttp 12020 13772 "GET /home/ HTTP/1.1" 200 45460
+WARNING 2025-11-16 13:25:18 log 12020 13772 Not Found: /favicon.ico
+WARNING 2025-11-16 13:25:18 basehttp 12020 13772 "GET /favicon.ico HTTP/1.1" 404 4918
+INFO 2025-11-16 13:25:25 basehttp 12020 13772 "GET /maps/ HTTP/1.1" 200 1035316
+INFO 2025-11-16 13:25:30 basehttp 12020 13772 "POST /maps/save-assessment/ HTTP/1.1" 200 82
+INFO 2025-11-16 13:25:30 basehttp 12020 13772 "GET /maps/report/?barangay=Eustaquio%20Lopez&lat=10.816189&lon=123.015704&risk=LF HTTP/1.1" 200 10609
+INFO 2025-11-16 13:25:30 basehttp 12020 13772 "GET /static/images/drrmo_header.png HTTP/1.1" 200 161208
+INFO 2025-11-16 13:25:51 basehttp 12020 13772 "POST /maps/save-assessment/ HTTP/1.1" 200 82
+INFO 2025-11-16 13:25:52 basehttp 12020 13772 "GET /maps/certificate/form/?barangay=Eustaquio%20Lopez&lat=10.807831&lon=123.026137&risk=LF HTTP/1.1" 200 17029
+INFO 2025-11-16 13:25:59 basehttp 12020 13772 "POST /maps/certificate/ HTTP/1.1" 200 10538
+INFO 2025-11-16 13:25:59 basehttp 12020 13772 "GET /static/images/drrmo_header.png HTTP/1.1" 304 0
+INFO 2025-11-16 13:26:20 views 12020 13772 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-16 13:26:21 views 12020 13772 API returned - Rain: 0.0mm, Temp: 29.2°C, Humidity: 77%, Wind: 18.8km/h
+INFO 2025-11-16 13:26:21 views 12020 13772 Processed 7 days of weather forecast
+INFO 2025-11-16 13:26:21 views 12020 13772 Created new rainfall record: 0.0mm
+INFO 2025-11-16 13:26:21 views 12020 13772 Created new weather record
+INFO 2025-11-16 13:26:21 views 12020 13772 Requesting WorldTides API for Cebu City: https://www.worldtides.info/api/v3
+INFO 2025-11-16 13:26:23 views 12020 13772 Created new tide record: -0.311m from WorldTides API
+INFO 2025-11-16 13:26:23 basehttp 12020 13772 "GET /monitoring/ HTTP/1.1" 200 84295
+INFO 2025-11-16 13:26:52 basehttp 12020 13772 "GET /monitoring/flood-record/edit/1/ HTTP/1.1" 200 30716
+INFO 2025-11-16 13:26:56 views 12020 13772 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-16 13:26:58 views 12020 13772 API returned - Rain: 0.0mm, Temp: 29.2°C, Humidity: 77%, Wind: 18.8km/h
+INFO 2025-11-16 13:26:58 views 12020 13772 Processed 7 days of weather forecast
+INFO 2025-11-16 13:26:58 basehttp 12020 13772 "GET /monitoring/ HTTP/1.1" 200 84295
+INFO 2025-11-16 13:27:00 basehttp 12020 13772 "GET /monitoring/flood-record/ HTTP/1.1" 200 29979
+INFO 2025-11-16 13:27:10 views 12020 13772 Flood record created: 22 - Flash Flood
+INFO 2025-11-16 13:27:10 basehttp 12020 13772 "POST /monitoring/flood-record/ HTTP/1.1" 200 142
+INFO 2025-11-16 13:27:12 views 12020 13772 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-16 13:27:13 views 12020 13772 API returned - Rain: 0.0mm, Temp: 29.2°C, Humidity: 77%, Wind: 18.8km/h
+INFO 2025-11-16 13:27:13 views 12020 13772 Processed 7 days of weather forecast
+INFO 2025-11-16 13:27:13 basehttp 12020 13772 "GET /monitoring/ HTTP/1.1" 200 85501
+INFO 2025-11-16 13:27:17 basehttp 12020 13772 "GET /monitoring/flood-record/edit/1/ HTTP/1.1" 200 30716
+WARNING 2025-11-16 13:27:23 views 12020 13772 Form validation errors: <ul class="errorlist"><li>affected_barangays<ul class="errorlist" id="id_affected_barangays_error"><li>Invalid barangay names: All Barangays</li></ul></li></ul>
+INFO 2025-11-16 13:27:23 basehttp 12020 13772 "POST /monitoring/flood-record/edit/1/ HTTP/1.1" 200 163
+INFO 2025-11-16 13:27:44 views 12020 13772 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-16 13:27:45 views 12020 13772 API returned - Rain: 0.0mm, Temp: 29.2°C, Humidity: 77%, Wind: 18.8km/h
+INFO 2025-11-16 13:27:45 views 12020 13772 Processed 7 days of weather forecast
+INFO 2025-11-16 13:27:45 basehttp 12020 13772 "GET /monitoring/ HTTP/1.1" 200 85501
+INFO 2025-11-16 13:28:10 basehttp 12020 13772 "GET /monitoring/flood-record/delete/22/ HTTP/1.1" 200 8483
+INFO 2025-11-16 13:28:42 views 12020 13772 Flood record deleted: 22 - Flash Flood
+INFO 2025-11-16 13:28:42 basehttp 12020 13772 "POST /monitoring/flood-record/delete/22/ HTTP/1.1" 302 0
+INFO 2025-11-16 13:28:42 views 12020 13772 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-16 13:28:43 views 12020 13772 API returned - Rain: 0.0mm, Temp: 29.2°C, Humidity: 77%, Wind: 18.8km/h
+INFO 2025-11-16 13:28:43 views 12020 13772 Processed 7 days of weather forecast
+INFO 2025-11-16 13:28:43 basehttp 12020 13772 "GET /monitoring/ HTTP/1.1" 200 84576
+INFO 2025-11-16 13:29:00 basehttp 12020 13772 "GET /monitoring/flood-record/ HTTP/1.1" 200 29979
+INFO 2025-11-16 13:30:44 views 12020 13772 Flood record created: 23 - Flood
+INFO 2025-11-16 13:30:44 basehttp 12020 13772 "POST /monitoring/flood-record/ HTTP/1.1" 200 136
+INFO 2025-11-16 13:30:46 views 12020 13772 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-16 13:30:47 views 12020 13772 API returned - Rain: 0.0mm, Temp: 29.0°C, Humidity: 78%, Wind: 18.4km/h
+INFO 2025-11-16 13:30:47 views 12020 13772 Processed 7 days of weather forecast
+INFO 2025-11-16 13:30:47 basehttp 12020 13772 "GET /monitoring/ HTTP/1.1" 200 85506
+INFO 2025-11-16 13:35:47 basehttp 12020 17328 "GET /monitoring/api/data/ HTTP/1.1" 200 54
+INFO 2025-11-16 13:40:47 basehttp 12020 13636 "GET /monitoring/api/data/ HTTP/1.1" 200 54
+INFO 2025-11-16 13:45:47 basehttp 12020 13636 "GET /monitoring/api/data/ HTTP/1.1" 200 54
+INFO 2025-11-16 13:50:47 basehttp 12020 18852 "GET /monitoring/api/data/ HTTP/1.1" 200 54
+INFO 2025-11-16 13:55:47 basehttp 12020 3684 "GET /monitoring/api/data/ HTTP/1.1" 200 54
+INFO 2025-11-16 14:07:53 basehttp 12020 13024 "GET /monitoring/api/data/ HTTP/1.1" 200 54
+INFO 2025-11-16 14:57:41 basehttp 12020 18540 "GET /monitoring/api/data/ HTTP/1.1" 200 54
+INFO 2025-11-16 15:00:44 basehttp 12020 18540 "GET /monitoring/api/data/ HTTP/1.1" 200 54
+INFO 2025-11-16 15:05:44 basehttp 12020 18540 "GET /monitoring/api/data/ HTTP/1.1" 200 54
