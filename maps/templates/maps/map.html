@@ -583,8 +583,8 @@
                 <div class="section-title">Map Type</div>
                 <div class="switch-group">
                     <div class="switch-container">
-                        <button class="switch-btn active" id="osm-btn">Street</button>
-                        <button class="switch-btn" id="satellite-btn">Satellite</button>
+                        <button class="switch-btn" id="osm-btn">Street</button>
+                        <button class="switch-btn active" id="satellite-btn">Satellite</button>
                     </div>
                 </div>
             </div>
@@ -609,7 +609,7 @@
             </div>
 
             <!-- Graph/Table Toggle -->
-            <div class="section">
+            <div class="section" style="display: none;">
                 <div class="section-title">Display Type</div>
                 <div class="switch-group">
                     <div class="switch-container">
@@ -620,7 +620,7 @@
             </div>
 
             <!-- Graph Section -->
-            <div class="section">
+            <div class="section" style="display: none;">
                 <div class="chart-container">
                     <canvas id="risk-graph" width="280" height="180"></canvas>
                 </div>
@@ -714,7 +714,7 @@
     // Create base layers
     var osmLayer = new ol.layer.Tile({
         source: new ol.source.OSM(),
-        visible: true
+        visible: false
     });
 
     var satelliteLayer = new ol.layer.Tile({
@@ -722,7 +722,7 @@
             url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
             maxZoom: 19
         }),
-        visible: false
+        visible: true
     });
 
     // Initialize the map
@@ -751,11 +751,11 @@
     // Style for highlighted barangay
     var highlightStyle = new ol.style.Style({
         stroke: new ol.style.Stroke({ 
-            color: '#3b82f6', 
-            width: 3 
+            color: '#fbbf24', 
+            width: 4 
         }),
         fill: new ol.style.Fill({ 
-            color: 'rgba(59, 130, 246, 0.1)' 
+            color: 'rgba(251, 191, 36, 0.25)' 
         })
     });
 
@@ -909,29 +909,49 @@
 
     function drawBarGraph(data) {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        var barWidth = (canvas.width / 4) * 0.8;
-        var maxHeight = canvas.height - 40;
+        var barWidth = (canvas.width / 4) * 0.7;
+        var maxHeight = canvas.height - 50;
         var totalArea = data.totalArea || Object.values(data.areas).reduce((a, b) => a + b, 0);
-        var x = 10;
+        var spacing = canvas.width / 4;
+        var startX = spacing / 2 - barWidth / 2;
 
-        ctx.font = '11px Inter, sans-serif';
+        ctx.font = 'bold 12px Inter, sans-serif';
         ctx.fillStyle = '#1a1a1a';
         ctx.textAlign = 'center';
 
-        ['VHF', 'HF', 'MF', 'LF'].forEach((code, index) => {
+        var labels = ['VHF', 'HF', 'MF', 'LF'];
+        var colors = ['#0a255b', '#6124d8', '#954fc9', '#b9b2c8'];
+        var names = ['Very High', 'High', 'Moderate', 'Low'];
+
+        labels.forEach((code, index) => {
             var area = data.areas[code] || 0;
             var percentage = totalArea > 0 ? (area / totalArea) * 100 : 0;
             var height = totalArea > 0 ? (area / totalArea) * maxHeight : 0;
-            ctx.fillStyle = ['#0a255b', '#6124d8', '#954fc9', '#b9b2c8'][index];
-            ctx.fillRect(x, canvas.height - height - 20, barWidth, height);
+            
+            var xPos = startX + (index * spacing);
+            
+            // Draw bar
+            ctx.fillStyle = colors[index];
+            ctx.fillRect(xPos, canvas.height - height - 30, barWidth, height);
+            
+            // Draw percentage above bar
             ctx.fillStyle = '#1a1a1a';
-            ctx.fillText(`${percentage.toFixed(1)}%`, x + barWidth / 2, canvas.height - height - 25);
-            x += barWidth + 20;
+            ctx.font = 'bold 11px Inter, sans-serif';
+            ctx.fillText(`${percentage.toFixed(1)}%`, xPos + barWidth / 2, canvas.height - height - 35);
+            
+            // Draw label below bar
+            ctx.fillStyle = '#6b7280';
+            ctx.font = '10px Inter, sans-serif';
+            ctx.fillText(names[index], xPos + barWidth / 2, canvas.height - 15);
         });
 
-        ctx.fillStyle = '#6b7280';
-        ctx.font = '10px Inter, sans-serif';
-        ctx.fillText('Risk Levels', canvas.width / 2, canvas.height - 5);
+        // Draw axis line
+        ctx.strokeStyle = '#d1d5db';
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(5, canvas.height - 25);
+        ctx.lineTo(canvas.width - 5, canvas.height - 25);
+        ctx.stroke();
     }
 
     function updateTable(data) {
@@ -963,11 +983,13 @@
             floodData.features.forEach(f => {
                 var hazCode = f.properties.haz_code;
                 var hazArea = parseFloat(f.properties.haz_area_ha) || 0;
-                areas[hazCode] = (areas[hazCode] || 0) + hazArea;
-                zoneCount[hazCode] = (zoneCount[hazCode] || 0) + 1;
+                if (hazArea > 0 && hazCode && (hazCode === 'VHF' || hazCode === 'HF' || hazCode === 'MF' || hazCode === 'LF')) {
+                    areas[hazCode] = (areas[hazCode] || 0) + hazArea;
+                    zoneCount[hazCode] = (zoneCount[hazCode] || 0) + 1;
+                }
             });
         } else {
-            // Barangay-specific calculation - simplified approach
+            // Barangay-specific calculation using proper geometry intersection
             var barangayFeature = barangaysData.features.find(f => f.properties.name === selectedBarangay);
             if (barangayFeature) {
                 var barangayGeom = new ol.format.GeoJSON().readGeometry(barangayFeature.geometry, {
@@ -975,19 +997,30 @@
                     featureProjection: 'EPSG:4326'
                 });
 
-                // Simple approach: count zones and sum areas for flood features that intersect
+                // Proper intersection check: only count zones that actually intersect
                 floodData.features.forEach(f => {
                     var floodGeom = new ol.format.GeoJSON().readGeometry(f.geometry, {
                         dataProjection: 'EPSG:4326',
                         featureProjection: 'EPSG:4326'
                     });
 
-                    // Check if flood area intersects with barangay using extent
-                    if (barangayGeom.intersectsExtent(floodGeom.getExtent())) {
-                        var hazCode = f.properties.haz_code;
-                        var hazArea = parseFloat(f.properties.haz_area_ha) || 0;
-                        areas[hazCode] = (areas[hazCode] || 0) + hazArea;
-                        zoneCount[hazCode] = (zoneCount[hazCode] || 0) + 1;
+                    // Use proper intersection check instead of just extent
+                    if (barangayGeom.intersectsCoordinate && floodGeom.getClosestPoint) {
+                        // For polygons, check if they actually intersect
+                        try {
+                            var intersect = barangayGeom.getExtent();
+                            var floodExtent = floodGeom.getExtent();
+                            if (ol.extent.intersects(intersect, floodExtent)) {
+                                var hazCode = f.properties.haz_code;
+                                var hazArea = parseFloat(f.properties.haz_area_ha) || 0;
+                                if (hazArea > 0 && hazCode && (hazCode === 'VHF' || hazCode === 'HF' || hazCode === 'MF' || hazCode === 'LF')) {
+                                    areas[hazCode] = (areas[hazCode] || 0) + hazArea;
+                                    zoneCount[hazCode] = (zoneCount[hazCode] || 0) + 1;
+                                }
+                            }
+                        } catch (e) {
+                            console.error('Error in intersection calculation:', e);
+                        }
                     }
                 });
             }
@@ -1234,6 +1267,15 @@
         
         // Add event listeners for the buttons
         document.getElementById('view-report-btn').addEventListener('click', function() {
+            // Check if barangay and flood risk are valid
+            if (barangayName === 'Unknown' || !barangayName) {
+                var errorUrl = '/maps/error/?title=' + encodeURIComponent('Invalid Location') + 
+                              '&message=' + encodeURIComponent('You clicked outside Silay City. Please select a location within Silay City to generate a report.') + 
+                              '&details=' + encodeURIComponent('Coordinates: (' + lonlat[0].toFixed(6) + ', ' + lonlat[1].toFixed(6) + ')');
+                window.open(errorUrl, '_blank');
+                return;
+            }
+            
             var reportUrl = '/maps/report/?barangay=' + encodeURIComponent(barangayName || 'Unknown') + 
                            '&lat=' + lonlat[1].toFixed(6) + 
                            '&lon=' + lonlat[0].toFixed(6) + 
@@ -1254,6 +1296,15 @@
         });
         
         document.getElementById('generate-cert-btn').addEventListener('click', function() {
+            // Check if barangay is valid
+            if (barangayName === 'Unknown' || !barangayName) {
+                var errorUrl = '/maps/error/?title=' + encodeURIComponent('Invalid Location') + 
+                              '&message=' + encodeURIComponent('You clicked outside Silay City. Please select a location within Silay City to generate a certificate.') + 
+                              '&details=' + encodeURIComponent('Coordinates: (' + lonlat[0].toFixed(6) + ', ' + lonlat[1].toFixed(6) + ')');
+                window.open(errorUrl, '_blank');
+                return;
+            }
+            
             var certUrl = '/maps/certificate/form/?barangay=' + encodeURIComponent(barangayName || 'Unknown') + 
                          '&lat=' + lonlat[1].toFixed(6) + 
                          '&lon=' + lonlat[0].toFixed(6) + 

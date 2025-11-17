@@ -9,10 +9,13 @@
         :root {
             --primary-blue: #1e3a5f;
             --secondary-blue: #2563eb;
+            --accent-cyan: #06b6d4;
+            --accent-gold: #fbbf24;
             --light-gray: #f8fafc;
             --border-gray: #e2e8f0;
             --text-dark: #1e293b;
             --text-muted: #64748b;
+            --success-green: #10b981;
         }
 
         * {
@@ -23,73 +26,117 @@
 
         body {
             font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, sans-serif;
-            background: var(--light-gray);
+            background: linear-gradient(135deg, #f0f9ff 0%, #f0f4f8 50%, #fef3c7 100%);
             padding: 40px 20px;
+            min-height: 100vh;
         }
 
-        /* Clean form container with minimal design and professional styling */
+        /* Modern form container with gradient and shadow */
         .form-container {
             max-width: 700px;
             margin: 0 auto;
             background: white;
             padding: 40px;
-            border-radius: 12px;
+            border-radius: 16px;
             border: 1px solid var(--border-gray);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 8px 32px rgba(30, 58, 95, 0.12), 0 2px 8px rgba(0, 0, 0, 0.04);
         }
 
         .form-header {
             margin-bottom: 32px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid var(--border-gray);
+            padding: 24px;
+            background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
+            border-radius: 12px;
+            color: white;
+            text-align: center;
         }
 
         .form-header h1 {
             font-size: 24px;
             font-weight: 700;
-            color: var(--text-dark);
+            color: white;
             margin-bottom: 8px;
             display: flex;
             align-items: center;
+            justify-content: center;
             gap: 12px;
         }
 
         .form-header h1 i {
-            color: var(--secondary-blue);
-            font-size: 28px;
+            color: var(--accent-gold);
+            font-size: 32px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
         }
 
         .form-header p {
             font-size: 14px;
-            color: var(--text-muted);
+            color: rgba(255, 255, 255, 0.9);
+            margin: 0;
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 24px;
         }
 
         .form-group label {
             display: block;
             font-size: 13px;
-            font-weight: 600;
+            font-weight: 700;
             color: var(--text-dark);
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             text-transform: uppercase;
-            letter-spacing: 0.3px;
+            letter-spacing: 0.5px;
+        }
+
+        .form-group label::after {
+            content: '*';
+            color: #dc2626;
+            margin-left: 4px;
+        }
+
+        .form-group label.readonly::after {
+            display: none;
         }
 
         .form-group input,
         .form-group select,
         .form-group textarea {
             width: 100%;
-            padding: 12px 16px;
+            padding: 13px 16px;
             border: 2px solid var(--border-gray);
-            border-radius: 8px;
+            border-radius: 10px;
             font-size: 14px;
             font-family: inherit;
             color: var(--text-dark);
-            transition: all 0.2s ease;
+            transition: all 0.3s ease;
             background-color: #ffffff;
+        }
+
+        /* Editable fields styling */
+        .form-group input:not([readonly]),
+        .form-group select:not([readonly]),
+        .form-group textarea:not([readonly]) {
+            border: 2px solid var(--secondary-blue);
+            background: linear-gradient(135deg, #ffffff 0%, #fafbff 100%);
+        }
+
+        .form-group input:not([readonly])::placeholder,
+        .form-group textarea:not([readonly])::placeholder {
+            color: #a0aec0;
+        }
+
+        /* Read-only fields styling */
+        .form-group input[readonly],
+        .form-group select[readonly] {
+            background: linear-gradient(135deg, #f8fafc 0%, #eef2f5 100%) !important;
+            color: var(--text-dark) !important;
+            border: 2px solid #cbd5e1 !important;
+            cursor: not-allowed;
         }
 
         .form-group input:focus,
@@ -97,121 +144,163 @@
         .form-group textarea:focus {
             outline: none;
             border-color: var(--secondary-blue);
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12), 0 0 0 1px var(--secondary-blue);
+            background-color: #fafbff;
+        }
+
+        .form-group input[readonly]:focus {
+            box-shadow: none;
+            border-color: #cbd5e1;
         }
 
         .form-group textarea {
             resize: vertical;
-            min-height: 80px;
+            min-height: 90px;
+            font-family: inherit;
         }
 
         .form-group .hint {
             font-size: 12px;
             color: var(--text-muted);
-            margin-top: 6px;
+            margin-top: 8px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .form-group .hint::before {
+            content: 'ℹ';
+            color: var(--secondary-blue);
+            font-weight: bold;
         }
 
         .form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 16px;
+            gap: 20px;
         }
 
         .readonly-info {
-            background: var(--light-gray);
-            padding: 16px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            border: 1px solid var(--border-gray);
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            padding: 24px;
+            border-radius: 12px;
+            margin-bottom: 28px;
+            border: 2px solid #bae6fd;
+            box-shadow: 0 4px 12px rgba(6, 182, 212, 0.08);
         }
 
         .readonly-info h3 {
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--text-dark);
-            margin-bottom: 12px;
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--secondary-blue);
+            margin-bottom: 16px;
             text-transform: uppercase;
-            letter-spacing: 0.3px;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .readonly-info h3::before {
+            content: '📍';
+            font-size: 16px;
         }
 
         .readonly-info p {
-            font-size: 13px;
-            color: var(--text-muted);
-            margin-bottom: 6px;
-            line-height: 1.5;
+            font-size: 14px;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+            line-height: 1.6;
         }
 
         .readonly-info strong {
-            color: var(--text-dark);
-            font-weight: 600;
+            color: var(--primary-blue);
+            font-weight: 700;
         }
 
         .button-group {
             display: flex;
-            gap: 12px;
-            margin-top: 32px;
+            gap: 16px;
+            margin-top: 36px;
+            padding-top: 28px;
+            border-top: 2px solid var(--border-gray);
         }
 
         .btn {
             flex: 1;
-            padding: 12px 24px;
+            padding: 14px 28px;
             border: none;
-            border-radius: 8px;
+            border-radius: 10px;
             font-size: 14px;
             font-weight: 600;
             cursor: pointer;
             font-family: inherit;
-            transition: all 0.2s ease;
+            transition: all 0.3s ease;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
+            gap: 10px;
             text-decoration: none;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            letter-spacing: 0.3px;
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, var(--secondary-blue), var(--primary-blue));
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
             color: white;
-            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.15);
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.25);
         }
 
         .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(16, 185, 129, 0.4);
+        }
+
+        .btn-primary:active {
+            transform: translateY(-1px);
         }
 
         .btn-secondary {
-            background: var(--border-gray);
-            color: var(--text-dark);
-            border: 1px solid var(--border-gray);
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+            color: white;
+            border: none;
+            box-shadow: 0 4px 15px rgba(239, 68, 68, 0.25);
         }
 
         .btn-secondary:hover {
-            background: #cbd5e1;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(239, 68, 68, 0.4);
+        }
+
+        .btn-secondary:active {
+            transform: translateY(-1px);
         }
 
         /* Error message styling */
         .error-message {
             color: #dc2626;
             font-size: 12px;
-            margin-top: 6px;
+            margin-top: 8px;
             display: none;
+            font-weight: 600;
+            padding: 8px 12px;
+            background: #fee2e2;
+            border-radius: 6px;
+            border-left: 3px solid #dc2626;
         }
 
         .form-group input.error,
         .form-group select.error,
         .form-group textarea.error {
             border-color: #dc2626;
-            background-color: #fff5f5;
+            background-color: #fef2f2;
         }
 
         .form-group input.error:focus,
         .form-group select.error:focus,
         .form-group textarea.error:focus {
-            box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+            box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.15), 0 0 0 1px #dc2626;
         }
 
         /* Toast styling */
@@ -220,20 +309,21 @@
             top: 20px;
             right: 20px;
             padding: 16px 24px;
-            border-radius: 8px;
+            border-radius: 10px;
             font-size: 14px;
-            font-weight: 500;
+            font-weight: 600;
             color: white;
-            background: #dc2626;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+            box-shadow: 0 8px 24px rgba(220, 38, 38, 0.3);
             display: none;
             z-index: 1050;
             animation: slideIn 0.3s ease-out;
+            border-left: 4px solid #fca5a5;
         }
 
         @keyframes slideIn {
             from {
-                transform: translateX(100%);
+                transform: translateX(400px);
                 opacity: 0;
             }
             to {
@@ -248,16 +338,28 @@
             }
 
             .form-container {
-                padding: 24px;
+                padding: 28px;
+                border-radius: 12px;
             }
 
-            .button-group {
-                flex-direction: column-reverse;
-                gap: 8px;
+            .form-header {
+                padding: 20px;
+                margin-bottom: 28px;
             }
 
             .form-header h1 {
                 font-size: 20px;
+            }
+
+            .button-group {
+                flex-direction: column-reverse;
+                gap: 12px;
+                margin-top: 28px;
+            }
+
+            .btn {
+                padding: 12px 20px;
+                font-size: 13px;
             }
         }
 
@@ -266,20 +368,35 @@
                 padding: 20px;
             }
 
+            .form-header {
+                padding: 16px;
+                margin-bottom: 24px;
+            }
+
             .form-header h1 {
                 font-size: 18px;
+                gap: 8px;
+            }
+
+            .form-header h1 i {
+                font-size: 24px;
             }
 
             .form-group input,
             .form-group select,
             .form-group textarea {
                 font-size: 13px;
-                padding: 10px 12px;
+                padding: 11px 13px;
             }
 
             .btn {
-                padding: 10px 16px;
-                font-size: 13px;
+                padding: 11px 16px;
+                font-size: 12px;
+            }
+
+            .readonly-info {
+                padding: 16px;
+                margin-bottom: 20px;
             }
         }
     </style>
@@ -315,6 +432,14 @@
             <input type="hidden" name="flood_susceptibility" value="{{ flood_susceptibility }}">
             <input type="hidden" name="risk_code" value="{{ risk_code }}">
 
+            <!-- Required Information Section -->
+            <div style="margin-bottom: 32px; padding: 20px; background: linear-gradient(135deg, #fef3c7 0%, #fef0c3 100%); border-left: 4px solid var(--accent-gold); border-radius: 8px;">
+                <p style="font-size: 13px; font-weight: 600; color: #92400e; margin: 0; display: flex; align-items: center; gap: 8px;">
+                    <span style="font-size: 16px;">✏️</span>
+                    <span>Please fill in the fields below</span>
+                </p>
+            </div>
+
             <!-- Establishment Details -->
             <div class="form-group">
                 <label for="establishment_name">Establishment Name *</label>
@@ -339,46 +464,49 @@
                 <div class="hint">Street name, sitio, or specific location within the barangay</div>
             </div>
 
+            <!-- Auto-filled Information Section -->
+            <div style="margin-bottom: 32px; margin-top: 32px; padding: 20px; background: linear-gradient(135deg, #dbeafe 0%, #e0f2fe 100%); border-left: 4px solid var(--secondary-blue); border-radius: 8px;">
+                <p style="font-size: 13px; font-weight: 600; color: #0c4a6e; margin: 0; display: flex; align-items: center; gap: 8px;">
+                    <span style="font-size: 16px;">🔒</span>
+                    <span>These fields are automatically filled</span>
+                </p>
+            </div>
+
             <!-- Zone Status -->
             <div class="form-group">
-                <label for="zone_status">Zone Status *</label>
+                <label for="zone_status" class="readonly">Zone Status</label>
                 <input type="text" id="zone_status" name="zone_status" required readonly
-                       value="{{ zone_status }}"
-                       style="background: var(--light-gray); color: var(--text-muted);">
+                       value="{{ zone_status }}">
                 <div class="hint">Automatically set based on flood susceptibility level</div>
             </div>
 
             <!-- Issue Date -->
             <div class="form-group">
-                <label for="issue_date">Issue Date *</label>
+                <label for="issue_date" class="readonly">Issue Date</label>
                 <input type="text" id="issue_date" name="issue_date" required readonly 
-                       value="{{ issue_date }}"
-                       style="background: var(--light-gray); color: var(--text-muted);">
+                       value="{{ issue_date }}">
                 <div class="hint">Automatically set to today's date</div>
             </div>
 
             <!-- Signatory Information -->
             <div class="form-row">
                 <div class="form-group">
-                    <label for="signatory_name">Signatory Name *</label>
+                    <label for="signatory_name" class="readonly">Signatory Name</label>
                     <input type="text" id="signatory_name" name="signatory_name" required readonly
-                           value="P/SUPT. ALEXANDER A. MUÑOZ (RET.)"
-                           style="background: var(--light-gray); color: var(--text-muted);">
+                           value="P/SUPT. ALEXANDER A. MUÑOZ (RET.)">
                 </div>
 
                 <div class="form-group">
-                    <label for="signatory_title">Signatory Title *</label>
+                    <label for="signatory_title" class="readonly">Signatory Title</label>
                     <input type="text" id="signatory_title" name="signatory_title" required readonly
-                           value="DRRMO Officer IV"
-                           style="background: var(--light-gray); color: var(--text-muted);">
+                           value="DRRMO Officer IV">
                 </div>
             </div>
 
             <div class="form-group">
-                <label for="signatory_subtitle">Signatory Subtitle</label>
+                <label for="signatory_subtitle" class="readonly">Signatory Subtitle</label>
                 <input type="text" id="signatory_subtitle" name="signatory_subtitle" readonly
-                       value="Secretariat, SCDRRMC"
-                       style="background: var(--light-gray); color: var(--text-muted);">
+                       value="Secretariat, SCDRRMC">
             </div>
 
             <!-- Buttons -->

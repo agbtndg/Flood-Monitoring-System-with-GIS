@@ -9,4 +9,5 @@ urlpatterns = [
     path('save-assessment/', views.save_assessment, name='save_assessment'),
     path('my-activity/', views.my_activity, name='my_activity'),
     path('all-activities/', views.all_activities, name='all_activities'),
+    path('error/', views.error_view, name='error_view'),
 ]

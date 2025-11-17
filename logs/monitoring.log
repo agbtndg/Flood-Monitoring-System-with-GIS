@@ -3973,3 +3973,449 @@ INFO 2025-11-18 04:41:50 basehttp 25384 11376 "GET /static/css/bootstrap.min.css
 INFO 2025-11-18 04:41:50 basehttp 25384 22472 "GET /static/js/ol.js.map HTTP/1.1" 200 4835285
 INFO 2025-11-18 04:42:16 autoreload 25384 12544 C:\Users\aldri\Flood-Monitoring-System-with-GIS\users\forms.py changed, reloading.
 INFO 2025-11-18 04:42:17 autoreload 13184 17120 Watching for file changes with StatReloader
+INFO 2025-11-18 04:44:25 basehttp 13184 15456 "GET /maps/ HTTP/1.1" 200 1035075
+WARNING 2025-11-18 04:44:25 log 13184 15456 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-11-18 04:44:25 basehttp 13184 20560 "GET /static/js/bootstrap.bundle.min.js.map HTTP/1.1" 404 2017
+WARNING 2025-11-18 04:44:25 basehttp 13184 15456 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5029
+INFO 2025-11-18 04:44:31 basehttp 13184 15456 "GET /home/ HTTP/1.1" 200 35546
+INFO 2025-11-18 04:44:33 basehttp 13184 15456 "GET /maps/ HTTP/1.1" 200 1035075
+INFO 2025-11-18 04:49:50 basehttp 13184 18704 "GET /maps/ HTTP/1.1" 200 1035076
+INFO 2025-11-18 04:51:31 basehttp 13184 18704 "GET /maps/ HTTP/1.1" 200 1035076
+INFO 2025-11-18 04:54:34 basehttp 13184 18704 "GET /maps/ HTTP/1.1" 200 1036640
+INFO 2025-11-18 04:56:06 basehttp 13184 18704 "GET /maps/ HTTP/1.1" 200 1036686
+ERROR 2025-11-18 04:56:37 log 13184 18704 Internal Server Error: /maps/save-assessment/
+Traceback (most recent call last):
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.StringDataRightTruncation: value too long for type character varying(3)
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\views.py", line 217, in save_assessment
+    assessment = AssessmentRecord.objects.create(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\models\query.py", line 663, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\models\base.py", line 902, in save
+    self.save_base(
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\models\base.py", line 1008, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\models\base.py", line 1169, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\models\base.py", line 1210, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\models\query.py", line 1868, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1882, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.DataError: value too long for type character varying(3)
+
+ERROR 2025-11-18 04:56:37 basehttp 13184 18704 "POST /maps/save-assessment/ HTTP/1.1" 500 170368
+ERROR 2025-11-18 04:56:38 log 13184 18704 Internal Server Error: /maps/report/
+Traceback (most recent call last):
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.StringDataRightTruncation: value too long for type character varying(3)
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\views.py", line 64, in report_view
+    ReportRecord.objects.create(
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\models\query.py", line 663, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\models\base.py", line 902, in save
+    self.save_base(
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\models\base.py", line 1008, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\models\base.py", line 1169, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\models\base.py", line 1210, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\models\query.py", line 1868, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1882, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.DataError: value too long for type character varying(3)
+
+ERROR 2025-11-18 04:56:38 basehttp 13184 18704 "GET /maps/report/?barangay=Unknown&lat=10.846154&lon=123.057367&risk=Unknown HTTP/1.1" 500 175448
+INFO 2025-11-18 04:59:22 autoreload 13184 17120 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\views.py changed, reloading.
+INFO 2025-11-18 04:59:23 autoreload 13512 22792 Watching for file changes with StatReloader
+INFO 2025-11-18 04:59:29 autoreload 13512 22792 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\urls.py changed, reloading.
+INFO 2025-11-18 04:59:30 autoreload 1672 17804 Watching for file changes with StatReloader
+INFO 2025-11-18 05:00:04 basehttp 1672 5856 "GET /maps/ HTTP/1.1" 200 1037925
+ERROR 2025-11-18 05:00:09 log 1672 5856 Internal Server Error: /maps/save-assessment/
+Traceback (most recent call last):
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.StringDataRightTruncation: value too long for type character varying(3)
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\views.py", line 232, in save_assessment
+    assessment = AssessmentRecord.objects.create(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\models\query.py", line 663, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\models\base.py", line 902, in save
+    self.save_base(
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\models\base.py", line 1008, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\models\base.py", line 1169, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\models\base.py", line 1210, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\models\query.py", line 1868, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1882, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.DataError: value too long for type character varying(3)
+
+ERROR 2025-11-18 05:00:09 basehttp 1672 5856 "POST /maps/save-assessment/ HTTP/1.1" 500 170347
+INFO 2025-11-18 05:00:12 basehttp 1672 5856 "GET /maps/error/?title=Invalid%20Location&message=You%20clicked%20outside%20Silay%20City.%20Please%20select%20a%20location%20within%20Silay%20City%20to%20generate%20a%20report.&details=Coordinates%3A%20(123.000054%2C%2010.859867) HTTP/1.1" 200 25561
+INFO 2025-11-18 05:00:27 basehttp 1672 5856 "GET /maps/ HTTP/1.1" 200 1037925
+ERROR 2025-11-18 05:01:22 log 1672 5856 Internal Server Error: /maps/save-assessment/
+Traceback (most recent call last):
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.StringDataRightTruncation: value too long for type character varying(3)
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\views.py", line 232, in save_assessment
+    assessment = AssessmentRecord.objects.create(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\models\query.py", line 663, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\models\base.py", line 902, in save
+    self.save_base(
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\models\base.py", line 1008, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\models\base.py", line 1169, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\models\base.py", line 1210, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\models\query.py", line 1868, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1882, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.DataError: value too long for type character varying(3)
+
+ERROR 2025-11-18 05:01:22 basehttp 1672 5856 "POST /maps/save-assessment/ HTTP/1.1" 500 170361
+INFO 2025-11-18 05:02:11 basehttp 1672 5856 "GET /maps/ HTTP/1.1" 200 1037925
+ERROR 2025-11-18 05:02:50 log 1672 5856 Internal Server Error: /maps/save-assessment/
+Traceback (most recent call last):
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.StringDataRightTruncation: value too long for type character varying(3)
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\views.py", line 232, in save_assessment
+    assessment = AssessmentRecord.objects.create(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\models\query.py", line 663, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\models\base.py", line 902, in save
+    self.save_base(
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\models\base.py", line 1008, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\models\base.py", line 1169, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\models\base.py", line 1210, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\models\query.py", line 1868, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1882, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.DataError: value too long for type character varying(3)
+
+ERROR 2025-11-18 05:02:50 basehttp 1672 5856 "POST /maps/save-assessment/ HTTP/1.1" 500 170354
+INFO 2025-11-18 05:02:53 basehttp 1672 5856 "GET /maps/error/?title=Invalid%20Location&message=You%20clicked%20outside%20Silay%20City.%20Please%20select%20a%20location%20within%20Silay%20City%20to%20generate%20a%20report.&details=Coordinates%3A%20(123.069517%2C%2010.849892) HTTP/1.1" 200 3775
+INFO 2025-11-18 05:02:59 basehttp 1672 5856 "GET /maps/ HTTP/1.1" 200 1037925
+ERROR 2025-11-18 05:03:05 log 1672 5856 Internal Server Error: /maps/save-assessment/
+Traceback (most recent call last):
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.StringDataRightTruncation: value too long for type character varying(3)
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\views.py", line 232, in save_assessment
+    assessment = AssessmentRecord.objects.create(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\models\query.py", line 663, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\models\base.py", line 902, in save
+    self.save_base(
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\models\base.py", line 1008, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\models\base.py", line 1169, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\models\base.py", line 1210, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\models\query.py", line 1868, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1882, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.DataError: value too long for type character varying(3)
+
+ERROR 2025-11-18 05:03:05 basehttp 1672 5856 "POST /maps/save-assessment/ HTTP/1.1" 500 170340
+INFO 2025-11-18 05:03:05 basehttp 1672 5856 "GET /maps/error/?title=Invalid%20Location&message=You%20clicked%20outside%20Silay%20City.%20Please%20select%20a%20location%20within%20Silay%20City%20to%20generate%20a%20certificate.&details=Coordinates%3A%20(123.101641%2C%2010.862563) HTTP/1.1" 200 3780
+INFO 2025-11-18 05:03:09 basehttp 1672 5856 "GET /maps/ HTTP/1.1" 200 1037925
+INFO 2025-11-18 05:04:12 basehttp 1672 5856 "POST /maps/save-assessment/ HTTP/1.1" 200 81
+INFO 2025-11-18 05:04:15 basehttp 1672 5856 "GET /maps/report/?barangay=Eustaquio%20Lopez&lat=10.806611&lon=123.024000&risk=LF HTTP/1.1" 200 10609
+INFO 2025-11-18 05:04:15 basehttp 1672 5856 "GET /static/images/drrmo_header.png HTTP/1.1" 200 161208
+INFO 2025-11-18 05:04:33 basehttp 1672 5856 "POST /maps/save-assessment/ HTTP/1.1" 200 81
+INFO 2025-11-18 05:04:36 basehttp 1672 5856 "GET /maps/report/?barangay=Rizal&lat=10.804536&lon=122.992730&risk=MF HTTP/1.1" 200 10725
+INFO 2025-11-18 05:04:45 basehttp 1672 5856 "POST /maps/save-assessment/ HTTP/1.1" 200 81
+INFO 2025-11-18 05:04:47 basehttp 1672 5856 "GET /maps/report/?barangay=Lantad&lat=10.811314&lon=122.958360&risk=HF HTTP/1.1" 200 10978
+INFO 2025-11-18 05:04:54 basehttp 1672 5856 "POST /maps/save-assessment/ HTTP/1.1" 200 81
+INFO 2025-11-18 05:04:55 basehttp 1672 5856 "GET /maps/report/?barangay=Barangay%20VI%20Pob.%20(Hawaiian)&lat=10.822934&lon=122.984982&risk=VHF HTTP/1.1" 200 10985
+INFO 2025-11-18 05:05:13 basehttp 1672 5856 "POST /maps/save-assessment/ HTTP/1.1" 200 81
+INFO 2025-11-18 05:05:14 basehttp 1672 5856 "GET /maps/certificate/form/?barangay=Eustaquio%20Lopez&lat=10.810208&lon=123.019493&risk=LF HTTP/1.1" 200 17029
+INFO 2025-11-18 05:05:23 basehttp 1672 5856 "POST /maps/certificate/ HTTP/1.1" 200 10530
+INFO 2025-11-18 05:05:42 basehttp 1672 5856 "POST /maps/save-assessment/ HTTP/1.1" 200 81
+INFO 2025-11-18 05:05:43 basehttp 1672 5856 "GET /maps/certificate/form/?barangay=Barangay%20VI%20Pob.%20(Hawaiian)&lat=10.820306&lon=122.984278&risk=VHF HTTP/1.1" 200 17081
+INFO 2025-11-18 05:05:54 autoreload 1672 17804 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\urls.py changed, reloading.
+INFO 2025-11-18 05:05:54 autoreload 8812 25592 Watching for file changes with StatReloader
+INFO 2025-11-18 05:07:15 basehttp 8812 13628 "GET /maps/ HTTP/1.1" 200 1037925
+INFO 2025-11-18 05:07:19 basehttp 8812 13628 "POST /maps/save-assessment/ HTTP/1.1" 200 81
+INFO 2025-11-18 05:07:20 basehttp 8812 13628 "GET /maps/certificate/form/?barangay=Eustaquio%20Lopez&lat=10.808100&lon=123.023391&risk=LF HTTP/1.1" 200 19606
+INFO 2025-11-18 05:09:33 basehttp 8812 13628 "GET /maps/certificate/form/?barangay=Eustaquio%20Lopez&lat=10.808100&lon=123.023391&risk=LF HTTP/1.1" 200 19765
+INFO 2025-11-18 05:11:39 basehttp 8812 13628 "GET /maps/certificate/form/?barangay=Eustaquio%20Lopez&lat=10.808100&lon=123.023391&risk=LF HTTP/1.1" 200 21364
+INFO 2025-11-18 05:12:48 basehttp 8812 13628 "GET /maps/certificate/form/?barangay=Eustaquio%20Lopez&lat=10.808100&lon=123.023391&risk=LF HTTP/1.1" 200 21339
+INFO 2025-11-18 05:13:07 basehttp 8812 13628 "POST /maps/certificate/ HTTP/1.1" 200 10516

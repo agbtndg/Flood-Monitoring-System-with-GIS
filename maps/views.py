@@ -6,6 +6,21 @@ from users.models import UserLog
 from datetime import datetime
 
 @login_required
+def error_view(request):
+    """Display error message to user"""
+    error_title = request.GET.get('title', 'An Error Occurred')
+    error_message = request.GET.get('message', 'Something went wrong. Please try again.')
+    error_details = request.GET.get('details', '')
+    
+    context = {
+        'error_title': error_title,
+        'error_message': error_message,
+        'error_details': error_details,
+    }
+    
+    return render(request, 'maps/error.html', context)
+
+@login_required
 def map_view(request):
     barangays = serialize('geojson', Barangay.objects.all(), geometry_field='geometry', fields=('id', 'name', 'parent_id', 'geometry'))
     flood_areas = serialize('geojson', FloodSusceptibility.objects.all(), geometry_field='geometry', fields=('lgu', 'psgc_lgu', 'haz_class', 'haz_code', 'haz_area_ha', 'geometry'))
