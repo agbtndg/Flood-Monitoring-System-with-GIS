@@ -283,3 +283,30 @@ INFO 2025-11-16 22:28:13 views 15768 19164 Processed 7 days of weather forecast
 INFO 2025-11-16 22:36:14 views 15768 19164 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
 INFO 2025-11-16 22:36:15 views 15768 19164 API returned - Rain: 0.0mm, Temp: 26.4°C, Humidity: 91%, Wind: 11.5km/h
 INFO 2025-11-16 22:36:15 views 15768 19164 Processed 7 days of weather forecast
+INFO 2025-11-17 01:39:55 views 17884 9084 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-17 01:39:57 views 17884 9084 API returned - Rain: 0.0mm, Temp: 26.0°C, Humidity: 94%, Wind: 11.2km/h
+INFO 2025-11-17 01:39:57 views 17884 9084 Processed 7 days of weather forecast
+INFO 2025-11-17 01:39:57 views 17884 9084 Created new rainfall record: 0.0mm
+INFO 2025-11-17 01:39:57 views 17884 9084 Created new weather record
+INFO 2025-11-17 01:39:57 views 17884 9084 Requesting WorldTides API for Cebu City: https://www.worldtides.info/api/v3
+INFO 2025-11-17 01:40:00 views 17884 9084 Created new tide record: 0.143m from WorldTides API
+INFO 2025-11-17 01:40:13 views 17884 9084 Flood record deleted: 24 - Flash Flood
+INFO 2025-11-17 01:40:13 views 17884 9084 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-17 01:40:14 views 17884 9084 API returned - Rain: 0.0mm, Temp: 26.0°C, Humidity: 94%, Wind: 11.2km/h
+INFO 2025-11-17 01:40:14 views 17884 9084 Processed 7 days of weather forecast
+INFO 2025-11-17 01:40:57 views 17884 9084 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-17 01:40:59 views 17884 9084 API returned - Rain: 0.0mm, Temp: 26.0°C, Humidity: 94%, Wind: 11.2km/h
+INFO 2025-11-17 01:40:59 views 17884 9084 Processed 7 days of weather forecast
+INFO 2025-11-17 01:54:18 views 17884 25624 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-17 01:54:21 views 17884 25624 API returned - Rain: 0.0mm, Temp: 25.9°C, Humidity: 94%, Wind: 11.2km/h
+INFO 2025-11-17 01:54:21 views 17884 25624 Processed 7 days of weather forecast
+INFO 2025-11-17 01:57:33 views 17884 25624 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-17 01:57:34 views 17884 25624 API returned - Rain: 0.0mm, Temp: 25.9°C, Humidity: 94%, Wind: 11.2km/h
+INFO 2025-11-17 01:57:34 views 17884 25624 Processed 7 days of weather forecast
+INFO 2025-11-17 07:58:09 views 17884 27788 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-17 07:58:10 views 17884 27788 API returned - Rain: 0.0mm, Temp: 27.7°C, Humidity: 84%, Wind: 14.8km/h
+INFO 2025-11-17 07:58:10 views 17884 27788 Processed 7 days of weather forecast
+INFO 2025-11-17 07:58:10 views 17884 27788 Created new rainfall record: 0.0mm
+INFO 2025-11-17 07:58:10 views 17884 27788 Created new weather record
+INFO 2025-11-17 07:58:10 views 17884 27788 Requesting WorldTides API for Cebu City: https://www.worldtides.info/api/v3
+INFO 2025-11-17 07:58:11 views 17884 27788 Created new tide record: 0.143m from WorldTides API

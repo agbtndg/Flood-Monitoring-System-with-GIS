@@ -84,20 +84,14 @@ TEMPLATES = [
 WSGI_APPLICATION = 'silay_drrmo.wsgi.application'
 
 
-# ============================================
-# DATABASE CONFIGURATION
-# ============================================
-# https://docs.djangoproject.com/en/5.2/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
         'NAME': os.getenv('DB_NAME', 'silaydrrmo_db'),
         'USER': os.getenv('DB_USER', 'postgres'),
-        'PASSWORD': os.getenv('DB_PASSWORD', 'Tndg652611'),  # TODO: Move to .env file
+        'PASSWORD': os.getenv('DB_PASSWORD', 'Tndg652611'),
         'HOST': os.getenv('DB_HOST', 'localhost'),
         'PORT': os.getenv('DB_PORT', '5432'),
-        'CONN_MAX_AGE': 600,  # Connection pooling (600 seconds = 10 minutes)
     }
 }
 
