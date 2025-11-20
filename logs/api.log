@@ -823,3 +823,97 @@ INFO 2025-11-20 22:28:52 views 8236 14456 Processed 7 days of weather forecast
 INFO 2025-11-20 22:58:16 views 23836 29356 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
 INFO 2025-11-20 22:58:17 views 23836 29356 API returned - Rain: 0.0mm, Temp: 26.1°C, Humidity: 93%, Wind: 13.2km/h
 INFO 2025-11-20 22:58:17 views 23836 29356 Processed 7 days of weather forecast
+INFO 2025-11-20 23:57:51 views 15148 25764 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-20 23:57:52 views 15148 25764 API returned - Rain: 0.0mm, Temp: 26.0°C, Humidity: 94%, Wind: 13.0km/h
+INFO 2025-11-20 23:57:52 views 15148 25764 Processed 7 days of weather forecast
+INFO 2025-11-21 00:22:27 views 24792 26972 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-21 00:22:28 views 24792 26972 API returned - Rain: 0.0mm, Temp: 26.2°C, Humidity: 94%, Wind: 11.6km/h
+INFO 2025-11-21 00:22:28 views 24792 26972 Processed 7 days of weather forecast
+INFO 2025-11-21 00:23:03 views 24792 26972 Flood record created: 8 - Flood
+INFO 2025-11-21 00:23:06 views 24792 26972 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-21 00:23:06 views 24792 26972 API returned - Rain: 0.0mm, Temp: 26.2°C, Humidity: 94%, Wind: 11.6km/h
+INFO 2025-11-21 00:23:06 views 24792 26972 Processed 7 days of weather forecast
+INFO 2025-11-21 00:23:36 views 24792 26972 Flood record deleted: 8 - Flood
+INFO 2025-11-21 00:23:36 views 24792 26972 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-21 00:23:37 views 24792 26972 API returned - Rain: 0.0mm, Temp: 26.2°C, Humidity: 94%, Wind: 11.6km/h
+INFO 2025-11-21 00:23:37 views 24792 26972 Processed 7 days of weather forecast
+INFO 2025-11-21 01:30:27 views 18788 2796 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-21 01:30:27 views 18788 2796 API returned - Rain: 0.0mm, Temp: 26.1°C, Humidity: 94%, Wind: 11.8km/h
+INFO 2025-11-21 01:30:27 views 18788 2796 Processed 7 days of weather forecast
+INFO 2025-11-21 01:30:27 views 18788 2796 Created new rainfall record: 0.0mm
+INFO 2025-11-21 01:30:28 views 18788 2796 Created new weather record
+INFO 2025-11-21 01:30:28 views 18788 2796 Requesting WorldTides API for Cebu City: https://www.worldtides.info/api/v3
+INFO 2025-11-21 01:30:29 views 18788 2796 Created new tide record: 0.851m from WorldTides API
+INFO 2025-11-21 01:31:40 views 18788 2796 Flood record created: 9 - Flash Flood
+INFO 2025-11-21 01:31:42 views 18788 2796 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-21 01:31:43 views 18788 2796 API returned - Rain: 0.0mm, Temp: 26.1°C, Humidity: 94%, Wind: 11.8km/h
+INFO 2025-11-21 01:31:43 views 18788 2796 Processed 7 days of weather forecast
+INFO 2025-11-21 01:32:06 views 18788 2796 Flood record deleted: 9 - Flash Flood
+INFO 2025-11-21 01:32:06 views 18788 2796 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-21 01:32:07 views 18788 2796 API returned - Rain: 0.0mm, Temp: 26.1°C, Humidity: 94%, Wind: 11.8km/h
+INFO 2025-11-21 01:32:07 views 18788 2796 Processed 7 days of weather forecast
+INFO 2025-11-21 01:35:09 views 18788 2796 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-21 01:35:10 views 18788 2796 API returned - Rain: 0.0mm, Temp: 26.1°C, Humidity: 94%, Wind: 11.8km/h
+INFO 2025-11-21 01:35:10 views 18788 2796 Processed 7 days of weather forecast
+INFO 2025-11-21 01:35:17 views 18788 2796 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-21 01:35:17 views 18788 2796 API returned - Rain: 0.0mm, Temp: 26.1°C, Humidity: 94%, Wind: 11.8km/h
+INFO 2025-11-21 01:35:17 views 18788 2796 Processed 7 days of weather forecast
+INFO 2025-11-21 01:35:29 views 18788 2796 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-21 01:35:30 views 18788 2796 API returned - Rain: 0.0mm, Temp: 26.1°C, Humidity: 94%, Wind: 11.8km/h
+INFO 2025-11-21 01:35:30 views 18788 2796 Processed 7 days of weather forecast
+INFO 2025-11-21 01:37:45 views 18788 2796 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-21 01:37:46 views 18788 2796 API returned - Rain: 0.0mm, Temp: 26.1°C, Humidity: 94%, Wind: 11.8km/h
+INFO 2025-11-21 01:37:46 views 18788 2796 Processed 7 days of weather forecast
+INFO 2025-11-21 01:37:53 views 18788 2796 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-21 01:37:54 views 18788 2796 API returned - Rain: 0.0mm, Temp: 26.1°C, Humidity: 94%, Wind: 11.8km/h
+INFO 2025-11-21 01:37:54 views 18788 2796 Processed 7 days of weather forecast
+INFO 2025-11-21 01:38:22 views 18788 2796 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-21 01:38:23 views 18788 2796 API returned - Rain: 0.0mm, Temp: 26.1°C, Humidity: 94%, Wind: 11.8km/h
+INFO 2025-11-21 01:38:23 views 18788 2796 Processed 7 days of weather forecast
+WARNING 2025-11-21 01:38:44 views 18788 2796 Form validation errors: <ul class="errorlist"><li>affected_persons<ul class="errorlist" id="id_affected_persons_error"><li>Number of affected persons should be at least equal to the number of affected families.</li></ul></li></ul>
+INFO 2025-11-21 01:38:51 views 18788 2796 Flood record updated: 4 - Flash Flood
+INFO 2025-11-21 01:38:53 views 18788 2796 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-21 01:38:54 views 18788 2796 API returned - Rain: 0.0mm, Temp: 26.1°C, Humidity: 94%, Wind: 11.8km/h
+INFO 2025-11-21 01:38:54 views 18788 2796 Processed 7 days of weather forecast
+INFO 2025-11-21 01:45:40 views 9956 14408 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-21 01:45:41 views 9956 14408 API returned - Rain: 0.0mm, Temp: 26.1°C, Humidity: 94%, Wind: 11.8km/h
+INFO 2025-11-21 01:45:41 views 9956 14408 Processed 7 days of weather forecast
+INFO 2025-11-21 01:45:44 views 9956 14408 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-21 01:45:45 views 9956 14408 API returned - Rain: 0.0mm, Temp: 26.1°C, Humidity: 94%, Wind: 11.8km/h
+INFO 2025-11-21 01:45:45 views 9956 14408 Processed 7 days of weather forecast
+INFO 2025-11-21 01:45:51 views 9956 14408 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-21 01:45:52 views 9956 14408 API returned - Rain: 0.0mm, Temp: 26.1°C, Humidity: 94%, Wind: 11.8km/h
+INFO 2025-11-21 01:45:52 views 9956 14408 Processed 7 days of weather forecast
+INFO 2025-11-21 01:46:02 views 9956 14408 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-21 01:46:05 views 9956 14408 API returned - Rain: 0.0mm, Temp: 26.1°C, Humidity: 94%, Wind: 11.8km/h
+INFO 2025-11-21 01:46:05 views 9956 14408 Processed 7 days of weather forecast
+INFO 2025-11-21 01:46:10 views 9956 14408 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-21 01:46:11 views 9956 14408 API returned - Rain: 0.0mm, Temp: 26.1°C, Humidity: 94%, Wind: 11.8km/h
+INFO 2025-11-21 01:46:11 views 9956 14408 Processed 7 days of weather forecast
+INFO 2025-11-21 01:46:44 views 9956 14408 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-21 01:46:45 views 9956 14408 API returned - Rain: 0.0mm, Temp: 26.1°C, Humidity: 94%, Wind: 11.8km/h
+INFO 2025-11-21 01:46:45 views 9956 14408 Processed 7 days of weather forecast
+INFO 2025-11-21 01:46:49 views 9956 14408 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-21 01:46:51 views 9956 14408 API returned - Rain: 0.0mm, Temp: 26.1°C, Humidity: 94%, Wind: 11.8km/h
+INFO 2025-11-21 01:46:51 views 9956 14408 Processed 7 days of weather forecast
+INFO 2025-11-21 02:14:48 views 19208 6860 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-21 02:14:49 views 19208 6860 API returned - Rain: 0.0mm, Temp: 26.1°C, Humidity: 94%, Wind: 11.8km/h
+INFO 2025-11-21 02:14:49 views 19208 6860 Processed 7 days of weather forecast
+INFO 2025-11-21 02:33:07 views 27096 25612 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-21 02:33:08 views 27096 25612 API returned - Rain: 0.0mm, Temp: 26.1°C, Humidity: 94%, Wind: 12.0km/h
+INFO 2025-11-21 02:33:08 views 27096 25612 Processed 7 days of weather forecast
+INFO 2025-11-21 02:34:10 views 27096 25612 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-21 02:34:11 views 27096 25612 API returned - Rain: 0.0mm, Temp: 26.1°C, Humidity: 94%, Wind: 12.0km/h
+INFO 2025-11-21 02:34:11 views 27096 25612 Processed 7 days of weather forecast
+INFO 2025-11-21 02:38:37 views 7320 13592 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-21 02:38:38 views 7320 13592 API returned - Rain: 0.0mm, Temp: 26.1°C, Humidity: 94%, Wind: 12.0km/h
+INFO 2025-11-21 02:38:38 views 7320 13592 Processed 7 days of weather forecast
+INFO 2025-11-21 02:38:47 views 7320 13592 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-21 02:38:47 views 7320 13592 API returned - Rain: 0.0mm, Temp: 26.1°C, Humidity: 94%, Wind: 12.0km/h
+INFO 2025-11-21 02:38:47 views 7320 13592 Processed 7 days of weather forecast
+INFO 2025-11-21 02:39:19 views 3196 27556 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-21 02:39:20 views 3196 27556 API returned - Rain: 0.0mm, Temp: 26.1°C, Humidity: 94%, Wind: 12.0km/h
+INFO 2025-11-21 02:39:20 views 3196 27556 Processed 7 days of weather forecast
+INFO 2025-11-21 02:39:22 views 3196 27556 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-21 02:39:23 views 3196 27556 API returned - Rain: 0.0mm, Temp: 26.1°C, Humidity: 94%, Wind: 12.0km/h
+INFO 2025-11-21 02:39:23 views 3196 27556 Processed 7 days of weather forecast

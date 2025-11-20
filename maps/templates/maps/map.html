@@ -77,13 +77,13 @@
         text-decoration: none;
         color: white;
         font-size: 14px;
-        font-weight: 600;
+        font-weight: 700;
         padding: 12px 20px;
-        border-radius: 8px;
+        border-radius: 10px;
         background: linear-gradient(135deg, var(--secondary-blue), var(--primary-blue));
         border: none;
         transition: all 0.2s ease;
-        box-shadow: 0 2px 8px rgba(37, 99, 235, 0.15);
+        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
         cursor: pointer;
         margin-top: -8px;
         margin-bottom: 16px;
@@ -94,7 +94,7 @@
         color: white;
         text-decoration: none;
         transform: translateY(-2px);
-        box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
+        box-shadow: 0 8px 28px rgba(37, 99, 235, 0.35);
     }
 
     .back-to-dashboard i {
@@ -788,12 +788,26 @@
         })
     });
 
-    // Pin style
+    // Pin style - Large, visible red location pin
     var pinStyle = new ol.style.Style({
         image: new ol.style.Icon({
-            src: 'https://openlayers.org/en/latest/examples/data/icon.png',
-            scale: 0.1,
-            anchor: [0.5, 1]
+            src: 'data:image/svg+xml;utf8,' + encodeURIComponent(`
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="64" viewBox="0 0 48 64">
+                    <!-- Drop shadow -->
+                    <ellipse cx="24" cy="60" rx="8" ry="3" fill="rgba(0,0,0,0.3)"/>
+                    <!-- Pin body -->
+                    <path d="M24 0C13.5 0 5 8.5 5 19c0 14 19 45 19 45s19-31 19-45c0-10.5-8.5-19-19-19z" 
+                          fill="#ef4444" stroke="#b91c1c" stroke-width="2"/>
+                    <!-- Inner white circle -->
+                    <circle cx="24" cy="19" r="8" fill="white"/>
+                    <!-- Inner red dot -->
+                    <circle cx="24" cy="19" r="4" fill="#dc2626"/>
+                </svg>
+            `),
+            scale: 1,
+            anchor: [0.5, 1],
+            anchorXUnits: 'fraction',
+            anchorYUnits: 'fraction'
         })
     });
 

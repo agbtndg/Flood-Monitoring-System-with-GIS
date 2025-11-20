@@ -1,5 +1,25 @@
 from django.contrib.auth.models import AbstractUser
+from django.core.exceptions import ValidationError
+from django.core.validators import FileExtensionValidator
 from django.db import models
+
+
+def validate_image_size(image):
+    """Validate uploaded image size (max 5MB)"""
+    if image.size > 5 * 1024 * 1024:  # 5MB in bytes
+        raise ValidationError('Image file size must be less than 5MB.')
+
+
+def validate_image_dimensions(image):
+    """Validate uploaded image dimensions (max 4000x4000 pixels)"""
+    try:
+        from PIL import Image
+        img = Image.open(image)
+        width, height = img.size
+        if width > 4000 or height > 4000:
+            raise ValidationError('Image dimensions must be less than 4000x4000 pixels.')
+    except Exception as e:
+        raise ValidationError(f'Invalid image file: {str(e)}')
 
 
 class CustomUser(AbstractUser):
@@ -19,7 +39,18 @@ class CustomUser(AbstractUser):
     contact_number = models.CharField(max_length=11, blank=True, verbose_name="Contact Number")
     emergency_contact = models.CharField(max_length=100, blank=True, verbose_name="Emergency Contact")
     emergency_number = models.CharField(max_length=11, blank=True, verbose_name="Emergency Contact Number")
-    profile_image = models.ImageField(upload_to='profile_images/', null=True, blank=True, verbose_name="Profile Image")
+    profile_image = models.ImageField(
+        upload_to='profile_images/', 
+        null=True, 
+        blank=True, 
+        verbose_name="Profile Image",
+        validators=[
+            FileExtensionValidator(allowed_extensions=['jpg', 'jpeg', 'png', 'gif']),
+            validate_image_size,
+            validate_image_dimensions
+        ],
+        help_text="Upload a profile image (JPG, PNG, or GIF, max 5MB, max 4000x4000px)"
+    )
     bio = models.TextField(max_length=500, blank=True, verbose_name="Bio")
     date_of_birth = models.DateField(null=True, blank=True, verbose_name="Date of Birth")
 

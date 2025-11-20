@@ -184,7 +184,13 @@ def generate_flood_insights(weather_forecast, rainfall_data, tide_data, flood_re
         })
 
     # Add time-based insights
-    current_hour = timezone.now().hour
+    # Get current hour in Philippines timezone (Asia/Manila)
+    from django.utils import timezone as tz
+    import pytz
+    manila_tz = pytz.timezone('Asia/Manila')
+    current_time = tz.now().astimezone(manila_tz)
+    current_hour = current_time.hour
+    
     if 6 <= current_hour <= 18:  # Daytime
         insights['forecast_analysis'].append({
             'title': 'Daytime Monitoring',
@@ -711,11 +717,11 @@ def flood_record_edit(request, record_id):
                     return JsonResponse({
                         'success': True,
                         'message': success_message,
-                        'redirect_url': reverse('monitoring_view')
+                        'redirect_url': reverse('monitoring_view') + '#flood-records'
                     })
                 
                 messages.success(request, success_message)
-                return redirect('monitoring_view')
+                return redirect(reverse('monitoring_view') + '#flood-records')
             else:
                 error_message = '❌ Please correct the errors below and try again.'
                 logger.warning(f"Form validation errors: {form.errors}")
@@ -782,11 +788,11 @@ def flood_record_delete(request, record_id):
                 return JsonResponse({
                     'success': True,
                     'message': success_message,
-                    'redirect_url': reverse('monitoring_view')
+                    'redirect_url': reverse('monitoring_view') + '#flood-records'
                 })
             
             messages.success(request, success_message)
-            return redirect('monitoring_view')
+            return redirect(reverse('monitoring_view') + '#flood-records')
         except Exception as e:
             error_message = f'❌ An error occurred while deleting the record: {str(e)}'
             logger.error(f"Error deleting flood record: {e}", exc_info=True)
@@ -798,7 +804,7 @@ def flood_record_delete(request, record_id):
                 })
             
             messages.error(request, error_message)
-            return redirect('monitoring_view')
+            return redirect(reverse('monitoring_view') + '#flood-records')
     
     return render(request, 'monitoring/flood_record_delete.html', {
         'record': flood_record

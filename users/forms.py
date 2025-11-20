@@ -40,6 +40,9 @@ class CustomUserCreationForm(UserCreationForm):
             if field_name in placeholders:
                 field.widget.attrs['placeholder'] = placeholders[field_name]
         
+        # Custom position is only required when position is "others"
+        self.fields['custom_position'].required = False
+        
         # Set autofocus on first_name field (first field to fill)
         if 'first_name' in self.fields:
             self.fields['first_name'].widget.attrs['autofocus'] = True
@@ -87,6 +90,22 @@ class CustomUserCreationForm(UserCreationForm):
         if email and CustomUser.objects.filter(email__iexact=email).exists():
             raise forms.ValidationError("This email address is already registered.")
         return email
+
+    def clean(self):
+        """Validate that custom_position is provided only when position is 'others'."""
+        cleaned_data = super().clean()
+        position = cleaned_data.get('position')
+        custom_position = cleaned_data.get('custom_position')
+        
+        # If position is "others", custom_position is required
+        if position == 'others':
+            if not custom_position or not custom_position.strip():
+                self.add_error('custom_position', 'Please specify your position when selecting "Others".')
+        else:
+            # If position is not "others", clear custom_position
+            cleaned_data['custom_position'] = ''
+        
+        return cleaned_data
 
 class AdminRegistrationForm(UserCreationForm):
     """
@@ -209,6 +228,9 @@ class ProfileEditForm(UserChangeForm):
             if not isinstance(field.widget, (forms.CheckboxInput, forms.RadioSelect)):
                 if 'class' not in field.widget.attrs:
                     field.widget.attrs['class'] = 'form-control'
+        
+        # Custom position is only required when position is "others"
+        self.fields['custom_position'].required = False
     
     def clean_contact_number(self):
         """Validate contact number: must be exactly 11 digits, digits only."""
@@ -271,3 +293,19 @@ class ProfileEditForm(UserChangeForm):
                 raise forms.ValidationError(f"Invalid file type. Allowed types: {', '.join(valid_extensions)}")
         
         return image
+    
+    def clean(self):
+        """Validate that custom_position is provided only when position is 'others'."""
+        cleaned_data = super().clean()
+        position = cleaned_data.get('position')
+        custom_position = cleaned_data.get('custom_position')
+        
+        # If position is "others", custom_position is required
+        if position == 'others':
+            if not custom_position or not custom_position.strip():
+                self.add_error('custom_position', 'Please specify your position when selecting "Others".')
+        else:
+            # If position is not "others", clear custom_position
+            cleaned_data['custom_position'] = ''
+        
+        return cleaned_data

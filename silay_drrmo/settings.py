@@ -89,11 +89,15 @@ DATABASES = {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
         'NAME': os.getenv('DB_NAME', 'silaydrrmo_db'),
         'USER': os.getenv('DB_USER', 'postgres'),
-        'PASSWORD': os.getenv('DB_PASSWORD', 'Tndg652611'),
+        'PASSWORD': os.getenv('DB_PASSWORD'),  # Required from environment - no fallback for security
         'HOST': os.getenv('DB_HOST', 'localhost'),
         'PORT': os.getenv('DB_PORT', '5432'),
     }
 }
+
+# Validate required environment variables
+if not os.getenv('DB_PASSWORD'):
+    raise Exception('DB_PASSWORD environment variable is required. Please set it in your .env file.')
 
 
 # Password validation
@@ -269,7 +273,10 @@ CEBU_LATITUDE = 10.3167200
 CEBU_LONGITUDE = 123.8907100
 
 # API Keys - Use environment variables for security
-WORLDTIDES_API_KEY = os.getenv('WORLDTIDES_API_KEY', '28d6df6b-6b1c-4aa9-b96d-026ba71348eb')  # TODO: Move to .env
+WORLDTIDES_API_KEY = os.getenv('WORLDTIDES_API_KEY')  # Required from environment - no fallback
+
+if not WORLDTIDES_API_KEY:
+    raise Exception('WORLDTIDES_API_KEY environment variable is required. Please set it in your .env file.')
 
 # Note: Open-Meteo API is free and doesn't require an API key
 OPENMETEO_API_URL = 'https://api.open-meteo.com/v1/forecast'
@@ -375,9 +382,12 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  # Console for 
 # ============================================
 # ADMIN REGISTRATION SECURITY
 # ============================================
-# Admin Registration Key - CHANGE THIS IN PRODUCTION!
-# Use environment variable for better security
-ADMIN_REGISTRATION_KEY = os.getenv('ADMIN_REGISTRATION_KEY', 'silay-drrmo-admin-2025')
+# Admin Registration Key - MUST be set in environment variables!
+# Use a strong, random key for production
+ADMIN_REGISTRATION_KEY = os.getenv('ADMIN_REGISTRATION_KEY')
+
+if not ADMIN_REGISTRATION_KEY:
+    raise Exception('ADMIN_REGISTRATION_KEY environment variable is required. Please set it in your .env file.')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field

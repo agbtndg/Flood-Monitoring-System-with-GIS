@@ -546,7 +546,7 @@
                 <a href="#" class="nav-link dropdown-toggle" data-dropdown="monitoring"><i class="fas fa-chart-area"></i> Monitoring</a>
                 <div class="dropdown-content">
                     <a href="{% url 'monitoring_view' %}"><i class="fas fa-chart-area"></i> Monitoring Page</a>
-                    <a href="{% url 'flood_record_form' %}"><i class="fas fa-plus-circle"></i> Add Flood Record</a>
+                    <a href="{% url 'monitoring_view' %}#flood-records"><i class="fas fa-list"></i> Flood Records</a>
                 </div>
             </div>
             {% if user.is_staff %}

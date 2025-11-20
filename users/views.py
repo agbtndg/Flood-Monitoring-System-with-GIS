@@ -231,14 +231,19 @@ def home(request):
             ReportRecord.objects.count() +
             CertificateRecord.objects.count()
         )
-        # Most active user: user with most UserLog entries
+        # Most active users: top 5 users with most UserLog entries
         from django.db.models import Count
-        most_active = UserLog.objects.values('user__username').annotate(activity_count=Count('id')).order_by('-activity_count').first()
-        most_active_user = None
-        if most_active:
-            most_active_user = type('MostActiveUser', (), {})()
-            most_active_user.username = most_active['user__username']
-            most_active_user.activity_count = most_active['activity_count']
+        most_active_query = UserLog.objects.values('user__username', 'user__id').annotate(activity_count=Count('id')).order_by('-activity_count')[:5]
+        most_active_users = []
+        for user_data in most_active_query:
+            # Get the actual user object to access profile_image
+            user_obj = CustomUser.objects.get(id=user_data['user__id'])
+            user_info = type('MostActiveUser', (), {})()
+            user_info.username = user_data['user__username']
+            user_info.activity_count = user_data['activity_count']
+            user_info.profile_image = user_obj.profile_image
+            user_info.full_name = user_obj.get_full_name()
+            most_active_users.append(user_info)
 
         # Recent activity highlights: last 5 from all activity models, sorted by timestamp/date
         recent_activity_highlights = []
@@ -273,17 +278,59 @@ def home(request):
         # Sort all by date/timestamp descending
         recent_activity_highlights.sort(key=lambda x: getattr(x, 'timestamp', getattr(x, 'date', None)), reverse=True)
         context['total_activities'] = total_activities
-        context['most_active_user'] = most_active_user
+        context['most_active_users'] = most_active_users
         context['recent_activity_highlights'] = recent_activity_highlights[:5]
     
     # Get latest monitoring data
     from monitoring.models import RainfallData, WeatherData, TideLevelData, FloodRecord
+    from maps.models import Barangay, FloodSusceptibility
+    from django.contrib.gis.measure import D
+    from django.db.models import Q
     
     
     rainfall_data = RainfallData.objects.last()
     weather_data = WeatherData.objects.last()
     tide_data = TideLevelData.objects.last()
     recent_floods = FloodRecord.objects.all().order_by('-date')[:3]
+    
+    # Calculate highest risk barangay based on flood susceptibility data
+    highest_risk_barangay = None
+    try:
+        # Priority order: VHF (Very High) > HF (High) > MF (Moderate) > LF (Low)
+        risk_priority = {'VHF': 4, 'HF': 3, 'MF': 2, 'LF': 1}
+        risk_level_map = {'VHF': 'Critical', 'HF': 'High', 'MF': 'Moderate', 'LF': 'Low'}
+        
+        # Get all barangays
+        barangays = Barangay.objects.all()
+        barangay_risks = []
+        
+        for barangay in barangays:
+            # Find flood susceptibility areas that intersect with this barangay
+            flood_areas = FloodSusceptibility.objects.filter(
+                geometry__intersects=barangay.geometry
+            ).order_by('-haz_code')
+            
+            if flood_areas.exists():
+                # Get the highest risk code for this barangay
+                highest_code = flood_areas.first().haz_code
+                risk_score = risk_priority.get(highest_code, 0)
+                barangay_risks.append({
+                    'name': barangay.name,
+                    'risk_code': highest_code,
+                    'risk_level': risk_level_map.get(highest_code, 'Unknown'),
+                    'risk_score': risk_score
+                })
+        
+        # Sort by risk score descending and get the highest
+        if barangay_risks:
+            barangay_risks.sort(key=lambda x: x['risk_score'], reverse=True)
+            highest = barangay_risks[0]
+            highest_risk_barangay = type('HighestRiskBarangay', (), {})()
+            highest_risk_barangay.name = highest['name']
+            highest_risk_barangay.risk_level = highest['risk_level']
+    except Exception as e:
+        print(f"Error calculating highest risk barangay: {e}")
+        highest_risk_barangay = None
     
     if rainfall_data:
         rain_risk_level, rain_risk_color = get_flood_risk_level(rainfall_data.value_mm)
@@ -292,15 +339,64 @@ def home(request):
     if tide_data:
         tide_risk_level, tide_risk_color = get_tide_risk_level(tide_data.height_m)
         context['tide_risk'] = {'level': tide_risk_level, 'color': tide_risk_color}
+    
+    # Import BenchmarkSettings for alert thresholds
+    from monitoring.models import BenchmarkSettings
         
     if rainfall_data and tide_data:
         combined_risk_level, combined_risk_color = get_combined_risk_level(rainfall_data.value_mm, tide_data.height_m)
         context['combined_risk'] = {'level': combined_risk_level, 'color': combined_risk_color}
+        
+        # Generate flood alerts based on risk level and conditions
+        flood_alerts = []
+        settings = BenchmarkSettings.get_settings()
+        
+        # HIGH RISK ALERTS
+        if combined_risk_level == "High Risk":
+            flood_alerts.append("🚨 HIGH FLOOD RISK: Both rainfall and tide levels are critically high!")
+            flood_alerts.append(f"Current rainfall: {rainfall_data.value_mm}mm (High threshold: {settings.rainfall_high_threshold}mm)")
+            flood_alerts.append(f"Current tide level: {tide_data.height_m}m (High threshold: {settings.tide_high_threshold}m)")
+            flood_alerts.append("⚠️ IMMEDIATE ACTION: Monitor low-lying areas and prepare evacuation plans.")
+        
+        # MODERATE RISK ALERTS
+        elif combined_risk_level == "Moderate Risk":
+            flood_alerts.append("⚠️ MODERATE FLOOD RISK: Rainfall and tide levels are elevated.")
+            flood_alerts.append(f"Current rainfall: {rainfall_data.value_mm}mm (Moderate threshold: {settings.rainfall_moderate_threshold}mm)")
+            flood_alerts.append(f"Current tide level: {tide_data.height_m}m (Moderate threshold: {settings.tide_moderate_threshold}m)")
+            flood_alerts.append("📋 ADVISORY: Stay alert and monitor conditions closely.")
+        
+        # LOW RISK - Still show informational alerts
+        else:
+            # Check individual thresholds for warnings
+            if rainfall_data.value_mm >= settings.rainfall_moderate_threshold:
+                flood_alerts.append(f"🌧️ Elevated Rainfall: Current {rainfall_data.value_mm}mm (above {settings.rainfall_moderate_threshold}mm threshold)")
+            elif rainfall_data.value_mm >= settings.rainfall_moderate_threshold * 0.7:
+                flood_alerts.append(f"☁️ Increasing Rainfall: Current {rainfall_data.value_mm}mm (approaching threshold)")
+            
+            if tide_data.height_m >= settings.tide_moderate_threshold:
+                flood_alerts.append(f"🌊 High Tide Alert: Current {tide_data.height_m}m (above {settings.tide_moderate_threshold}m threshold)")
+            elif tide_data.height_m >= settings.tide_moderate_threshold * 0.8:
+                flood_alerts.append(f"🌊 Rising Tide: Current {tide_data.height_m}m (approaching threshold)")
+            
+            # If no specific warnings, show general status
+            if not flood_alerts:
+                flood_alerts.append(f"✅ Conditions Normal: Rainfall at {rainfall_data.value_mm}mm, Tide at {tide_data.height_m}m")
+                flood_alerts.append("📊 Current conditions are within safe parameters.")
+        
+        # Add weather-based alerts
+        if weather_data:
+            if weather_data.wind_speed_kph > 50:
+                flood_alerts.append(f"💨 Strong Winds: {weather_data.wind_speed_kph} km/h - Secure outdoor items")
+            if weather_data.humidity_percent > 85:
+                flood_alerts.append(f"💧 High Humidity: {weather_data.humidity_percent}% - Increased flood potential")
+        
+        context['flood_alerts'] = flood_alerts if flood_alerts else None
     
     context.update({
         'rainfall_data': rainfall_data,
         'weather_data': weather_data,
-        'recent_floods': recent_floods
+        'recent_floods': recent_floods,
+        'highest_risk_barangay': highest_risk_barangay
     })
     
     return render(request, 'users/home.html', context)
