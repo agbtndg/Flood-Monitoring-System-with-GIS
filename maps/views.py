@@ -5,6 +5,11 @@ from .models import Barangay, FloodSusceptibility, AssessmentRecord, ReportRecor
 from users.models import UserLog
 from datetime import datetime
 
+try:
+    from . import export_utils
+except ImportError:
+    export_utils = None
+
 @login_required
 def error_view(request):
     """Display error message to user"""
@@ -174,6 +179,9 @@ def certificate_view(request):
         flood_susceptibility = request.POST.get('flood_susceptibility', 'Unknown')
         risk_code = request.POST.get('risk_code', 'Unknown')
         
+        # Get mitigating measures value from hidden field
+        mitigating_measures_value = request.POST.get('mitigating_measures_value', 'false')
+        
         # Save certificate generation record
         CertificateRecord.objects.create(
             user=request.user,
@@ -199,6 +207,7 @@ def certificate_view(request):
             'signatory_name': signatory_name,
             'signatory_title': signatory_title,
             'signatory_subtitle': signatory_subtitle,
+            'mitigating_measures_value': mitigating_measures_value,
         }
         
         return render(request, 'maps/certificate.html', context)
@@ -292,11 +301,12 @@ def my_activity(request):
     
     return render(request, 'maps/my_activity.html', context)
 
-# View for admin to see all staff activities
+# View for admin to see all staff activities with pagination
 @login_required
 def all_activities(request):
     from django.contrib.admin.views.decorators import staff_member_required
     from django.core.exceptions import PermissionDenied
+    from django.core.paginator import Paginator
     
     if not request.user.is_staff:
         raise PermissionDenied
@@ -304,6 +314,13 @@ def all_activities(request):
     # Get sort parameter (default: recent first)
     # Accept both 'sort' and 'sort_order' for compatibility with templates
     sort_order = request.GET.get('sort') or request.GET.get('sort_order') or 'recent'
+    
+    # Get page number for current tab
+    assessments_page = request.GET.get('assessments_page', 1)
+    reports_page = request.GET.get('reports_page', 1)
+    certificates_page = request.GET.get('certificates_page', 1)
+    flood_page = request.GET.get('flood_page', 1)
+    logs_page = request.GET.get('logs_page', 1)
     
     assessments = AssessmentRecord.objects.all().select_related('user')
     reports = ReportRecord.objects.all().select_related('user')
@@ -315,7 +332,6 @@ def all_activities(request):
     if sort_order == 'oldest':
         assessments = assessments.order_by('timestamp')
         reports = reports.order_by('timestamp')
-        # Certificates also have a timestamp, use that for reliable chronological ordering
         certificates = certificates.order_by('timestamp')
         flood_activities = flood_activities.order_by('timestamp')
         user_logs = user_logs.order_by('timestamp')
@@ -345,6 +361,31 @@ def all_activities(request):
         flood_activities = flood_activities.filter(timestamp__date=filter_date)
         user_logs = user_logs.filter(timestamp__date=filter_date)
     
+    # Get total counts before pagination
+    total_assessments = assessments.count()
+    total_reports = reports.count()
+    total_certificates = certificates.count()
+    total_flood_activities = flood_activities.count()
+    total_user_logs = user_logs.count()
+    
+    # Apply pagination (25 records per page)
+    paginator_size = 25
+    
+    assessments_paginator = Paginator(assessments, paginator_size)
+    assessments = assessments_paginator.get_page(assessments_page)
+    
+    reports_paginator = Paginator(reports, paginator_size)
+    reports = reports_paginator.get_page(reports_page)
+    
+    certificates_paginator = Paginator(certificates, paginator_size)
+    certificates = certificates_paginator.get_page(certificates_page)
+    
+    flood_paginator = Paginator(flood_activities, paginator_size)
+    flood_activities = flood_paginator.get_page(flood_page)
+    
+    logs_paginator = Paginator(user_logs, paginator_size)
+    user_logs = logs_paginator.get_page(logs_page)
+    
     # Get all users for filter dropdown
     from django.contrib.auth import get_user_model
     User = get_user_model()
@@ -361,11 +402,109 @@ def all_activities(request):
         'filter_date': filter_date,
         'sort_order': sort_order,
         'active_tab': active_tab,
-        'total_assessments': assessments.count(),
-        'total_reports': reports.count(),
-        'total_certificates': certificates.count(),
-        'total_flood_activities': flood_activities.count(),
-        'total_user_logs': user_logs.count(),
+        'total_assessments': total_assessments,
+        'total_reports': total_reports,
+        'total_certificates': total_certificates,
+        'total_flood_activities': total_flood_activities,
+        'total_user_logs': total_user_logs,
+        'assessments_paginator': assessments_paginator,
+        'reports_paginator': reports_paginator,
+        'certificates_paginator': certificates_paginator,
+        'flood_paginator': flood_paginator,
+        'logs_paginator': logs_paginator,
     }
     
     return render(request, 'maps/all_activities.html', context)
+
+
+# Export activities view
+@login_required
+def export_activities(request):
+    """Export activities in CSV or PDF format"""
+    from django.core.exceptions import PermissionDenied
+    from django.http import JsonResponse
+    
+    if not request.user.is_staff:
+        raise PermissionDenied
+    
+    # Check if export_utils is available
+    if export_utils is None:
+        return JsonResponse({
+            'error': 'PDF export requires reportlab. Please run: pip install reportlab'
+        }, status=500)
+    
+    export_type = request.GET.get('type', 'csv')  # csv or pdf
+    activity_type = request.GET.get('activity', 'assessments')  # Type of activity to export
+    
+    # Get filter parameters
+    filter_user = request.GET.get('user', None)
+    filter_date = request.GET.get('date', None)
+    sort_order = request.GET.get('sort', 'recent')
+    
+    # Prepare base querysets
+    assessments = AssessmentRecord.objects.all().select_related('user')
+    reports = ReportRecord.objects.all().select_related('user')
+    certificates = CertificateRecord.objects.all().select_related('user')
+    flood_activities = FloodRecordActivity.objects.all().select_related('user')
+    user_logs = UserLog.objects.all().select_related('user')
+    
+    # Apply ordering
+    if sort_order == 'oldest':
+        assessments = assessments.order_by('timestamp')
+        reports = reports.order_by('timestamp')
+        certificates = certificates.order_by('timestamp')
+        flood_activities = flood_activities.order_by('timestamp')
+        user_logs = user_logs.order_by('timestamp')
+    else:
+        assessments = assessments.order_by('-timestamp')
+        reports = reports.order_by('-timestamp')
+        certificates = certificates.order_by('-timestamp')
+        flood_activities = flood_activities.order_by('-timestamp')
+        user_logs = user_logs.order_by('-timestamp')
+    
+    # Apply filters
+    if filter_user:
+        assessments = assessments.filter(user__id=filter_user)
+        reports = reports.filter(user__id=filter_user)
+        certificates = certificates.filter(user__id=filter_user)
+        flood_activities = flood_activities.filter(user__id=filter_user)
+        user_logs = user_logs.filter(user__id=filter_user)
+    
+    if filter_date:
+        assessments = assessments.filter(timestamp__date=filter_date)
+        reports = reports.filter(timestamp__date=filter_date)
+        certificates = certificates.filter(timestamp__date=filter_date)
+        flood_activities = flood_activities.filter(timestamp__date=filter_date)
+        user_logs = user_logs.filter(timestamp__date=filter_date)
+    
+    # Export based on type and activity
+    if export_type == 'pdf':
+        if activity_type == 'assessments':
+            headers, data = export_utils.prepare_assessments_data(assessments)
+            return export_utils.export_to_pdf('Flood Risk Assessment Records', headers, data, 'assessments')
+        elif activity_type == 'reports':
+            headers, data = export_utils.prepare_reports_data(reports)
+            return export_utils.export_to_pdf('Flood Risk Reports', headers, data, 'reports')
+        elif activity_type == 'certificates':
+            headers, data = export_utils.prepare_certificates_data(certificates)
+            return export_utils.export_to_pdf('Flood Risk Certificates', headers, data, 'certificates')
+        elif activity_type == 'flood-records':
+            headers, data = export_utils.prepare_flood_activities_data(flood_activities)
+            return export_utils.export_to_pdf('Flood Activity Records', headers, data, 'flood_activities')
+        elif activity_type == 'user-logs':
+            headers, data = export_utils.prepare_user_logs_data(user_logs)
+            return export_utils.export_to_pdf('User Activity Logs', headers, data, 'user_logs')
+    else:  # CSV
+        if activity_type == 'assessments':
+            return export_utils.export_assessments_to_csv(assessments)
+        elif activity_type == 'reports':
+            return export_utils.export_reports_to_csv(reports)
+        elif activity_type == 'certificates':
+            return export_utils.export_certificates_to_csv(certificates)
+        elif activity_type == 'flood-records':
+            return export_utils.export_flood_activities_to_csv(flood_activities)
+        elif activity_type == 'user-logs':
+            return export_utils.export_user_logs_to_csv(user_logs)
+    
+    # Default fallback
+    return export_utils.export_assessments_to_csv(assessments)

@@ -378,13 +378,13 @@
 
         <!-- Toast notifications will appear here -->
 
-        <form method="post">
+        <form method="post" autocomplete="off" data-form-type="other">
             {% csrf_token %}
             <div class="form-group">
                 <label for="username">Username</label>
                 <div class="input-group">
                     <i class="fas fa-user"></i>
-                    <input type="text" id="username" name="username" class="form-control" placeholder="Enter your username" required>
+                    <input type="text" id="username" name="username" class="form-control" placeholder="Enter your username" autocomplete="username" required>
                 </div>
             </div>
 
@@ -392,7 +392,7 @@
                 <label for="password">Password</label>
                 <div class="input-group">
                     <i class="fas fa-lock"></i>
-                    <input type="password" id="password" name="password" class="form-control" placeholder="Enter your password" required>
+                    <input type="password" id="password" name="password" class="form-control" placeholder="Enter your password" autocomplete="new-password" required>
                 </div>
             </div>
 
@@ -474,6 +474,10 @@
         
         // Display Django messages and errors as toasts on page load
         document.addEventListener('DOMContentLoaded', function() {
+            // Clear login form to prevent browser/password manager auto-fill
+            document.getElementById('username').value = '';
+            document.getElementById('password').value = '';
+            
             {% if error %}
                 showToast("{{ error|escapejs }}", "error", 5000);
             {% endif %}

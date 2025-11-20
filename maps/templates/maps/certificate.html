@@ -9,33 +9,64 @@
     <style>
         @media print {
             @page {
-                margin: 8mm;
+                margin: 0;
                 size: letter;
             }
-            body {
-                margin: 0 !important;
-                padding: 0 !important;
+            
+            html, body {
+                width: 8.5in;
+                height: 11in;
+                margin: 0;
+                padding: 0;
+                background: white !important;
             }
+            
+            body {
+                display: flex !important;
+                flex-direction: column !important;
+            }
+            
             .certificate-container {
                 margin: 0 !important;
-                padding: 6mm !important;
+                padding: 0 0.5in !important;
                 max-width: 100% !important;
                 box-shadow: none !important;
+                width: 100% !important;
+                background: white !important;
+                min-height: 11in !important;
+                display: flex !important;
+                flex-direction: column !important;
             }
+            
+            .header {
+                flex-shrink: 0;
+                margin-top: 0 !important;
+                padding-top: 0 !important;
+            }
+            
+            .header img {
+                margin-top: 0 !important;
+                padding-top: 0 !important;
+            }
+            
+            .content-wrapper {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+            
+            .main-content {
+                flex-grow: 1;
+            }
+            
+            .footer {
+                flex-shrink: 0;
+                margin-top: auto;
+            }
+            
             .no-print {
                 display: none !important;
-            }
-        }
-
-        @media print and (size: A4) {
-            @page {
-                size: A4;
-                margin: 10mm;
-            }
-            .certificate-container {
-                min-height: 340mm;
-                padding-top: 22mm !important;
-                padding-bottom: 22mm !important;
             }
         }
         
@@ -47,168 +78,153 @@
         
         body {
             font-family: 'Times New Roman', Times, serif;
-            background: #f5f5f5;
-            padding-top: 64px;
+            background: #1a1a1a;
+            padding: 20px;
             margin: 0;
             line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
         }
         
         .certificate-container {
-            max-width: 100%;
-            margin: 10px;
+            width: 100%;
+            max-width: 850px;
             background: white;
-            padding: 18px 18px 12px 18px;
-            box-shadow: none;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            margin: 20px auto;
+            min-height: 11in;
+            display: flex;
+            flex-direction: column;
         }
         
         .header {
             text-align: center;
-            margin-bottom: 18px;
+            margin-bottom: 20px;
+            margin-top: 0;
+            padding-top: 0;
+            flex-shrink: 0;
         }
         
-        .header-logos {
+        .header img {
+            width: 100%;
+            max-width: 1150px;
+            margin-bottom: 2px;
+            margin-top: 0;
+            padding-top: 0;
+            display: block;
+        }
+        
+        .content-wrapper {
+            flex: 1;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 15px;
-            gap: 20px;
+            flex-direction: column;
+            justify-content: space-between;
         }
         
-        .header-logo {
-            width: 80px;
-            height: 80px;
-        }
-        
-        .header-text {
-            text-align: center;
-        }
-        
-        .header-text h1 {
-            font-size: 14px;
-            font-weight: bold;
-            margin-bottom: 2px;
-        }
-        
-        .header-text h2 {
-            font-size: 13px;
-            font-weight: bold;
-            margin-bottom: 2px;
-        }
-        
-        .header-text h3 {
-            font-size: 13px;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-        
-        .header-text p {
-            font-size: 11px;
-            font-style: italic;
-            color: #666;
+        .main-content {
+            flex-grow: 1;
         }
         
         .title {
             text-align: center;
-            margin: 18px 0 14px 0;
+            margin: 0px 0 24px 0;
         }
         
         .title h1 {
-            font-size: 23px;
+            font-size: 28px;
             font-weight: bold;
             letter-spacing: 7.5px;
             color: #999;
-            margin-top: 28px;
-            margin-bottom: 32px;
+            margin: 0;
         }
         
         .content {
             text-align: justify;
-            font-size: 14.2px;
-            line-height: 1.75;
-            margin-bottom: 24px;
+            font-size: 16px;
+            line-height: 1.65;
+            margin-bottom: 0px;
         }
         
         .content p {
-            margin-bottom: 18px;
+            margin-bottom: 20px;
             text-indent: 40px;
         }
         
-        .establishment-name {
-            font-weight: bold;
-            text-decoration: underline;
+        .content p:first-child {
+            margin-top: 0;
         }
         
-        .owner-name {
-            font-weight: bold;
-        }
-        
-        .location {
-            font-weight: bold;
-        }
-        
-        .barangay {
-            font-weight: bold;
-        }
-        
-        .hazard-level {
+        .establishment-name, .owner-name, .location, .barangay, .hazard-level, .zone-status {
             font-weight: bold;
         }
         
         .zone-status {
-            font-weight: bold;
             text-decoration: underline;
         }
         
-        .whereas {
-            font-weight: bold;
-        }
-        
-        .wherefore {
+        .whereas, .wherefore {
             font-weight: bold;
         }
         
         .issued-date {
-            margin-top: 24px;
+            margin-top: 2px;
             text-indent: 40px;
         }
         
         .signature-section {
-            margin-top: 44px;
+            margin-top: 20px;
+            margin-bottom: 20px;
         }
         
         .signature-block {
             text-align: center;
         }
         
+        .signature-block > div {
+            text-align: left;
+            margin-left: 50px;
+        }
+        
+        .signature-block p {
+            margin-bottom: 5px;
+        }
+        
         .signature-line {
             display: inline-block;
             width: 280px;
             border-bottom: 2px solid #000;
-            margin-bottom: 9px;
-            height: 52px;
+            margin-bottom: 2px;
+            height: 32px;
         }
         
         .signatory-name {
             font-weight: bold;
-            font-size: 13px;
+            font-size: 14px;
             text-transform: uppercase;
+            margin-bottom: 1px;
         }
         
         .signatory-title {
-            font-size: 11px;
+            font-size: 12px;
             font-style: italic;
+            margin-bottom: 0px;
         }
         
         .footer {
             text-align: center;
-            margin-top: 25px;
-            padding-top: 14px;
+            padding-top: 10px;
             border-top: 2px solid #000;
+            flex-shrink: 0;
+            margin-top: auto;
         }
         
         .footer p {
-            font-size: 11px;
+            font-size: 12px;
             font-weight: bold;
+            margin: 0;
         }
         
         .action-buttons {
@@ -219,38 +235,39 @@
             display: flex;
             gap: 12px;
         }
-        .print-btn {
-            background: linear-gradient(135deg, #2563eb, #1e3a5f);
-            color: white;
+        
+        .print-btn, .close-btn {
             border: none;
             border-radius: 8px;
             font-size: 16px;
             font-weight: 600;
             padding: 14px 24px;
             cursor: pointer;
-            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.15);
             font-family: inherit;
             transition: all 0.2s ease;
             display: flex;
             align-items: center;
             gap: 8px;
+            color: white;
         }
+        
+        .print-btn {
+            background: linear-gradient(135deg, #2563eb, #1e3a5f);
+            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.15);
+        }
+        
+        .print-btn:hover {
+            background: linear-gradient(135deg, #1e3a5f, #2563eb);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
+        }
+        
         .close-btn {
             background: linear-gradient(135deg, #dc2626, #b91c1c);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: 600;
-            padding: 14px 20px;
-            cursor: pointer;
             box-shadow: 0 2px 8px rgba(220, 38, 38, 0.15);
-            font-family: inherit;
-            transition: all 0.2s ease;
-            display: flex;
-            align-items: center;
-            gap: 6px;
+            padding: 14px 20px;
         }
+        
         .close-btn:hover {
             background: linear-gradient(135deg, #b91c1c, #dc2626);
             transform: translateY(-2px);
@@ -266,8 +283,7 @@
     
     <div class="certificate-container">
         <div class="header">
-            <img src="{% static 'images/drrmo_header.png' %}" alt="Silay DRRMO Header" style="width:100%;max-width:1100px;margin-bottom:20px;margin-top:-30px;display:block;">
-            <!-- Removed duplicate text header under DRRMO header image -->
+            <img src="{% static 'images/drrmo_header.png' %}" alt="Silay DRRMO Header" style="width:100%;max-width:1050px;margin-bottom:2px;margin-top:0;display:block;">
         </div>
         
         <div class="title">
@@ -292,6 +308,7 @@
                 NEGROS OCCIDENTAL, PHILIPPINES.
             </p>
             
+            {% if mitigating_measures_value == 'true' or mitigating_measures_value == True %}
             <p>
                 <span class="whereas">WHEREAS</span>, Disaster Prevention and Mitigation are being established 
                 by the Silay City Disaster Risk Reduction & Management Council (SCDRRMC) to its possible hazard prone areas.
@@ -307,6 +324,7 @@
                 Silay City Disaster Risk Reduction & Management Office (SCDRRMO), which will monitor and ensure 
                 the welfare and safety of its surrounding communities.
             </p>
+            {% endif %}
             
             <p>
                 <span class="wherefore">WHEREFORE</span>, upon assessment of the Silay City Disaster Risk Reduction & 

@@ -723,6 +723,31 @@
                 {% endif %}
             </div>
 
+            <!-- Barangay selection dropdown -->
+            <div class="form-group">
+                <label>
+                    <i class="fas fa-list"></i>
+                    Select Affected Barangay
+                </label>
+                <div class="barangay-dropdown-wrapper">
+                    <div class="barangay-dropdown-toggle" id="barangay-dropdown-toggle">
+                        -- Select Barangays --
+                    </div>
+                    <div class="barangay-dropdown-menu" id="barangay-dropdown-menu">
+                        <div class="barangay-dropdown-item" style="background: #f0f9ff; border-bottom: 2px solid var(--secondary-blue);">
+                            <input type="checkbox" id="checkbox-select-all" name="barangay-checkbox-select-all" value="select-all">
+                            <label for="checkbox-select-all" style="font-weight: 700; color: var(--secondary-blue);">✓ Select All Barangays</label>
+                        </div>
+                        {% for barangay_value, barangay_name in BARANGAYS %}
+                            <div class="barangay-dropdown-item">
+                                <input type="checkbox" id="checkbox-{{ barangay_value }}" name="barangay-checkbox" value="{{ barangay_value }}" data-barangay-name="{{ barangay_name }}">
+                                <label for="checkbox-{{ barangay_value }}">{{ barangay_name }}</label>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
             <!-- Barangay selection after event -->
             <div class="form-group">
                 <label for="{{ form.affected_barangays.id_for_label }}">
@@ -741,26 +766,6 @@
                     </ul>
                 {% endif %}
                 <small>{{ form.affected_barangays.help_text }}</small>
-            </div>
-            <!-- Barangay selection dropdown -->
-            <div class="form-group">
-                <label>
-                    <i class="fas fa-list"></i>
-                    Select Affected Barangay
-                </label>
-                <div class="barangay-dropdown-wrapper">
-                    <div class="barangay-dropdown-toggle" id="barangay-dropdown-toggle">
-                        -- Select Barangays --
-                    </div>
-                    <div class="barangay-dropdown-menu" id="barangay-dropdown-menu">
-                        {% for barangay_value, barangay_name in BARANGAYS %}
-                            <div class="barangay-dropdown-item">
-                                <input type="checkbox" id="checkbox-{{ barangay_value }}" name="barangay-checkbox" value="{{ barangay_value }}" data-barangay-name="{{ barangay_name }}">
-                                <label for="checkbox-{{ barangay_value }}">{{ barangay_name }}</label>
-                            </div>
-                        {% endfor %}
-                    </div>
-                </div>
             </div>
 
             <!-- Render remaining fields except event and affected_barangays -->
@@ -917,22 +922,46 @@
             markRequiredFields();
 
             // Handle date input formatting (mm/dd/yyyy)
-            // Disable manual typing on date inputs - calendar picker only
+            // Allow manual typing with automatic formatting
             const dateInputs = document.querySelectorAll('input[type="date"]');
             dateInputs.forEach(dateInput => {
-                dateInput.addEventListener('keydown', function(e) {
-                    e.preventDefault();
+                // Listen for input changes (both typed and calendar picker)
+                dateInput.addEventListener('input', function(e) {
+                    let value = this.value;
+                    
+                    // If user is typing (not from calendar picker), format the input
+                    if (value && !value.includes('-')) {
+                        // User typed something without dashes, try to parse mm/dd/yyyy or mmddyyyy
+                        let cleaned = value.replace(/\D/g, ''); // Remove all non-digits
+                        
+                        if (cleaned.length >= 8) {
+                            let month = cleaned.substring(0, 2);
+                            let day = cleaned.substring(2, 4);
+                            let year = cleaned.substring(4, 8);
+                            
+                            // Validate month and day
+                            if (parseInt(month) >= 1 && parseInt(month) <= 12 &&
+                                parseInt(day) >= 1 && parseInt(day) <= 31) {
+                                // Convert to YYYY-MM-DD format for the input
+                                this.value = `${year}-${month}-${day}`;
+                            }
+                        }
+                    }
                 });
-                dateInput.addEventListener('keypress', function(e) {
-                    e.preventDefault();
+                
+                // Format display as mm/dd/yyyy when showing, but keep internal value as YYYY-MM-DD
+                dateInput.addEventListener('focus', function() {
+                    // Show the date in calendar picker format when focused
                 });
-                dateInput.addEventListener('keyup', function(e) {
-                    e.preventDefault();
+                
+                dateInput.addEventListener('blur', function() {
+                    // Could format display here if needed
                 });
             });
                         const dropdownToggle = document.getElementById('barangay-dropdown-toggle');
             const dropdownMenu = document.getElementById('barangay-dropdown-menu');
             const checkboxes = document.querySelectorAll('input[name="barangay-checkbox"]');
+            const selectAllCheckbox = document.getElementById('checkbox-select-all');
             const affectedInput = document.getElementById('id_affected_barangays');
             const barangayTags = document.getElementById('barangay-tags');
 
@@ -951,7 +980,19 @@
                 }
             });
 
-            // Handle checkbox changes
+            // Handle "Select All" checkbox
+            selectAllCheckbox.addEventListener('change', function() {
+                checkboxes.forEach(checkbox => {
+                    checkbox.checked = this.checked;
+                });
+                
+                // Trigger change event on first checkbox to update display
+                if (checkboxes.length > 0) {
+                    checkboxes[0].dispatchEvent(new Event('change', { bubbles: true }));
+                }
+            });
+
+            // Handle individual checkbox changes
             checkboxes.forEach(checkbox => {
                 checkbox.addEventListener('change', function() {
                     const selectedBarangays = Array.from(checkboxes)
@@ -963,6 +1004,12 @@
                     
                     // Update tags display
                     updateBarangayTags(selectedBarangays);
+                    
+                    // Update "Select All" checkbox state
+                    const allChecked = checkboxes.length > 0 && Array.from(checkboxes).every(cb => cb.checked);
+                    const someChecked = Array.from(checkboxes).some(cb => cb.checked);
+                    selectAllCheckbox.checked = allChecked;
+                    selectAllCheckbox.indeterminate = someChecked && !allChecked;
                     
                     // Clear validation error if any
                     affectedInput.classList.remove('is-invalid');

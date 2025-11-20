@@ -1268,9 +1268,9 @@
         </div>
     </div>
 
-    <!-- Recent Flood Records -->
+    <!-- Flood Records -->
     <div class="card">
-        <h2><i class="fas fa-list"></i> Recent Flood Records</h2>
+        <h2><i class="fas fa-list"></i> Flood Records</h2>
         <div style="overflow-x: auto;">
             <table>
                 <thead>
@@ -1280,8 +1280,14 @@
                         <th>Barangays</th>
                         <th>Dead</th>
                         <th>Injured</th>
-                        <th>Persons</th>
+                        <th>Missing</th>
+                        <th>Affected Persons</th>
+                        <th>Affected Families</th>
                         <th>Houses (Partial/Total)</th>
+                        <th>Infrastructure Damage</th>
+                        <th>Agriculture Damage</th>
+                        <th>Institutions Damage</th>
+                        <th>Private/Commercial Damage</th>
                         <th>Total Damage</th>
                         <th>Actions</th>
                     </tr>
@@ -1292,11 +1298,17 @@
                         <td>{{ record.date|date:"Y-m-d" }}</td>
                         <td>{{ record.event }}</td>
                         <td>{{ record.affected_barangays }}</td>
-                        <td>{{ record.casualties_dead }}</td>
-                        <td>{{ record.casualties_injured }}</td>
-                        <td>{{ record.affected_persons }}</td>
-                        <td>{{ record.houses_damaged_partially }}/{{ record.houses_damaged_totally }}</td>
-                        <td>₱{{ record.damage_total_php|floatformat:0 }}</td>
+                        <td>{{ record.casualties_dead_fmt }}</td>
+                        <td>{{ record.casualties_injured_fmt }}</td>
+                        <td>{{ record.casualties_missing_fmt }}</td>
+                        <td>{{ record.affected_persons_fmt }}</td>
+                        <td>{{ record.affected_families_fmt }}</td>
+                        <td>{{ record.houses_damaged_partially_fmt }}/{{ record.houses_damaged_totally_fmt }}</td>
+                        <td>₱{{ record.damage_infrastructure_php_fmt }}</td>
+                        <td>₱{{ record.damage_agriculture_php_fmt }}</td>
+                        <td>₱{{ record.damage_institutions_php_fmt }}</td>
+                        <td>₱{{ record.damage_private_commercial_php_fmt }}</td>
+                        <td>₱{{ record.damage_total_php_fmt }}</td>
                         <td>
                             <div class="action-buttons">
                                 <a href="{% url 'flood_record_edit' record.id %}" class="btn btn-edit"><i class="fas fa-edit"></i></a>
@@ -1305,7 +1317,7 @@
                         </td>
                     </tr>
                     {% empty %}
-                    <tr><td colspan="9">No flood records available</td></tr>
+                    <tr><td colspan="15">No flood records available</td></tr>
                     {% endfor %}
                 </tbody>
             </table>

@@ -398,6 +398,17 @@
                 {% endif %}
             </div>
 
+            <!-- Barangay selection dropdown -->
+            <div class="form-group">
+                <label for="barangay-select">Select Affected Barangay</label>
+                <select id="barangay-select" name="barangay-select">
+                    <option value="">-- Select Barangay --</option>
+                    {% for barangay_value, barangay_name in BARANGAYS %}
+                        <option value="{{ barangay_value }}">{{ barangay_name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
             <!-- Barangay selection after event -->
             <div class="form-group">
                 <label for="{{ form.affected_barangays.id_for_label }}">{{ form.affected_barangays.label }}</label>
@@ -413,16 +424,6 @@
                     </ul>
                 {% endif %}
                 <small>{{ form.affected_barangays.help_text }}</small>
-            </div>
-            <!-- Barangay selection dropdown -->
-            <div class="form-group">
-                <label for="barangay-select">Select Affected Barangay</label>
-                <select id="barangay-select" name="barangay-select">
-                    <option value="">-- Select Barangay --</option>
-                    {% for barangay_value, barangay_name in BARANGAYS %}
-                        <option value="{{ barangay_value }}">{{ barangay_name }}</option>
-                    {% endfor %}
-                </select>
             </div>
 
             <!-- Render remaining fields except event and affected_barangays -->
@@ -582,7 +583,43 @@
         document.addEventListener('DOMContentLoaded', function() {
             markRequiredFields();
 
-            const barangaySelect = document.getElementById('barangay-select');
+            // Handle date input formatting (mm/dd/yyyy)
+            // Allow manual typing with automatic formatting
+            const dateInputs = document.querySelectorAll('input[type="date"]');
+            dateInputs.forEach(dateInput => {
+                // Listen for input changes (both typed and calendar picker)
+                dateInput.addEventListener('input', function(e) {
+                    let value = this.value;
+                    
+                    // If user is typing (not from calendar picker), format the input
+                    if (value && !value.includes('-')) {
+                        // User typed something without dashes, try to parse mm/dd/yyyy or mmddyyyy
+                        let cleaned = value.replace(/\D/g, ''); // Remove all non-digits
+                        
+                        if (cleaned.length >= 8) {
+                            let month = cleaned.substring(0, 2);
+                            let day = cleaned.substring(2, 4);
+                            let year = cleaned.substring(4, 8);
+                            
+                            // Validate month and day
+                            if (parseInt(month) >= 1 && parseInt(month) <= 12 &&
+                                parseInt(day) >= 1 && parseInt(day) <= 31) {
+                                // Convert to YYYY-MM-DD format for the input
+                                this.value = `${year}-${month}-${day}`;
+                            }
+                        }
+                    }
+                });
+                
+                // Format display as mm/dd/yyyy when showing, but keep internal value as YYYY-MM-DD
+                dateInput.addEventListener('focus', function() {
+                    // Show the date in calendar picker format when focused
+                });
+                
+                dateInput.addEventListener('blur', function() {
+                    // Could format display here if needed
+                });
+            });
             const affectedInput = document.getElementById('id_affected_barangays');
             const barangayTags = document.getElementById('barangay-tags');
 

@@ -5513,3 +5513,1045 @@ INFO 2025-11-19 22:26:00 views 32576 24348 Processed 7 days of weather forecast
 INFO 2025-11-19 22:26:00 basehttp 32576 24348 "GET /monitoring/ HTTP/1.1" 200 85679
 INFO 2025-11-19 22:26:16 basehttp 32576 24348 "GET /profile/ HTTP/1.1" 200 54969
 INFO 2025-11-19 22:27:36 basehttp 32576 24348 "GET /profile/ HTTP/1.1" 200 54959
+INFO 2025-11-20 10:41:57 autoreload 24760 19380 Watching for file changes with StatReloader
+INFO 2025-11-20 10:42:02 basehttp 24760 27168 "GET / HTTP/1.1" 302 0
+INFO 2025-11-20 10:42:02 basehttp 24760 27168 "GET /home/ HTTP/1.1" 200 52843
+INFO 2025-11-20 10:42:02 basehttp 24760 23216 "GET /static/css/font-awesome.min.css HTTP/1.1" 304 0
+INFO 2025-11-20 10:42:02 basehttp 24760 17052 "GET /static/images/drrmo_logo.png HTTP/1.1" 304 0
+INFO 2025-11-20 10:42:02 basehttp 24760 27168 "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+INFO 2025-11-20 10:42:02 basehttp 24760 2120 "GET /static/js/bootstrap.bundle.min.js HTTP/1.1" 304 0
+INFO 2025-11-20 10:42:03 basehttp 24760 2120 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 304 0
+INFO 2025-11-20 10:42:03 basehttp 24760 17052 "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 304 0
+WARNING 2025-11-20 10:42:03 log 24760 17052 Not Found: /favicon.ico
+WARNING 2025-11-20 10:42:03 basehttp 24760 17052 "GET /favicon.ico HTTP/1.1" 404 4918
+INFO 2025-11-20 10:42:17 views 24760 17052 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-20 10:42:18 views 24760 17052 API returned - Rain: 0.0mm, Temp: 29.2°C, Humidity: 77%, Wind: 19.4km/h
+INFO 2025-11-20 10:42:18 views 24760 17052 Processed 7 days of weather forecast
+INFO 2025-11-20 10:42:18 views 24760 17052 Created new rainfall record: 0.0mm
+INFO 2025-11-20 10:42:18 views 24760 17052 Created new weather record
+INFO 2025-11-20 10:42:18 views 24760 17052 Requesting WorldTides API for Cebu City: https://www.worldtides.info/api/v3
+INFO 2025-11-20 10:42:21 views 24760 17052 Created new tide record: 0.096m from WorldTides API
+INFO 2025-11-20 10:42:21 basehttp 24760 17052 "GET /monitoring/ HTTP/1.1" 200 85677
+INFO 2025-11-20 10:42:21 basehttp 24760 17052 "GET /static/js/chart.js HTTP/1.1" 304 0
+INFO 2025-11-20 10:42:43 basehttp 24760 17052 "GET /monitoring/benchmark-settings/ HTTP/1.1" 200 43674
+INFO 2025-11-20 10:43:43 basehttp 24760 4960 "GET /logout/ HTTP/1.1" 302 0
+INFO 2025-11-20 10:43:43 basehttp 24760 4960 "GET / HTTP/1.1" 200 13751
+INFO 2025-11-20 10:43:45 basehttp 24760 4960 "GET /register/ HTTP/1.1" 200 26194
+INFO 2025-11-20 10:49:04 autoreload 24760 19380 C:\Users\aldri\Flood-Monitoring-System-with-GIS\users\forms.py changed, reloading.
+INFO 2025-11-20 10:49:04 autoreload 16852 7796 Watching for file changes with StatReloader
+INFO 2025-11-20 10:49:10 autoreload 16852 7796 C:\Users\aldri\Flood-Monitoring-System-with-GIS\users\forms.py changed, reloading.
+INFO 2025-11-20 10:49:10 autoreload 17404 15460 Watching for file changes with StatReloader
+INFO 2025-11-20 10:50:03 basehttp 17404 26928 "GET /register/ HTTP/1.1" 200 26194
+INFO 2025-11-20 10:50:08 basehttp 17404 26928 "GET /register/ HTTP/1.1" 200 26194
+INFO 2025-11-20 10:50:18 basehttp 17404 26928 "GET / HTTP/1.1" 200 13751
+INFO 2025-11-20 10:50:36 basehttp 17404 26928 "GET /register/ HTTP/1.1" 200 26194
+INFO 2025-11-20 10:50:53 basehttp 17404 26928 "GET /admin HTTP/1.1" 301 0
+INFO 2025-11-20 10:50:53 basehttp 17404 28492 "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-11-20 10:50:53 basehttp 17404 28492 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4177
+INFO 2025-11-20 10:50:54 basehttp 17404 28268 "GET /static/admin/css/responsive.css HTTP/1.1" 200 16565
+INFO 2025-11-20 10:50:54 basehttp 17404 28492 "GET /static/admin/css/base.css HTTP/1.1" 200 22120
+INFO 2025-11-20 10:50:54 basehttp 17404 25156 "GET /static/admin/css/login.css HTTP/1.1" 200 951
+INFO 2025-11-20 10:50:54 basehttp 17404 27452 "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+INFO 2025-11-20 10:50:54 basehttp 17404 26128 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+INFO 2025-11-20 10:50:54 basehttp 17404 16708 "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2808
+INFO 2025-11-20 10:50:54 basehttp 17404 26128 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2025-11-20 10:50:59 basehttp 17404 26128 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-11-20 10:50:59 basehttp 17404 26128 "GET /admin/ HTTP/1.1" 200 17849
+INFO 2025-11-20 10:50:59 basehttp 17404 26128 "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2025-11-20 10:50:59 basehttp 17404 26128 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2025-11-20 10:50:59 basehttp 17404 16708 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2025-11-20 10:51:02 basehttp 17404 16708 "GET /admin/users/customuser/ HTTP/1.1" 200 14654
+INFO 2025-11-20 10:51:02 basehttp 17404 25156 "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+INFO 2025-11-20 10:51:02 basehttp 17404 27452 "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2025-11-20 10:51:02 basehttp 17404 16708 "GET /static/admin/css/changelists.css HTTP/1.1" 200 6878
+INFO 2025-11-20 10:51:02 basehttp 17404 28268 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9777
+INFO 2025-11-20 10:51:02 basehttp 17404 25156 "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+INFO 2025-11-20 10:51:02 basehttp 17404 27452 "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2025-11-20 10:51:02 basehttp 17404 28268 "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2025-11-20 10:51:02 basehttp 17404 26128 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+INFO 2025-11-20 10:51:02 basehttp 17404 16708 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+INFO 2025-11-20 10:51:02 basehttp 17404 16708 "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+INFO 2025-11-20 10:51:02 basehttp 17404 28492 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-20 10:51:02 basehttp 17404 28492 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2025-11-20 10:51:05 basehttp 17404 28492 "GET /admin/users/customuser/10/change/ HTTP/1.1" 200 37133
+INFO 2025-11-20 10:51:05 basehttp 17404 16708 "GET /static/admin/js/calendar.js HTTP/1.1" 200 9141
+INFO 2025-11-20 10:51:05 basehttp 17404 28492 "GET /static/admin/css/forms.css HTTP/1.1" 200 8525
+INFO 2025-11-20 10:51:05 basehttp 17404 28268 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+INFO 2025-11-20 10:51:05 basehttp 17404 26128 "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19319
+INFO 2025-11-20 10:51:05 basehttp 17404 16708 "GET /static/admin/css/widgets.css HTTP/1.1" 200 11991
+INFO 2025-11-20 10:51:05 basehttp 17404 16708 "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2025-11-20 10:51:05 basehttp 17404 27452 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-20 10:51:05 basehttp 17404 27452 "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+INFO 2025-11-20 10:51:05 basehttp 17404 16708 "GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 677
+INFO 2025-11-20 10:51:09 basehttp 17404 16708 "GET /admin/users/customuser/10/delete/ HTTP/1.1" 200 16170
+INFO 2025-11-20 10:51:09 basehttp 17404 16708 "GET /static/admin/js/cancel.js HTTP/1.1" 200 884
+INFO 2025-11-20 10:51:12 basehttp 17404 16708 "POST /admin/users/customuser/10/delete/ HTTP/1.1" 302 0
+INFO 2025-11-20 10:51:12 basehttp 17404 16708 "GET /admin/users/customuser/ HTTP/1.1" 302 0
+INFO 2025-11-20 10:51:12 basehttp 17404 16708 "GET /admin/login/?next=/admin/users/customuser/ HTTP/1.1" 200 4365
+INFO 2025-11-20 10:51:12 basehttp 17404 16708 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+INFO 2025-11-20 10:51:26 basehttp 17404 16708 "GET / HTTP/1.1" 200 13856
+INFO 2025-11-20 10:51:29 basehttp 17404 16708 "GET /register/admin/ HTTP/1.1" 200 25761
+INFO 2025-11-20 10:51:38 basehttp 17404 16708 "GET /register/ HTTP/1.1" 200 26194
+INFO 2025-11-20 10:51:46 basehttp 17404 16708 "GET /register/admin/ HTTP/1.1" 200 25761
+INFO 2025-11-20 10:53:18 autoreload 17404 15460 C:\Users\aldri\Flood-Monitoring-System-with-GIS\users\forms.py changed, reloading.
+INFO 2025-11-20 10:53:18 autoreload 10400 27268 Watching for file changes with StatReloader
+INFO 2025-11-20 10:53:24 autoreload 10400 27268 C:\Users\aldri\Flood-Monitoring-System-with-GIS\users\forms.py changed, reloading.
+INFO 2025-11-20 10:53:24 autoreload 24832 15748 Watching for file changes with StatReloader
+INFO 2025-11-20 10:53:54 basehttp 24832 10688 "GET /register/ HTTP/1.1" 200 26194
+INFO 2025-11-20 10:54:18 basehttp 24832 10688 "GET / HTTP/1.1" 200 13856
+INFO 2025-11-20 10:54:20 basehttp 24832 10688 "GET /register/admin/ HTTP/1.1" 200 25761
+INFO 2025-11-20 10:54:31 basehttp 24832 10688 "GET / HTTP/1.1" 200 13856
+INFO 2025-11-20 10:54:57 autoreload 24832 15748 C:\Users\aldri\Flood-Monitoring-System-with-GIS\users\forms.py changed, reloading.
+INFO 2025-11-20 10:54:57 autoreload 23816 5304 Watching for file changes with StatReloader
+INFO 2025-11-20 10:55:06 autoreload 23816 5304 C:\Users\aldri\Flood-Monitoring-System-with-GIS\users\forms.py changed, reloading.
+INFO 2025-11-20 10:55:06 autoreload 26404 24104 Watching for file changes with StatReloader
+INFO 2025-11-20 10:55:19 basehttp 26404 25288 "GET / HTTP/1.1" 200 13856
+INFO 2025-11-20 10:55:21 basehttp 26404 25288 "GET /register/ HTTP/1.1" 200 26204
+INFO 2025-11-20 10:55:23 basehttp 26404 25288 "GET / HTTP/1.1" 200 13856
+INFO 2025-11-20 10:55:24 basehttp 26404 25288 "GET /register/admin/ HTTP/1.1" 200 25771
+INFO 2025-11-20 10:56:09 basehttp 26404 25288 "GET / HTTP/1.1" 200 13856
+INFO 2025-11-20 10:56:17 basehttp 26404 25288 "POST / HTTP/1.1" 200 14191
+INFO 2025-11-20 11:00:03 basehttp 26404 25288 "POST / HTTP/1.1" 200 14248
+INFO 2025-11-20 11:00:08 basehttp 26404 25288 "GET / HTTP/1.1" 200 13913
+INFO 2025-11-20 11:00:11 basehttp 26404 25288 "GET / HTTP/1.1" 200 13913
+INFO 2025-11-20 11:03:17 basehttp 26404 25288 "GET / HTTP/1.1" 200 13913
+INFO 2025-11-20 11:03:34 basehttp 26404 25288 "GET /register/ HTTP/1.1" 200 26204
+INFO 2025-11-20 11:03:36 basehttp 26404 25288 "GET / HTTP/1.1" 200 13913
+INFO 2025-11-20 11:03:37 basehttp 26404 25288 "GET /register/admin/ HTTP/1.1" 200 25771
+INFO 2025-11-20 11:03:40 basehttp 26404 25288 "GET / HTTP/1.1" 200 13913
+INFO 2025-11-20 11:11:45 basehttp 26404 9780 "GET / HTTP/1.1" 200 14161
+INFO 2025-11-20 11:12:02 basehttp 26404 9780 "GET /register/ HTTP/1.1" 200 26204
+INFO 2025-11-20 11:12:05 basehttp 26404 9780 "GET / HTTP/1.1" 200 14161
+INFO 2025-11-20 11:12:06 basehttp 26404 9780 "GET /register/admin/ HTTP/1.1" 200 25771
+INFO 2025-11-20 11:13:01 basehttp 26404 9780 "GET /register/admin/ HTTP/1.1" 200 25771
+INFO 2025-11-20 11:14:59 basehttp 26404 9780 "POST /register/admin/ HTTP/1.1" 302 0
+INFO 2025-11-20 11:14:59 basehttp 26404 9780 "GET / HTTP/1.1" 200 14332
+INFO 2025-11-20 11:15:28 basehttp 26404 9780 "POST / HTTP/1.1" 302 0
+INFO 2025-11-20 11:15:28 basehttp 26404 9780 "GET /home/ HTTP/1.1" 200 52058
+INFO 2025-11-20 11:15:54 views 26404 9780 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-20 11:15:56 views 26404 9780 API returned - Rain: 0.0mm, Temp: 29.7°C, Humidity: 75%, Wind: 19.9km/h
+INFO 2025-11-20 11:15:56 views 26404 9780 Processed 7 days of weather forecast
+INFO 2025-11-20 11:15:56 basehttp 26404 9780 "GET /monitoring/ HTTP/1.1" 200 85677
+INFO 2025-11-20 11:16:29 basehttp 26404 9780 "GET /monitoring/flood-record/delete/3/ HTTP/1.1" 200 8654
+INFO 2025-11-20 11:16:32 views 26404 9780 Flood record deleted: 3 - Flood
+INFO 2025-11-20 11:16:32 basehttp 26404 9780 "POST /monitoring/flood-record/delete/3/ HTTP/1.1" 302 0
+INFO 2025-11-20 11:16:32 views 26404 9780 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-20 11:16:34 views 26404 9780 API returned - Rain: 0.0mm, Temp: 29.7°C, Humidity: 75%, Wind: 19.9km/h
+INFO 2025-11-20 11:16:34 views 26404 9780 Processed 7 days of weather forecast
+INFO 2025-11-20 11:16:34 basehttp 26404 9780 "GET /monitoring/ HTTP/1.1" 200 84301
+INFO 2025-11-20 11:16:39 basehttp 26404 9780 "GET /home/ HTTP/1.1" 200 52058
+INFO 2025-11-20 11:17:25 basehttp 26404 9780 "GET /maps/ HTTP/1.1" 200 1043302
+INFO 2025-11-20 11:17:25 basehttp 26404 9780 "GET /static/css/ol.css HTTP/1.1" 304 0
+INFO 2025-11-20 11:17:25 basehttp 26404 9780 "GET /static/js/ol.js HTTP/1.1" 304 0
+ERROR 2025-11-20 11:18:59 log 26404 9780 Internal Server Error: /maps/save-assessment/
+Traceback (most recent call last):
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.StringDataRightTruncation: value too long for type character varying(3)
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\views.py", line 232, in save_assessment
+    assessment = AssessmentRecord.objects.create(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 663, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\base.py", line 902, in save
+    self.save_base(
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\base.py", line 1008, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\base.py", line 1169, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\base.py", line 1210, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 1868, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\sql\compiler.py", line 1882, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.DataError: value too long for type character varying(3)
+
+ERROR 2025-11-20 11:18:59 basehttp 26404 9780 "POST /maps/save-assessment/ HTTP/1.1" 500 167461
+INFO 2025-11-20 11:19:04 basehttp 26404 9780 "GET /maps/error/?title=Invalid%20Location&message=You%20clicked%20outside%20Silay%20City.%20Please%20select%20a%20location%20within%20Silay%20City%20to%20generate%20a%20report.&details=Coordinates%3A%20(122.986408%2C%2010.844269) HTTP/1.1" 200 3775
+INFO 2025-11-20 11:19:10 basehttp 26404 9780 "GET /maps/ HTTP/1.1" 200 1043302
+ERROR 2025-11-20 11:19:21 log 26404 9780 Internal Server Error: /maps/save-assessment/
+Traceback (most recent call last):
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.StringDataRightTruncation: value too long for type character varying(3)
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\views.py", line 232, in save_assessment
+    assessment = AssessmentRecord.objects.create(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 663, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\base.py", line 902, in save
+    self.save_base(
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\base.py", line 1008, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\base.py", line 1169, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\base.py", line 1210, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 1868, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\sql\compiler.py", line 1882, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.DataError: value too long for type character varying(3)
+
+ERROR 2025-11-20 11:19:21 basehttp 26404 9780 "POST /maps/save-assessment/ HTTP/1.1" 500 167605
+INFO 2025-11-20 11:19:23 basehttp 26404 9780 "GET /maps/certificate/form/?barangay=Eustaquio%20Lopez&lat=10.786486&lon=123.060762&risk=Unknown HTTP/1.1" 200 23009
+ERROR 2025-11-20 11:19:47 log 26404 9780 Internal Server Error: /maps/save-assessment/
+Traceback (most recent call last):
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.StringDataRightTruncation: value too long for type character varying(3)
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\views.py", line 232, in save_assessment
+    assessment = AssessmentRecord.objects.create(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 663, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\base.py", line 902, in save
+    self.save_base(
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\base.py", line 1008, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\base.py", line 1169, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\base.py", line 1210, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 1868, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\sql\compiler.py", line 1882, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.DataError: value too long for type character varying(3)
+
+ERROR 2025-11-20 11:19:47 basehttp 26404 9780 "POST /maps/save-assessment/ HTTP/1.1" 500 167461
+INFO 2025-11-20 11:19:49 basehttp 26404 9780 "GET /maps/error/?title=Invalid%20Location&message=You%20clicked%20outside%20Silay%20City.%20Please%20select%20a%20location%20within%20Silay%20City%20to%20generate%20a%20certificate.&details=Coordinates%3A%20(122.996615%2C%2010.853933) HTTP/1.1" 200 3780
+INFO 2025-11-20 11:19:53 basehttp 26404 9780 "GET /maps/ HTTP/1.1" 200 1043302
+INFO 2025-11-20 11:19:59 basehttp 26404 9780 "POST /maps/save-assessment/ HTTP/1.1" 200 82
+INFO 2025-11-20 11:20:00 basehttp 26404 9780 "GET /maps/report/?barangay=Eustaquio%20Lopez&lat=10.810257&lon=123.019822&risk=LF HTTP/1.1" 200 9915
+INFO 2025-11-20 11:20:01 basehttp 26404 9780 "GET /static/images/drrmo_header.png HTTP/1.1" 200 161208
+INFO 2025-11-20 11:21:21 basehttp 26404 9780 "GET /maps/certificate/form/?barangay=Eustaquio%20Lopez&lat=10.810257&lon=123.019822&risk=LF HTTP/1.1" 200 23005
+INFO 2025-11-20 11:22:30 basehttp 26404 9780 "POST /maps/certificate/ HTTP/1.1" 200 10557
+INFO 2025-11-20 11:23:24 views 26404 9780 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-20 11:23:25 views 26404 9780 API returned - Rain: 0.0mm, Temp: 29.7°C, Humidity: 75%, Wind: 19.9km/h
+INFO 2025-11-20 11:23:25 views 26404 9780 Processed 7 days of weather forecast
+INFO 2025-11-20 11:23:25 basehttp 26404 9780 "GET /monitoring/ HTTP/1.1" 200 84026
+INFO 2025-11-20 11:24:12 basehttp 26404 9780 "GET /monitoring/api/trends/?time_range=7d HTTP/1.1" 200 499
+INFO 2025-11-20 11:24:14 basehttp 26404 9780 "GET /monitoring/api/trends/?time_range=30d HTTP/1.1" 200 501
+INFO 2025-11-20 11:24:17 basehttp 26404 9780 "GET /monitoring/api/trends/?time_range=90d HTTP/1.1" 200 501
+INFO 2025-11-20 11:24:18 basehttp 26404 9780 "GET /monitoring/api/trends/?time_range=all HTTP/1.1" 200 498
+INFO 2025-11-20 11:24:21 basehttp 26404 9780 "GET /monitoring/api/trends/?time_range=24h HTTP/1.1" 200 347
+INFO 2025-11-20 11:24:39 basehttp 26404 9780 "GET /monitoring/flood-record/ HTTP/1.1" 200 49235
+INFO 2025-11-20 11:27:17 autoreload 26404 24104 C:\Users\aldri\Flood-Monitoring-System-with-GIS\users\forms.py changed, reloading.
+INFO 2025-11-20 11:27:18 autoreload 28156 20392 Watching for file changes with StatReloader
+INFO 2025-11-20 11:32:07 basehttp 28156 18388 "GET /monitoring/flood-record/ HTTP/1.1" 200 50701
+INFO 2025-11-20 11:34:46 views 28156 18388 Flood record created: 4 - Flash Flood
+INFO 2025-11-20 11:34:46 basehttp 28156 18388 "POST /monitoring/flood-record/ HTTP/1.1" 200 142
+INFO 2025-11-20 11:34:48 views 28156 18388 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-20 11:34:49 views 28156 18388 API returned - Rain: 0.0mm, Temp: 29.9°C, Humidity: 74%, Wind: 19.9km/h
+INFO 2025-11-20 11:34:49 views 28156 18388 Processed 7 days of weather forecast
+INFO 2025-11-20 11:34:49 basehttp 28156 18388 "GET /monitoring/ HTTP/1.1" 200 85781
+INFO 2025-11-20 11:35:45 basehttp 28156 18388 "GET /monitoring/flood-record/edit/4/ HTTP/1.1" 200 31092
+INFO 2025-11-20 11:35:52 views 28156 18388 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-20 11:35:53 views 28156 18388 API returned - Rain: 0.0mm, Temp: 29.9°C, Humidity: 74%, Wind: 19.9km/h
+INFO 2025-11-20 11:35:53 views 28156 18388 Processed 7 days of weather forecast
+INFO 2025-11-20 11:35:53 basehttp 28156 18388 "GET /monitoring/ HTTP/1.1" 200 85781
+INFO 2025-11-20 11:36:13 basehttp 28156 18388 "GET /approve/ HTTP/1.1" 200 37377
+INFO 2025-11-20 11:36:13 basehttp 28156 18388 "GET /static/webfonts/fa-regular-400.woff2 HTTP/1.1" 304 0
+INFO 2025-11-20 11:36:24 basehttp 28156 18388 "GET /monitoring/flood-record/ HTTP/1.1" 200 50701
+INFO 2025-11-20 11:42:28 autoreload 28156 20392 C:\Users\aldri\Flood-Monitoring-System-with-GIS\users\forms.py changed, reloading.
+INFO 2025-11-20 11:42:29 autoreload 16712 1484 Watching for file changes with StatReloader
+INFO 2025-11-20 11:42:43 autoreload 16712 1484 C:\Users\aldri\Flood-Monitoring-System-with-GIS\users\forms.py changed, reloading.
+INFO 2025-11-20 11:42:44 autoreload 28520 27020 Watching for file changes with StatReloader
+INFO 2025-11-20 11:44:36 autoreload 28520 27020 C:\Users\aldri\Flood-Monitoring-System-with-GIS\users\forms.py changed, reloading.
+INFO 2025-11-20 11:44:37 autoreload 23760 28348 Watching for file changes with StatReloader
+INFO 2025-11-20 11:47:00 autoreload 23760 28348 C:\Users\aldri\Flood-Monitoring-System-with-GIS\users\forms.py changed, reloading.
+INFO 2025-11-20 11:47:01 autoreload 11880 24776 Watching for file changes with StatReloader
+INFO 2025-11-20 11:47:39 basehttp 11880 22008 "GET /monitoring/flood-record/ HTTP/1.1" 200 50701
+INFO 2025-11-20 11:47:50 views 11880 22008 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-20 11:47:51 views 11880 22008 API returned - Rain: 0.0mm, Temp: 30.0°C, Humidity: 74%, Wind: 20.4km/h
+INFO 2025-11-20 11:47:51 views 11880 22008 Processed 7 days of weather forecast
+INFO 2025-11-20 11:47:51 basehttp 11880 22008 "GET /monitoring/ HTTP/1.1" 200 85781
+INFO 2025-11-20 11:47:57 basehttp 11880 22008 "GET /monitoring/flood-record/ HTTP/1.1" 200 50701
+INFO 2025-11-20 11:48:45 autoreload 11880 24776 C:\Users\aldri\Flood-Monitoring-System-with-GIS\monitoring\forms.py changed, reloading.
+INFO 2025-11-20 11:48:46 autoreload 26284 13332 Watching for file changes with StatReloader
+INFO 2025-11-20 11:49:39 autoreload 26284 13332 C:\Users\aldri\Flood-Monitoring-System-with-GIS\monitoring\forms.py changed, reloading.
+INFO 2025-11-20 11:49:40 autoreload 12012 18044 Watching for file changes with StatReloader
+INFO 2025-11-20 11:50:40 basehttp 12012 28396 "GET /monitoring/flood-record/ HTTP/1.1" 200 50685
+INFO 2025-11-20 11:51:02 autoreload 12012 18044 C:\Users\aldri\Flood-Monitoring-System-with-GIS\users\forms.py changed, reloading.
+INFO 2025-11-20 11:51:02 autoreload 3836 22320 Watching for file changes with StatReloader
+INFO 2025-11-20 11:51:49 autoreload 3836 22320 C:\Users\aldri\Flood-Monitoring-System-with-GIS\monitoring\forms.py changed, reloading.
+INFO 2025-11-20 11:51:49 autoreload 28660 23512 Watching for file changes with StatReloader
+INFO 2025-11-20 11:52:01 autoreload 28660 23512 C:\Users\aldri\Flood-Monitoring-System-with-GIS\monitoring\forms.py changed, reloading.
+INFO 2025-11-20 11:52:01 autoreload 26896 2776 Watching for file changes with StatReloader
+INFO 2025-11-20 11:55:12 basehttp 26896 26968 "GET /monitoring/flood-record/ HTTP/1.1" 200 50682
+INFO 2025-11-20 11:55:18 basehttp 26896 26968 "GET /monitoring/flood-record/ HTTP/1.1" 200 50682
+INFO 2025-11-20 11:55:35 basehttp 26896 26968 "GET /monitoring/flood-record/ HTTP/1.1" 200 50682
+INFO 2025-11-20 11:55:42 autoreload 26896 2776 C:\Users\aldri\Flood-Monitoring-System-with-GIS\monitoring\forms.py changed, reloading.
+INFO 2025-11-20 11:55:43 autoreload 9068 27576 Watching for file changes with StatReloader
+INFO 2025-11-20 11:55:44 basehttp 9068 6544 "GET /monitoring/flood-record/ HTTP/1.1" 200 50682
+INFO 2025-11-20 11:55:54 autoreload 9068 27576 C:\Users\aldri\Flood-Monitoring-System-with-GIS\monitoring\forms.py changed, reloading.
+INFO 2025-11-20 11:55:55 autoreload 16984 26252 Watching for file changes with StatReloader
+INFO 2025-11-20 11:56:03 autoreload 16984 26252 C:\Users\aldri\Flood-Monitoring-System-with-GIS\monitoring\forms.py changed, reloading.
+INFO 2025-11-20 11:56:04 autoreload 8736 26004 Watching for file changes with StatReloader
+INFO 2025-11-20 11:56:05 basehttp 8736 26536 "GET /monitoring/flood-record/ HTTP/1.1" 200 50701
+INFO 2025-11-20 11:58:56 basehttp 8736 26536 "GET /monitoring/flood-record/ HTTP/1.1" 200 52039
+INFO 2025-11-20 11:59:01 basehttp 8736 26536 "GET /monitoring/flood-record/ HTTP/1.1" 200 52039
+INFO 2025-11-20 11:59:15 basehttp 8736 26536 "GET /monitoring/flood-record/ HTTP/1.1" 200 52039
+INFO 2025-11-20 12:02:31 basehttp 8736 26536 "GET /monitoring/flood-record/ HTTP/1.1" 200 52040
+WARNING 2025-11-20 12:04:36 views 8736 26536 Form validation errors: <ul class="errorlist"><li>affected_persons<ul class="errorlist" id="id_affected_persons_error"><li>Number of affected persons should be at least equal to the number of affected families.</li></ul></li></ul>
+INFO 2025-11-20 12:04:36 basehttp 8736 26536 "POST /monitoring/flood-record/ HTTP/1.1" 200 211
+INFO 2025-11-20 12:05:39 views 8736 26536 Flood record created: 5 - Flash Flood
+INFO 2025-11-20 12:05:39 basehttp 8736 26536 "POST /monitoring/flood-record/ HTTP/1.1" 200 142
+INFO 2025-11-20 12:05:41 views 8736 26536 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-20 12:05:42 views 8736 26536 API returned - Rain: 0.0mm, Temp: 30.1°C, Humidity: 73%, Wind: 20.6km/h
+INFO 2025-11-20 12:05:42 views 8736 26536 Processed 7 days of weather forecast
+INFO 2025-11-20 12:05:43 basehttp 8736 26536 "GET /monitoring/ HTTP/1.1" 200 87012
+INFO 2025-11-20 12:06:07 basehttp 8736 26536 "GET /monitoring/flood-record/edit/4/ HTTP/1.1" 200 33009
+INFO 2025-11-20 12:06:12 views 8736 26536 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-20 12:06:14 views 8736 9048 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-20 12:06:14 views 8736 26536 API returned - Rain: 0.0mm, Temp: 30.1°C, Humidity: 73%, Wind: 20.6km/h
+INFO 2025-11-20 12:06:14 views 8736 26536 Processed 7 days of weather forecast
+INFO 2025-11-20 12:06:14 basehttp 8736 26536 - Broken pipe from ('127.0.0.1', 54360)
+INFO 2025-11-20 12:06:15 views 8736 9048 API returned - Rain: 0.0mm, Temp: 30.1°C, Humidity: 73%, Wind: 20.6km/h
+INFO 2025-11-20 12:06:15 views 8736 9048 Processed 7 days of weather forecast
+INFO 2025-11-20 12:06:15 basehttp 8736 9048 "GET /monitoring/ HTTP/1.1" 200 87012
+INFO 2025-11-20 12:57:52 basehttp 8736 25220 "GET /monitoring/api/data/ HTTP/1.1" 200 53
+INFO 2025-11-20 13:01:15 basehttp 8736 28136 "GET /monitoring/api/data/ HTTP/1.1" 200 53
+INFO 2025-11-20 13:06:15 basehttp 8736 28136 "GET /monitoring/api/data/ HTTP/1.1" 200 53
+INFO 2025-11-20 13:07:23 views 8736 28136 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-20 13:07:25 views 8736 28136 API returned - Rain: 0.0mm, Temp: 29.7°C, Humidity: 77%, Wind: 21.2km/h
+INFO 2025-11-20 13:07:25 views 8736 28136 Processed 7 days of weather forecast
+ERROR 2025-11-20 13:07:25 log 8736 28136 Internal Server Error: /monitoring/
+Traceback (most recent call last):
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\defaulttags.py", line 1035, in find_library
+    return parser.libraries[name]
+           ~~~~~~~~~~~~~~~~^^^^^^
+KeyError: 'custom_filters'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\monitoring\views.py", line 488, in monitoring_view
+    return render(request, 'monitoring/monitoring.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\defaulttags.py", line 1097, in load
+    lib = find_library(parser, name)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\defaulttags.py", line 1037, in find_library
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: 'custom_filters' is not a registered tag library. Must be one of:
+admin_list
+admin_modify
+admin_urls
+cache
+i18n
+l10n
+log
+static
+tz
+ERROR 2025-11-20 13:07:25 basehttp 8736 28136 "GET /monitoring/ HTTP/1.1" 500 281236
+INFO 2025-11-20 13:08:09 autoreload 8736 26004 C:\Users\aldri\Flood-Monitoring-System-with-GIS\monitoring\apps.py changed, reloading.
+INFO 2025-11-20 13:08:10 autoreload 22056 5676 Watching for file changes with StatReloader
+INFO 2025-11-20 13:09:52 autoreload 22056 5676 C:\Users\aldri\Flood-Monitoring-System-with-GIS\monitoring\views.py changed, reloading.
+INFO 2025-11-20 13:09:53 autoreload 26420 6588 Watching for file changes with StatReloader
+INFO 2025-11-20 13:10:30 views 26420 10972 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-20 13:10:32 views 26420 10972 API returned - Rain: 0.0mm, Temp: 29.7°C, Humidity: 77%, Wind: 21.2km/h
+INFO 2025-11-20 13:10:32 views 26420 10972 Processed 7 days of weather forecast
+INFO 2025-11-20 13:10:32 basehttp 26420 10972 "GET /monitoring/ HTTP/1.1" 200 87712
+INFO 2025-11-20 13:12:19 basehttp 26420 10972 "GET /monitoring/flood-record/ HTTP/1.1" 200 52040
+INFO 2025-11-20 13:13:53 views 26420 10972 Flood record created: 6 - Flood
+INFO 2025-11-20 13:13:53 basehttp 26420 10972 "POST /monitoring/flood-record/ HTTP/1.1" 200 136
+INFO 2025-11-20 13:13:55 views 26420 10972 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+ERROR 2025-11-20 13:14:07 views 26420 10972 Open-Meteo API Error: HTTPSConnectionPool(host='api.open-meteo.com', port=443): Max retries exceeded with url: /v1/forecast?latitude=10.753794&longitude=123.08416&current=temperature_2m%2Crelative_humidity_2m%2Cwind_speed_10m%2Crain&hourly=temperature_2m%2Crelative_humidity_2m%2Cwind_speed_10m%2Crain&daily=temperature_2m_max%2Ctemperature_2m_min%2Cprecipitation_sum%2Crelative_humidity_2m_mean%2Cwind_speed_10m_max&timezone=Asia%2FManila&forecast_days=7 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000002AA659D4800>: Failed to resolve 'api.open-meteo.com' ([Errno 11001] getaddrinfo failed)"))
+INFO 2025-11-20 13:14:07 basehttp 26420 10972 "GET /monitoring/ HTTP/1.1" 200 83648
+INFO 2025-11-20 13:15:20 basehttp 26420 10972 "GET /monitoring/flood-record/delete/6/ HTTP/1.1" 200 8547
+INFO 2025-11-20 13:15:29 views 26420 10972 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+ERROR 2025-11-20 13:15:41 views 26420 10972 Open-Meteo API Error: HTTPSConnectionPool(host='api.open-meteo.com', port=443): Max retries exceeded with url: /v1/forecast?latitude=10.753794&longitude=123.08416&current=temperature_2m%2Crelative_humidity_2m%2Cwind_speed_10m%2Crain&hourly=temperature_2m%2Crelative_humidity_2m%2Cwind_speed_10m%2Crain&daily=temperature_2m_max%2Ctemperature_2m_min%2Cprecipitation_sum%2Crelative_humidity_2m_mean%2Cwind_speed_10m_max&timezone=Asia%2FManila&forecast_days=7 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000002AA65950230>: Failed to resolve 'api.open-meteo.com' ([Errno 11001] getaddrinfo failed)"))
+INFO 2025-11-20 13:15:41 basehttp 26420 10972 "GET /monitoring/ HTTP/1.1" 200 83648
+INFO 2025-11-20 13:15:58 basehttp 26420 10972 "GET /monitoring/flood-record/ HTTP/1.1" 200 52040
+INFO 2025-11-20 13:16:19 views 26420 10972 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+ERROR 2025-11-20 13:16:30 views 26420 10972 Open-Meteo API Error: HTTPSConnectionPool(host='api.open-meteo.com', port=443): Max retries exceeded with url: /v1/forecast?latitude=10.753794&longitude=123.08416&current=temperature_2m%2Crelative_humidity_2m%2Cwind_speed_10m%2Crain&hourly=temperature_2m%2Crelative_humidity_2m%2Cwind_speed_10m%2Crain&daily=temperature_2m_max%2Ctemperature_2m_min%2Cprecipitation_sum%2Crelative_humidity_2m_mean%2Cwind_speed_10m_max&timezone=Asia%2FManila&forecast_days=7 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000002AA659D4D10>: Failed to resolve 'api.open-meteo.com' ([Errno 11001] getaddrinfo failed)"))
+INFO 2025-11-20 13:16:30 basehttp 26420 10972 "GET /monitoring/ HTTP/1.1" 200 83648
+INFO 2025-11-20 13:16:50 basehttp 26420 10972 "GET /home/ HTTP/1.1" 200 52851
+INFO 2025-11-20 13:17:20 views 26420 10972 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+ERROR 2025-11-20 13:17:32 views 26420 10972 Open-Meteo API Error: HTTPSConnectionPool(host='api.open-meteo.com', port=443): Max retries exceeded with url: /v1/forecast?latitude=10.753794&longitude=123.08416&current=temperature_2m%2Crelative_humidity_2m%2Cwind_speed_10m%2Crain&hourly=temperature_2m%2Crelative_humidity_2m%2Cwind_speed_10m%2Crain&daily=temperature_2m_max%2Ctemperature_2m_min%2Cprecipitation_sum%2Crelative_humidity_2m_mean%2Cwind_speed_10m_max&timezone=Asia%2FManila&forecast_days=7 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000002AA65986960>: Failed to resolve 'api.open-meteo.com' ([Errno 11001] getaddrinfo failed)"))
+INFO 2025-11-20 13:17:32 basehttp 26420 10972 "GET /monitoring/ HTTP/1.1" 200 83648
+INFO 2025-11-20 13:17:41 basehttp 26420 10972 "GET /home/ HTTP/1.1" 200 52851
+INFO 2025-11-20 13:19:27 basehttp 26420 10972 "GET /maps/ HTTP/1.1" 200 1043302
+WARNING 2025-11-20 13:19:49 log 26420 10972 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-11-20 13:19:49 basehttp 26420 10972 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5029
+WARNING 2025-11-20 13:19:49 basehttp 26420 10972 "GET /static/js/bootstrap.bundle.min.js.map HTTP/1.1" 404 2017
+INFO 2025-11-20 13:19:49 basehttp 26420 5708 "GET /static/css/bootstrap.min.css.map HTTP/1.1" 200 589892
+INFO 2025-11-20 13:19:49 basehttp 26420 4084 "GET /static/js/ol.js.map HTTP/1.1" 200 4835285
+INFO 2025-11-20 13:19:56 basehttp 26420 4084 "GET /maps/ HTTP/1.1" 200 1043302
+INFO 2025-11-20 13:20:24 basehttp 26420 4084 "GET /home/ HTTP/1.1" 200 52851
+INFO 2025-11-20 13:20:53 autoreload 26420 6588 C:\Users\aldri\Flood-Monitoring-System-with-GIS\monitoring\apps.py changed, reloading.
+INFO 2025-11-20 13:20:53 autoreload 1496 16932 Watching for file changes with StatReloader
+INFO 2025-11-20 14:31:35 autoreload 18444 27680 Watching for file changes with StatReloader
+INFO 2025-11-20 14:31:37 basehttp 18444 25200 "GET / HTTP/1.1" 302 0
+INFO 2025-11-20 14:31:37 basehttp 18444 25200 "GET /home/ HTTP/1.1" 200 52851
+INFO 2025-11-20 14:31:42 basehttp 18444 25200 "GET /logout/ HTTP/1.1" 302 0
+INFO 2025-11-20 14:31:42 basehttp 18444 25200 "GET / HTTP/1.1" 200 14056
+INFO 2025-11-20 14:31:44 basehttp 18444 25200 "GET /register/ HTTP/1.1" 200 26204
+INFO 2025-11-20 14:32:34 basehttp 18444 25200 "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-11-20 14:32:34 basehttp 18444 25200 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4177
+INFO 2025-11-20 14:32:37 basehttp 18444 25200 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4347
+INFO 2025-11-20 14:32:55 basehttp 18444 25200 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4177
+INFO 2025-11-20 14:33:05 basehttp 18444 25200 "GET /approve/ HTTP/1.1" 302 0
+INFO 2025-11-20 14:33:05 basehttp 18444 25200 "GET /?next=/approve/ HTTP/1.1" 200 14056
+INFO 2025-11-20 14:33:07 basehttp 18444 25200 "GET /?next=/approve/ HTTP/1.1" 200 14056
+INFO 2025-11-20 14:33:17 basehttp 18444 25200 "GET / HTTP/1.1" 200 14056
+INFO 2025-11-20 14:33:20 basehttp 18444 25200 "GET /register/ HTTP/1.1" 200 26204
+INFO 2025-11-20 14:33:28 basehttp 18444 25200 "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-11-20 14:33:28 basehttp 18444 25200 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4177
+INFO 2025-11-20 14:33:39 basehttp 18444 25200 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4347
+INFO 2025-11-20 14:34:23 basehttp 18444 25200 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-11-20 14:34:23 basehttp 18444 25200 "GET /admin/ HTTP/1.1" 200 13982
+INFO 2025-11-20 14:34:35 basehttp 18444 25200 "GET / HTTP/1.1" 302 0
+INFO 2025-11-20 14:34:36 basehttp 18444 25200 "GET /home/ HTTP/1.1" 200 52948
+INFO 2025-11-20 14:35:50 views 18444 25200 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-20 14:35:52 views 18444 25200 API returned - Rain: 0.0mm, Temp: 29.2°C, Humidity: 79%, Wind: 21.2km/h
+INFO 2025-11-20 14:35:52 views 18444 25200 Processed 7 days of weather forecast
+INFO 2025-11-20 14:35:52 views 18444 25200 Created new rainfall record: 0.0mm
+INFO 2025-11-20 14:35:52 views 18444 25200 Created new weather record
+INFO 2025-11-20 14:35:52 views 18444 25200 Requesting WorldTides API for Cebu City: https://www.worldtides.info/api/v3
+INFO 2025-11-20 14:35:52 views 18444 14060 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-20 14:35:53 views 18444 25200 Created new tide record: -0.147m from WorldTides API
+INFO 2025-11-20 14:35:53 basehttp 18444 25200 - Broken pipe from ('127.0.0.1', 54592)
+INFO 2025-11-20 14:35:54 views 18444 14060 API returned - Rain: 0.0mm, Temp: 29.2°C, Humidity: 79%, Wind: 21.2km/h
+INFO 2025-11-20 14:35:54 views 18444 14060 Processed 7 days of weather forecast
+INFO 2025-11-20 14:35:54 views 18444 14060 Requesting WorldTides API for Cebu City: https://www.worldtides.info/api/v3
+INFO 2025-11-20 14:35:55 views 18444 14060 Created new tide record: -0.147m from WorldTides API
+INFO 2025-11-20 14:35:55 basehttp 18444 14060 "GET /monitoring/ HTTP/1.1" 200 89235
+WARNING 2025-11-20 14:36:21 log 18444 14060 Forbidden (CSRF token from POST incorrect.): /admin/login/
+WARNING 2025-11-20 14:36:21 basehttp 18444 14060 "POST /admin/login/?next=/admin/ HTTP/1.1" 403 2503
+INFO 2025-11-20 14:36:28 basehttp 18444 14060 "GET /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-11-20 14:36:28 basehttp 18444 14060 "GET /admin/ HTTP/1.1" 200 13982
+INFO 2025-11-20 14:36:33 basehttp 18444 14060 "GET /admin/monitoring/rainfalldata/ HTTP/1.1" 200 16914
+INFO 2025-11-20 14:36:33 basehttp 18444 14060 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-20 14:36:44 basehttp 18444 14060 "GET /monitoring/benchmark-settings/ HTTP/1.1" 200 43674
+INFO 2025-11-20 14:37:48 basehttp 18444 14060 "GET /admin/monitoring/rainfalldata/8/change/ HTTP/1.1" 200 15167
+INFO 2025-11-20 14:37:48 basehttp 18444 14060 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-20 14:38:03 basehttp 18444 14060 "POST /admin/monitoring/rainfalldata/8/change/ HTTP/1.1" 302 0
+INFO 2025-11-20 14:38:03 basehttp 18444 14060 "GET /admin/monitoring/rainfalldata/ HTTP/1.1" 200 17148
+INFO 2025-11-20 14:38:03 basehttp 18444 14060 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-20 14:38:05 basehttp 18444 14060 "GET /admin/monitoring/tideleveldata/ HTTP/1.1" 200 17262
+INFO 2025-11-20 14:38:05 basehttp 18444 14060 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-20 14:38:07 basehttp 18444 14060 "GET /admin/monitoring/tideleveldata/9/change/ HTTP/1.1" 200 15183
+INFO 2025-11-20 14:38:07 basehttp 18444 14060 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-20 14:38:16 basehttp 18444 14060 "POST /admin/monitoring/tideleveldata/9/change/ HTTP/1.1" 302 0
+INFO 2025-11-20 14:38:16 basehttp 18444 14060 "GET /admin/monitoring/tideleveldata/ HTTP/1.1" 200 17500
+INFO 2025-11-20 14:38:16 basehttp 18444 14060 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-20 14:38:31 views 18444 14060 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-20 14:38:32 views 18444 14060 API returned - Rain: 0.0mm, Temp: 29.2°C, Humidity: 79%, Wind: 21.2km/h
+INFO 2025-11-20 14:38:32 views 18444 14060 Processed 7 days of weather forecast
+INFO 2025-11-20 14:38:32 basehttp 18444 14060 "GET /monitoring/ HTTP/1.1" 200 89244
+INFO 2025-11-20 14:38:46 basehttp 18444 14060 "GET /admin/monitoring/tideleveldata/9/change/ HTTP/1.1" 200 15180
+INFO 2025-11-20 14:38:46 basehttp 18444 14060 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-20 14:38:52 basehttp 18444 14060 "POST /admin/monitoring/tideleveldata/9/change/ HTTP/1.1" 302 0
+INFO 2025-11-20 14:38:52 basehttp 18444 14060 "GET /admin/monitoring/tideleveldata/ HTTP/1.1" 200 17500
+INFO 2025-11-20 14:38:52 basehttp 18444 14060 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-20 14:38:54 views 18444 14060 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-20 14:38:56 views 18444 14060 API returned - Rain: 0.0mm, Temp: 29.2°C, Humidity: 79%, Wind: 21.2km/h
+INFO 2025-11-20 14:38:56 views 18444 14060 Processed 7 days of weather forecast
+INFO 2025-11-20 14:38:56 basehttp 18444 14060 "GET /monitoring/ HTTP/1.1" 200 89229
+INFO 2025-11-20 14:39:09 basehttp 18444 14060 "GET /monitoring/benchmark-settings/ HTTP/1.1" 200 43674
+INFO 2025-11-20 14:39:21 basehttp 18444 14060 "GET /admin/monitoring/tideleveldata/9/change/ HTTP/1.1" 200 15180
+INFO 2025-11-20 14:39:21 basehttp 18444 14060 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-20 14:39:26 basehttp 18444 14060 "POST /admin/monitoring/tideleveldata/9/change/ HTTP/1.1" 302 0
+INFO 2025-11-20 14:39:27 basehttp 18444 14060 "GET /admin/monitoring/tideleveldata/ HTTP/1.1" 200 17500
+INFO 2025-11-20 14:39:27 basehttp 18444 14060 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-20 14:39:29 basehttp 18444 14060 "GET /admin/monitoring/rainfalldata/ HTTP/1.1" 200 16914
+INFO 2025-11-20 14:39:29 basehttp 18444 14060 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-20 14:39:31 basehttp 18444 14060 "GET /admin/monitoring/rainfalldata/8/change/ HTTP/1.1" 200 15168
+INFO 2025-11-20 14:39:31 basehttp 18444 14060 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-20 14:39:35 basehttp 18444 14060 "POST /admin/monitoring/rainfalldata/8/change/ HTTP/1.1" 302 0
+INFO 2025-11-20 14:39:35 basehttp 18444 14060 "GET /admin/monitoring/rainfalldata/ HTTP/1.1" 200 17148
+INFO 2025-11-20 14:39:35 basehttp 18444 14060 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-20 14:39:39 views 18444 14060 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-20 14:39:40 views 18444 14060 API returned - Rain: 0.0mm, Temp: 29.2°C, Humidity: 79%, Wind: 21.2km/h
+INFO 2025-11-20 14:39:40 views 18444 14060 Processed 7 days of weather forecast
+INFO 2025-11-20 14:39:40 basehttp 18444 14060 "GET /monitoring/ HTTP/1.1" 200 89241
+INFO 2025-11-20 14:39:47 basehttp 18444 14060 "GET /logout/ HTTP/1.1" 302 0
+INFO 2025-11-20 14:39:47 basehttp 18444 14060 "GET / HTTP/1.1" 200 14056
+INFO 2025-11-20 14:39:49 basehttp 18444 14060 "GET /register/ HTTP/1.1" 200 26204
+INFO 2025-11-20 14:39:59 basehttp 18444 14060 "GET / HTTP/1.1" 200 14056
+INFO 2025-11-20 14:40:11 basehttp 18444 14060 "POST / HTTP/1.1" 302 0
+INFO 2025-11-20 14:40:11 basehttp 18444 14060 "GET /home/ HTTP/1.1" 200 53331
+INFO 2025-11-20 14:40:15 basehttp 18444 14060 "GET /maps/ HTTP/1.1" 200 1043302
+INFO 2025-11-20 14:40:23 basehttp 18444 14060 "POST /maps/save-assessment/ HTTP/1.1" 200 82
+INFO 2025-11-20 14:40:25 basehttp 18444 14060 "GET /maps/certificate/form/?barangay=Eustaquio%20Lopez&lat=10.809017&lon=123.023166&risk=LF HTTP/1.1" 200 23005
+INFO 2025-11-20 14:40:56 basehttp 18444 14060 "GET /maps/certificate/form/?barangay=Eustaquio%20Lopez&lat=10.809017&lon=123.023166&risk=LF HTTP/1.1" 200 23005
+INFO 2025-11-20 14:42:25 basehttp 18444 14060 "POST /maps/certificate/ HTTP/1.1" 200 10585
+INFO 2025-11-20 14:48:00 basehttp 18444 11124 "GET /maps/certificate/form/?barangay=Eustaquio%20Lopez&lat=10.809017&lon=123.023166&risk=LF HTTP/1.1" 200 23005
+INFO 2025-11-20 14:48:47 basehttp 18444 11124 "POST /maps/certificate/ HTTP/1.1" 200 10579
+INFO 2025-11-20 14:51:39 basehttp 18444 24632 "GET /maps/report/?barangay=Eustaquio%20Lopez&lat=10.809017&lon=123.023166&risk=LF HTTP/1.1" 200 9915
+INFO 2025-11-20 14:53:04 basehttp 18444 24632 "GET /maps/report/?barangay=Eustaquio%20Lopez&lat=10.809017&lon=123.023166&risk=LF HTTP/1.1" 200 9915
+INFO 2025-11-20 14:53:52 basehttp 18444 24632 "GET /maps/my-activity/ HTTP/1.1" 200 65261
+INFO 2025-11-20 14:54:33 basehttp 18444 24632 "GET /maps/all-activities/ HTTP/1.1" 200 76589
+INFO 2025-11-20 14:54:53 basehttp 18444 24632 "GET /maps/all-activities/?tab=assessments&user=&date=&sort=oldest HTTP/1.1" 200 76585
+INFO 2025-11-20 14:56:41 views 18444 24632 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-20 14:56:43 views 18444 24632 API returned - Rain: 0.0mm, Temp: 29.0°C, Humidity: 79%, Wind: 21.3km/h
+INFO 2025-11-20 14:56:43 views 18444 24632 Processed 7 days of weather forecast
+INFO 2025-11-20 14:56:43 basehttp 18444 24632 "GET /monitoring/ HTTP/1.1" 200 89241
+INFO 2025-11-20 14:58:44 basehttp 18444 24632 "GET /monitoring/flood-record/ HTTP/1.1" 200 52040
+WARNING 2025-11-20 14:59:13 views 18444 24632 Form validation errors: <ul class="errorlist"><li>affected_persons<ul class="errorlist" id="id_affected_persons_error"><li>Number of affected persons should be at least equal to the number of affected families.</li></ul></li></ul>
+INFO 2025-11-20 14:59:13 basehttp 18444 24632 "POST /monitoring/flood-record/ HTTP/1.1" 200 211
+INFO 2025-11-20 14:59:31 views 18444 24632 Flood record created: 7 - Flood
+INFO 2025-11-20 14:59:31 basehttp 18444 24632 "POST /monitoring/flood-record/ HTTP/1.1" 200 136
+INFO 2025-11-20 14:59:33 views 18444 24632 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-20 14:59:34 views 18444 24632 API returned - Rain: 0.0mm, Temp: 29.0°C, Humidity: 79%, Wind: 21.3km/h
+INFO 2025-11-20 14:59:34 views 18444 24632 Processed 7 days of weather forecast
+INFO 2025-11-20 14:59:34 basehttp 18444 24632 "GET /monitoring/ HTTP/1.1" 200 90879
+INFO 2025-11-20 14:59:55 basehttp 18444 24632 "GET /home/ HTTP/1.1" 200 53106
+INFO 2025-11-20 15:00:26 basehttp 18444 24632 "GET /admin/monitoring/rainfalldata/8/change/ HTTP/1.1" 200 15168
+INFO 2025-11-20 15:00:26 basehttp 18444 24632 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-20 15:30:45 autoreload 16524 6868 Watching for file changes with StatReloader
+INFO 2025-11-20 15:30:46 basehttp 16524 8284 "GET /maps/ HTTP/1.1" 200 1043302
+INFO 2025-11-20 15:30:48 basehttp 16524 8284 "GET / HTTP/1.1" 302 0
+INFO 2025-11-20 15:30:49 basehttp 16524 8284 "GET /home/ HTTP/1.1" 200 53106
+INFO 2025-11-20 15:30:55 basehttp 16524 8284 "GET /maps/ HTTP/1.1" 200 1043302
+INFO 2025-11-20 15:31:02 basehttp 16524 8284 "POST /maps/save-assessment/ HTTP/1.1" 200 82
+INFO 2025-11-20 15:31:05 basehttp 16524 8284 "GET /maps/certificate/form/?barangay=Eustaquio%20Lopez&lat=10.814302&lon=123.018449&risk=LF HTTP/1.1" 200 24418
+INFO 2025-11-20 15:31:27 basehttp 16524 8284 "POST /maps/certificate/ HTTP/1.1" 200 9658
+INFO 2025-11-20 15:36:16 basehttp 16524 8284 "GET /maps/certificate/form/?barangay=Eustaquio%20Lopez&lat=10.814302&lon=123.018449&risk=LF HTTP/1.1" 200 24418
+INFO 2025-11-20 15:38:47 basehttp 16524 8284 "POST /maps/certificate/ HTTP/1.1" 200 9652
+INFO 2025-11-20 15:41:06 basehttp 16524 8284 "POST /maps/certificate/ HTTP/1.1" 200 10107
+INFO 2025-11-20 15:41:54 basehttp 16524 8284 "POST /maps/certificate/ HTTP/1.1" 200 10110
+INFO 2025-11-20 15:43:35 basehttp 16524 8284 "POST /maps/certificate/ HTTP/1.1" 200 10172
+INFO 2025-11-20 15:46:11 basehttp 16524 8284 "POST /maps/certificate/ HTTP/1.1" 200 10169
+INFO 2025-11-20 15:48:37 autoreload 16524 6868 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\views.py changed, reloading.
+INFO 2025-11-20 15:48:37 autoreload 24964 17084 Watching for file changes with StatReloader
+INFO 2025-11-20 15:49:56 autoreload 27460 15768 Watching for file changes with StatReloader
+INFO 2025-11-20 15:51:24 autoreload 25936 14128 Watching for file changes with StatReloader
+INFO 2025-11-20 15:51:28 basehttp 25936 12324 "GET / HTTP/1.1" 302 0
+INFO 2025-11-20 15:51:28 basehttp 25936 12324 "GET /home/ HTTP/1.1" 200 53107
+INFO 2025-11-20 15:51:31 basehttp 25936 12324 "GET /maps/ HTTP/1.1" 200 1043302
+INFO 2025-11-20 15:51:36 basehttp 25936 12324 "POST /maps/save-assessment/ HTTP/1.1" 200 82
+INFO 2025-11-20 15:51:38 basehttp 25936 12324 "GET /maps/certificate/form/?barangay=Eustaquio%20Lopez&lat=10.807291&lon=123.026686&risk=LF HTTP/1.1" 200 24418
+INFO 2025-11-20 15:51:47 basehttp 25936 12324 "POST /maps/certificate/ HTTP/1.1" 200 11065
+INFO 2025-11-20 15:53:22 autoreload 25936 14128 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\views.py changed, reloading.
+INFO 2025-11-20 15:53:22 autoreload 13752 20316 Watching for file changes with StatReloader
+INFO 2025-11-20 15:53:35 autoreload 13752 20316 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\views.py changed, reloading.
+INFO 2025-11-20 15:53:35 autoreload 23708 23160 Watching for file changes with StatReloader
+INFO 2025-11-20 15:54:13 autoreload 12780 24884 Watching for file changes with StatReloader
+INFO 2025-11-20 15:55:48 autoreload 12780 24884 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\views.py changed, reloading.
+INFO 2025-11-20 15:55:49 autoreload 23708 23160 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\views.py changed, reloading.
+INFO 2025-11-20 15:55:49 autoreload 13764 18396 Watching for file changes with StatReloader
+INFO 2025-11-20 15:56:05 basehttp 13764 7384 "GET / HTTP/1.1" 302 0
+INFO 2025-11-20 15:56:05 basehttp 13764 7384 "GET /home/ HTTP/1.1" 200 53108
+INFO 2025-11-20 15:56:07 basehttp 13764 7384 "GET /maps/ HTTP/1.1" 200 1043302
+INFO 2025-11-20 15:56:12 basehttp 13764 7384 "POST /maps/save-assessment/ HTTP/1.1" 200 82
+INFO 2025-11-20 15:56:13 basehttp 13764 7384 "GET /maps/report/?barangay=Eustaquio%20Lopez&lat=10.810527&lon=123.018449&risk=LF HTTP/1.1" 200 9915
+INFO 2025-11-20 15:56:22 basehttp 13764 7384 "GET /maps/certificate/form/?barangay=Eustaquio%20Lopez&lat=10.810527&lon=123.018449&risk=LF HTTP/1.1" 200 24418
+INFO 2025-11-20 15:56:38 basehttp 13764 7384 "POST /maps/certificate/ HTTP/1.1" 200 9666
+INFO 2025-11-20 16:04:30 autoreload 13764 18396 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\views.py changed, reloading.
+INFO 2025-11-20 16:04:30 autoreload 18692 7872 Watching for file changes with StatReloader
+INFO 2025-11-20 16:06:48 autoreload 13368 21400 Watching for file changes with StatReloader
+INFO 2025-11-20 16:08:04 autoreload 21900 10460 Watching for file changes with StatReloader
+INFO 2025-11-20 16:08:22 basehttp 21900 14548 "GET /maps/?id=f602bdd3-0f5d-4a6a-849a-092ab318d0cc&vscodeBrowserReqId=1763626101918 HTTP/1.1" 302 0
+INFO 2025-11-20 16:08:22 basehttp 21900 14548 "GET /?next=/maps/%3Fid%3Df602bdd3-0f5d-4a6a-849a-092ab318d0cc%26vscodeBrowserReqId%3D1763626101918 HTTP/1.1" 200 14056
+INFO 2025-11-20 16:08:54 basehttp 21900 26332 "GET /maps/ HTTP/1.1" 200 1043306
+INFO 2025-11-20 16:08:58 basehttp 21900 26332 "POST /maps/save-assessment/ HTTP/1.1" 200 82
+INFO 2025-11-20 16:08:59 basehttp 21900 26332 "GET /maps/report/pdf/?barangay=Eustaquio%20Lopez&lat=10.809718&lon=123.027235&risk=LF HTTP/1.1" 200 6916
+INFO 2025-11-20 16:09:14 autoreload 21900 10460 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\urls.py changed, reloading.
+INFO 2025-11-20 16:09:14 autoreload 17916 26440 Watching for file changes with StatReloader
+INFO 2025-11-20 16:09:57 autoreload 25460 27200 Watching for file changes with StatReloader
+INFO 2025-11-20 16:09:59 basehttp 25460 25060 "GET / HTTP/1.1" 302 0
+INFO 2025-11-20 16:10:00 basehttp 25460 25060 "GET /home/ HTTP/1.1" 200 53108
+INFO 2025-11-20 16:10:03 views 25460 25060 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-20 16:10:06 views 25460 25060 API returned - Rain: 0.0mm, Temp: 28.2°C, Humidity: 82%, Wind: 20.5km/h
+INFO 2025-11-20 16:10:06 views 25460 25060 Processed 7 days of weather forecast
+INFO 2025-11-20 16:10:06 basehttp 25460 25060 "GET /monitoring/ HTTP/1.1" 200 90793
+INFO 2025-11-20 16:10:11 basehttp 25460 25060 "GET /maps/ HTTP/1.1" 200 1043302
+INFO 2025-11-20 16:10:45 basehttp 25460 25060 "POST /maps/save-assessment/ HTTP/1.1" 200 82
+INFO 2025-11-20 16:10:48 basehttp 25460 25060 "GET /maps/report/?barangay=Eustaquio%20Lopez&lat=10.813493&lon=123.016527&risk=LF HTTP/1.1" 200 9915
+INFO 2025-11-20 16:11:13 basehttp 25460 25060 "POST /maps/save-assessment/ HTTP/1.1" 200 82
+INFO 2025-11-20 16:11:17 basehttp 25460 25060 "GET /maps/certificate/form/?barangay=Eustaquio%20Lopez&lat=10.807022&lon=123.023117&risk=LF HTTP/1.1" 200 24418
+INFO 2025-11-20 16:11:28 basehttp 25460 25060 "GET /home/ HTTP/1.1" 200 53111
+INFO 2025-11-20 16:13:35 basehttp 25460 25060 "GET /maps/all-activities/ HTTP/1.1" 200 110252
+INFO 2025-11-20 16:23:53 basehttp 25460 26148 "GET /maps/all-activities/ HTTP/1.1" 200 112378
+INFO 2025-11-20 16:24:10 basehttp 25460 26148 "GET /maps/all-activities/ HTTP/1.1" 200 112378
+WARNING 2025-11-20 16:24:29 log 25460 26148 Not Found: /assessment/32/delete/
+WARNING 2025-11-20 16:24:29 basehttp 25460 26148 "POST /assessment/32/delete/ HTTP/1.1" 404 4949
+WARNING 2025-11-20 16:24:33 log 25460 26148 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-11-20 16:24:33 basehttp 25460 26148 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5029
+WARNING 2025-11-20 16:24:33 basehttp 25460 26148 "GET /static/js/bootstrap.bundle.min.js.map HTTP/1.1" 404 2017
+INFO 2025-11-20 16:26:22 autoreload 25460 27200 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\views.py changed, reloading.
+INFO 2025-11-20 16:26:22 autoreload 24220 24776 Watching for file changes with StatReloader
+INFO 2025-11-20 16:26:32 autoreload 24220 24776 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\urls.py changed, reloading.
+INFO 2025-11-20 16:26:33 autoreload 18976 19464 Watching for file changes with StatReloader
+INFO 2025-11-20 16:29:31 basehttp 18976 5316 "GET /maps/all-activities/ HTTP/1.1" 200 116942
+WARNING 2025-11-20 16:29:31 log 18976 5316 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-11-20 16:29:31 basehttp 18976 24184 "GET /static/js/bootstrap.bundle.min.js.map HTTP/1.1" 404 2017
+WARNING 2025-11-20 16:29:31 basehttp 18976 5316 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5029
+INFO 2025-11-20 16:30:34 basehttp 18976 5316 "GET /maps/all-activities/ HTTP/1.1" 200 116938
+WARNING 2025-11-20 16:30:35 log 18976 5316 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-11-20 16:30:35 basehttp 18976 5316 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5029
+WARNING 2025-11-20 16:30:35 basehttp 18976 5316 "GET /static/js/bootstrap.bundle.min.js.map HTTP/1.1" 404 2017
+INFO 2025-11-20 16:30:38 basehttp 18976 16344 "GET /maps/assessment/32/detail/ HTTP/1.1" 200 335
+WARNING 2025-11-20 16:30:46 log 18976 16344 Forbidden (CSRF token from the 'X-Csrftoken' HTTP header has incorrect length.): /maps/assessment/32/delete/
+WARNING 2025-11-20 16:30:46 basehttp 18976 16344 "POST /maps/assessment/32/delete/ HTTP/1.1" 403 2549
+INFO 2025-11-20 16:31:05 basehttp 18976 16344 "GET /home/ HTTP/1.1" 200 53111
+INFO 2025-11-20 16:31:09 basehttp 18976 16344 "GET /maps/my-activity/ HTTP/1.1" 200 93881
+INFO 2025-11-20 16:31:12 basehttp 18976 16344 "GET /maps/all-activities/ HTTP/1.1" 200 116938
+WARNING 2025-11-20 16:31:17 log 18976 16344 Forbidden (CSRF token from the 'X-Csrftoken' HTTP header has incorrect length.): /maps/assessment/32/delete/
+WARNING 2025-11-20 16:31:17 basehttp 18976 16344 "POST /maps/assessment/32/delete/ HTTP/1.1" 403 2549
+INFO 2025-11-20 16:33:10 basehttp 18976 16344 "GET /maps/all-activities/ HTTP/1.1" 200 117402
+WARNING 2025-11-20 16:33:15 log 18976 16344 Forbidden (CSRF token from the 'X-Csrftoken' HTTP header has incorrect length.): /maps/assessment/32/delete/
+WARNING 2025-11-20 16:33:15 basehttp 18976 16344 "POST /maps/assessment/32/delete/ HTTP/1.1" 403 2549
+INFO 2025-11-20 16:33:19 basehttp 18976 16344 "GET /approve/ HTTP/1.1" 200 37377
+INFO 2025-11-20 16:33:34 basehttp 18976 16344 "GET /approve/ HTTP/1.1" 200 37377
+INFO 2025-11-20 16:33:37 basehttp 18976 16344 "GET /maps/all-activities/ HTTP/1.1" 200 117402
+WARNING 2025-11-20 16:33:42 log 18976 16344 Forbidden (CSRF token from the 'X-Csrftoken' HTTP header has incorrect length.): /maps/assessment/32/delete/
+WARNING 2025-11-20 16:33:42 basehttp 18976 16344 "POST /maps/assessment/32/delete/ HTTP/1.1" 403 2549
+INFO 2025-11-20 16:35:39 basehttp 18976 16344 "GET /maps/all-activities/ HTTP/1.1" 200 117903
+WARNING 2025-11-20 16:35:42 log 18976 16344 Forbidden (CSRF token from POST has incorrect length.): /maps/assessment/32/delete/
+WARNING 2025-11-20 16:35:42 basehttp 18976 16344 "POST /maps/assessment/32/delete/ HTTP/1.1" 403 2514
+INFO 2025-11-20 16:36:10 autoreload 18976 19464 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\urls.py changed, reloading.
+INFO 2025-11-20 16:36:11 autoreload 856 14408 Watching for file changes with StatReloader
+INFO 2025-11-20 16:36:14 basehttp 856 16852 "GET /maps/all-activities/ HTTP/1.1" 200 110252
+INFO 2025-11-20 16:36:19 basehttp 856 16852 "GET /home/ HTTP/1.1" 200 53111
+INFO 2025-11-20 16:36:34 basehttp 856 16852 "GET /maps/all-activities/ HTTP/1.1" 200 110252
+INFO 2025-11-20 16:41:45 autoreload 856 14408 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\views.py changed, reloading.
+INFO 2025-11-20 16:41:46 autoreload 13368 1972 Watching for file changes with StatReloader
+INFO 2025-11-20 16:42:09 autoreload 13368 1972 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\views.py changed, reloading.
+INFO 2025-11-20 16:42:09 autoreload 9628 1948 Watching for file changes with StatReloader
+INFO 2025-11-20 16:45:09 autoreload 9120 13324 Watching for file changes with StatReloader
+INFO 2025-11-20 16:47:25 autoreload 28124 15776 Watching for file changes with StatReloader
+INFO 2025-11-20 16:48:02 basehttp 28124 8796 "GET /maps/all-activities/ HTTP/1.1" 200 114748
+INFO 2025-11-20 16:48:09 basehttp 28124 8796 "GET /maps/export-activities/?type=pdf&activity=assessments&sort=recent HTTP/1.1" 200 2684
+INFO 2025-11-20 16:48:20 basehttp 28124 8796 "GET /maps/export-activities/?type=pdf&activity=reports&sort=recent HTTP/1.1" 200 2551
+INFO 2025-11-20 16:48:30 basehttp 28124 8796 "GET /maps/export-activities/?type=pdf&activity=certificates&sort=recent HTTP/1.1" 200 3098
+INFO 2025-11-20 16:48:40 basehttp 28124 8796 "GET /maps/export-activities/?type=pdf&activity=flood-records&sort=recent HTTP/1.1" 200 2729
+ERROR 2025-11-20 16:48:48 log 28124 8796 Internal Server Error: /maps/export-activities/
+Traceback (most recent call last):
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\views.py", line 491, in export_activities
+    headers, data = export_utils.prepare_user_logs_data(user_logs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\export_utils.py", line 290, in prepare_user_logs_data
+    obj.user.department or 'Not specified',
+    ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'CustomUser' object has no attribute 'department'
+ERROR 2025-11-20 16:48:48 basehttp 28124 8796 "GET /maps/export-activities/?type=pdf&activity=user-logs&sort=recent HTTP/1.1" 500 91553
+INFO 2025-11-20 16:49:08 autoreload 9120 13324 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\export_utils.py changed, reloading.
+INFO 2025-11-20 16:49:08 autoreload 28124 15776 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\export_utils.py changed, reloading.
+INFO 2025-11-20 16:49:08 autoreload 26704 26884 Watching for file changes with StatReloader
+INFO 2025-11-20 16:49:08 autoreload 8008 4692 Watching for file changes with StatReloader
+INFO 2025-11-20 16:49:14 autoreload 26704 26884 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\export_utils.py changed, reloading.
+INFO 2025-11-20 16:49:14 autoreload 8008 4692 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\export_utils.py changed, reloading.
+INFO 2025-11-20 16:49:14 autoreload 7532 28636 Watching for file changes with StatReloader
+INFO 2025-11-20 16:49:14 autoreload 12468 16912 Watching for file changes with StatReloader
+INFO 2025-11-20 16:49:37 basehttp 7532 7232 "GET /maps/export-activities/?type=pdf&activity=user-logs&sort=recent HTTP/1.1" 200 2280
+INFO 2025-11-20 20:37:09 basehttp 7532 28880 "GET /maps/export-activities/?type=csv&activity=user-logs&sort=recent HTTP/1.1" 200 422
+INFO 2025-11-20 20:37:58 autoreload 7532 28636 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\export_utils.py changed, reloading.
+INFO 2025-11-20 20:37:58 autoreload 12468 16912 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\views.py changed, reloading.
+INFO 2025-11-20 20:37:59 autoreload 28052 3896 Watching for file changes with StatReloader
+INFO 2025-11-20 20:37:59 autoreload 17832 26416 Watching for file changes with StatReloader
+INFO 2025-11-20 20:40:18 autoreload 17832 26416 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\export_utils.py changed, reloading.
+INFO 2025-11-20 20:40:19 autoreload 28052 3896 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\export_utils.py changed, reloading.
+INFO 2025-11-20 20:40:20 autoreload 22136 1948 Watching for file changes with StatReloader
+INFO 2025-11-20 20:40:20 autoreload 7228 9196 Watching for file changes with StatReloader
+INFO 2025-11-20 20:40:24 autoreload 22136 1948 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\export_utils.py changed, reloading.
+INFO 2025-11-20 20:40:24 autoreload 7228 9196 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\export_utils.py changed, reloading.
+INFO 2025-11-20 20:40:26 autoreload 5192 26604 Watching for file changes with StatReloader
+INFO 2025-11-20 20:40:26 autoreload 5468 28288 Watching for file changes with StatReloader
+INFO 2025-11-20 20:40:29 autoreload 5192 26604 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\export_utils.py changed, reloading.
+INFO 2025-11-20 20:40:29 autoreload 5468 28288 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\export_utils.py changed, reloading.
+INFO 2025-11-20 20:40:32 autoreload 25764 5076 Watching for file changes with StatReloader
+INFO 2025-11-20 20:40:32 autoreload 12524 28664 Watching for file changes with StatReloader
+INFO 2025-11-20 20:40:34 autoreload 12524 28664 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\export_utils.py changed, reloading.
+INFO 2025-11-20 20:40:34 autoreload 25764 5076 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\export_utils.py changed, reloading.
+INFO 2025-11-20 20:40:36 autoreload 16720 16524 Watching for file changes with StatReloader
+INFO 2025-11-20 20:40:36 autoreload 27024 9268 Watching for file changes with StatReloader
+INFO 2025-11-20 20:40:39 autoreload 16720 16524 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\export_utils.py changed, reloading.
+INFO 2025-11-20 20:40:39 autoreload 27024 9268 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\export_utils.py changed, reloading.
+INFO 2025-11-20 20:40:41 autoreload 25372 9096 Watching for file changes with StatReloader
+INFO 2025-11-20 20:40:41 autoreload 25700 24696 Watching for file changes with StatReloader
+INFO 2025-11-20 20:40:46 autoreload 25700 24696 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\export_utils.py changed, reloading.
+INFO 2025-11-20 20:40:46 autoreload 25372 9096 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\export_utils.py changed, reloading.
+INFO 2025-11-20 20:40:47 autoreload 29200 8252 Watching for file changes with StatReloader
+INFO 2025-11-20 20:40:47 autoreload 17404 8960 Watching for file changes with StatReloader
+INFO 2025-11-20 20:41:00 autoreload 17404 8960 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\export_utils.py changed, reloading.
+INFO 2025-11-20 20:41:00 autoreload 29200 8252 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\export_utils.py changed, reloading.
+INFO 2025-11-20 20:41:01 autoreload 3640 3588 Watching for file changes with StatReloader
+INFO 2025-11-20 20:41:01 autoreload 29368 19076 Watching for file changes with StatReloader
+INFO 2025-11-20 20:41:05 autoreload 29368 19076 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\export_utils.py changed, reloading.
+INFO 2025-11-20 20:41:05 autoreload 3640 3588 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\export_utils.py changed, reloading.
+INFO 2025-11-20 20:41:07 autoreload 24744 28420 Watching for file changes with StatReloader
+INFO 2025-11-20 20:41:07 autoreload 28136 28428 Watching for file changes with StatReloader
+INFO 2025-11-20 20:41:10 autoreload 28136 28428 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\export_utils.py changed, reloading.
+INFO 2025-11-20 20:41:10 autoreload 24744 28420 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\export_utils.py changed, reloading.
+INFO 2025-11-20 20:41:12 autoreload 26200 9008 Watching for file changes with StatReloader
+INFO 2025-11-20 20:41:12 autoreload 12812 28600 Watching for file changes with StatReloader
+INFO 2025-11-20 20:41:16 autoreload 12812 28600 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\export_utils.py changed, reloading.
+INFO 2025-11-20 20:41:16 autoreload 26200 9008 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\export_utils.py changed, reloading.
+INFO 2025-11-20 20:41:18 autoreload 25240 10684 Watching for file changes with StatReloader
+INFO 2025-11-20 20:41:18 autoreload 22276 7960 Watching for file changes with StatReloader
+INFO 2025-11-20 20:41:21 autoreload 22276 7960 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\export_utils.py changed, reloading.
+INFO 2025-11-20 20:41:21 autoreload 25240 10684 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\export_utils.py changed, reloading.
+INFO 2025-11-20 20:41:23 autoreload 1768 25632 Watching for file changes with StatReloader
+INFO 2025-11-20 20:41:23 autoreload 27568 23352 Watching for file changes with StatReloader
+INFO 2025-11-20 20:41:27 autoreload 27568 23352 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\export_utils.py changed, reloading.
+INFO 2025-11-20 20:41:27 autoreload 1768 25632 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\export_utils.py changed, reloading.
+INFO 2025-11-20 20:41:28 autoreload 16096 28260 Watching for file changes with StatReloader
+INFO 2025-11-20 20:41:28 autoreload 28432 16208 Watching for file changes with StatReloader
+INFO 2025-11-20 20:41:51 autoreload 22968 9712 Watching for file changes with StatReloader
+INFO 2025-11-20 20:42:05 basehttp 16096 8292 "GET /maps/all-activities/ HTTP/1.1" 200 114277
+INFO 2025-11-20 20:42:05 basehttp 16096 8292 "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+INFO 2025-11-20 20:42:05 basehttp 16096 20200 "GET /static/css/font-awesome.min.css HTTP/1.1" 304 0
+INFO 2025-11-20 20:42:05 basehttp 16096 28912 "GET /static/images/drrmo_logo.png HTTP/1.1" 304 0
+INFO 2025-11-20 20:42:05 basehttp 16096 25892 "GET /static/js/bootstrap.bundle.min.js HTTP/1.1" 304 0
+INFO 2025-11-20 20:42:07 basehttp 16096 25892 "GET /maps/export-activities/?type=pdf&activity=assessments&sort=recent HTTP/1.1" 200 2623
+INFO 2025-11-20 20:42:39 basehttp 16096 25892 "GET /maps/export-activities/?type=csv&activity=assessments&sort=recent HTTP/1.1" 200 998
+INFO 2025-11-20 20:45:10 autoreload 28432 16208 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\export_utils.py changed, reloading.
+INFO 2025-11-20 20:45:10 autoreload 22968 9712 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\export_utils.py changed, reloading.
+INFO 2025-11-20 20:45:10 autoreload 16096 28260 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\export_utils.py changed, reloading.
+INFO 2025-11-20 20:45:11 autoreload 5536 24524 Watching for file changes with StatReloader
+INFO 2025-11-20 20:45:11 autoreload 28136 29272 Watching for file changes with StatReloader
+INFO 2025-11-20 20:45:11 autoreload 28276 3420 Watching for file changes with StatReloader
+INFO 2025-11-20 20:45:15 autoreload 5536 24524 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\export_utils.py changed, reloading.
+INFO 2025-11-20 20:45:16 autoreload 28136 29272 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\export_utils.py changed, reloading.
+INFO 2025-11-20 20:45:16 autoreload 28276 3420 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\export_utils.py changed, reloading.
+INFO 2025-11-20 20:45:17 autoreload 27580 23656 Watching for file changes with StatReloader
+INFO 2025-11-20 20:45:18 autoreload 29640 29184 Watching for file changes with StatReloader
+INFO 2025-11-20 20:45:18 autoreload 22308 29428 Watching for file changes with StatReloader
+INFO 2025-11-20 20:45:24 autoreload 29640 29184 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\export_utils.py changed, reloading.
+INFO 2025-11-20 20:45:24 autoreload 22308 29428 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\export_utils.py changed, reloading.
+INFO 2025-11-20 20:45:24 autoreload 27580 23656 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\export_utils.py changed, reloading.
+INFO 2025-11-20 20:45:25 autoreload 27256 14016 Watching for file changes with StatReloader
+INFO 2025-11-20 20:45:26 autoreload 24668 15752 Watching for file changes with StatReloader
+INFO 2025-11-20 20:45:26 autoreload 4196 28636 Watching for file changes with StatReloader
+INFO 2025-11-20 20:46:12 basehttp 27256 14060 "GET /maps/export-activities/?type=pdf&activity=assessments&sort=recent HTTP/1.1" 200 2637
+INFO 2025-11-20 20:46:30 autoreload 27256 14016 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\export_utils.py changed, reloading.
+INFO 2025-11-20 20:46:30 autoreload 4196 28636 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\export_utils.py changed, reloading.
+INFO 2025-11-20 20:46:30 autoreload 24668 15752 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\export_utils.py changed, reloading.
+INFO 2025-11-20 20:46:31 autoreload 21980 13156 Watching for file changes with StatReloader
+INFO 2025-11-20 20:46:31 autoreload 27576 17312 Watching for file changes with StatReloader
+INFO 2025-11-20 20:46:31 autoreload 6984 9732 Watching for file changes with StatReloader
+INFO 2025-11-20 20:54:00 basehttp 27576 11356 "GET /maps/all-activities/ HTTP/1.1" 200 114280
+INFO 2025-11-20 20:54:02 basehttp 27576 11356 "GET /maps/ HTTP/1.1" 200 1043302
+INFO 2025-11-20 20:54:02 basehttp 27576 11356 "GET /static/css/ol.css HTTP/1.1" 304 0
+INFO 2025-11-20 20:54:02 basehttp 27576 25428 "GET /static/js/ol.js HTTP/1.1" 304 0
+INFO 2025-11-20 20:54:06 basehttp 27576 11356 "POST /maps/save-assessment/ HTTP/1.1" 200 82
+INFO 2025-11-20 20:54:07 basehttp 27576 11356 "GET /maps/report/?barangay=Eustaquio%20Lopez&lat=10.811875&lon=123.011860&risk=LF HTTP/1.1" 200 10259
+INFO 2025-11-20 20:54:07 basehttp 27576 11356 "GET /static/images/drrmo_header.png HTTP/1.1" 304 0
+INFO 2025-11-20 20:54:16 basehttp 27576 11356 "GET /maps/certificate/form/?barangay=Eustaquio%20Lopez&lat=10.811875&lon=123.011860&risk=LF HTTP/1.1" 200 24418
+INFO 2025-11-20 20:54:26 basehttp 27576 11356 "POST /maps/certificate/ HTTP/1.1" 200 10029
+INFO 2025-11-20 20:54:44 basehttp 27576 11356 "GET /maps/certificate/form/?barangay=Eustaquio%20Lopez&lat=10.811875&lon=123.011860&risk=LF HTTP/1.1" 200 24418
+INFO 2025-11-20 20:54:50 basehttp 27576 11356 "POST /maps/certificate/ HTTP/1.1" 200 10031
+INFO 2025-11-20 21:37:43 basehttp 27576 28676 "POST /maps/certificate/ HTTP/1.1" 200 12186
+INFO 2025-11-20 21:38:08 basehttp 27576 28676 "POST /maps/certificate/ HTTP/1.1" 200 13223
+INFO 2025-11-20 21:40:32 basehttp 27576 28676 "POST /maps/certificate/ HTTP/1.1" 200 10031
+INFO 2025-11-20 21:40:34 basehttp 27576 28676 "GET /maps/certificate/form/?barangay=Eustaquio%20Lopez&lat=10.811875&lon=123.011860&risk=LF HTTP/1.1" 200 24418
+INFO 2025-11-20 21:40:43 basehttp 27576 28676 "POST /maps/certificate/ HTTP/1.1" 200 10030
+INFO 2025-11-20 21:43:56 basehttp 27576 28676 "GET /maps/certificate/form/?barangay=Eustaquio%20Lopez&lat=10.811875&lon=123.011860&risk=LF HTTP/1.1" 200 24418
+INFO 2025-11-20 21:44:03 basehttp 27576 28676 "POST /maps/certificate/ HTTP/1.1" 200 10037
+INFO 2025-11-20 21:45:23 autoreload 27576 17312 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\views.py changed, reloading.
+INFO 2025-11-20 21:45:24 autoreload 24388 27808 Watching for file changes with StatReloader
+INFO 2025-11-20 21:45:34 basehttp 24388 28296 "GET /maps/certificate/form/?barangay=Eustaquio%20Lopez&lat=10.811875&lon=123.011860&risk=LF HTTP/1.1" 200 24418
+INFO 2025-11-20 21:45:40 basehttp 24388 28296 "POST /maps/certificate/ HTTP/1.1" 200 10937
+INFO 2025-11-20 21:45:46 basehttp 24388 28296 "POST /maps/certificate/ HTTP/1.1" 200 10027
+INFO 2025-11-20 21:45:51 autoreload 24388 27808 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\views.py changed, reloading.
+INFO 2025-11-20 21:45:51 autoreload 8236 888 Watching for file changes with StatReloader
+INFO 2025-11-20 21:52:00 basehttp 8236 29260 "POST /maps/certificate/ HTTP/1.1" 200 11121
+INFO 2025-11-20 21:52:26 basehttp 8236 29260 "POST /maps/certificate/ HTTP/1.1" 200 12031
+INFO 2025-11-20 21:53:33 basehttp 8236 29260 "POST /maps/certificate/ HTTP/1.1" 200 12042
+INFO 2025-11-20 21:55:07 basehttp 8236 29260 "POST /maps/certificate/ HTTP/1.1" 200 12042
+INFO 2025-11-20 21:55:50 basehttp 8236 29260 "GET /maps/report/?barangay=Eustaquio%20Lopez&lat=10.811875&lon=123.011860&risk=LF HTTP/1.1" 200 11626
+INFO 2025-11-20 21:56:04 basehttp 8236 29260 "GET /maps/report/?barangay=Eustaquio%20Lopez&lat=10.811875&lon=123.011860&risk=LF HTTP/1.1" 200 11626
+INFO 2025-11-20 21:58:16 basehttp 8236 29260 "GET /maps/report/?barangay=Eustaquio%20Lopez&lat=10.811875&lon=123.011860&risk=LF HTTP/1.1" 200 11626
+INFO 2025-11-20 21:58:21 basehttp 8236 29260 "POST /maps/certificate/ HTTP/1.1" 200 12119
+INFO 2025-11-20 21:59:07 basehttp 8236 29260 "POST /maps/certificate/ HTTP/1.1" 200 12118
+INFO 2025-11-20 22:00:13 basehttp 8236 29260 "POST /maps/certificate/ HTTP/1.1" 200 12119
+INFO 2025-11-20 22:00:28 basehttp 8236 29260 "POST /maps/certificate/ HTTP/1.1" 200 12121
+INFO 2025-11-20 22:00:54 basehttp 8236 29260 "POST /maps/certificate/ HTTP/1.1" 200 12119
+INFO 2025-11-20 22:01:40 basehttp 8236 29260 "GET /approve/ HTTP/1.1" 200 37377
+INFO 2025-11-20 22:01:40 basehttp 8236 28160 "GET /static/webfonts/fa-regular-400.woff2 HTTP/1.1" 304 0
+INFO 2025-11-20 22:01:40 basehttp 8236 29260 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 304 0
+INFO 2025-11-20 22:01:40 basehttp 8236 18060 "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 304 0
+INFO 2025-11-20 22:01:42 basehttp 8236 18060 "GET /maps/my-activity/ HTTP/1.1" 200 133203
+INFO 2025-11-20 22:01:45 basehttp 8236 18060 "GET /maps/all-activities/ HTTP/1.1" 200 151222
+INFO 2025-11-20 22:02:48 basehttp 8236 18060 "POST /maps/certificate/ HTTP/1.1" 200 12119
+INFO 2025-11-20 22:04:19 basehttp 8236 18060 "POST /maps/certificate/ HTTP/1.1" 200 12121
+INFO 2025-11-20 22:04:59 basehttp 8236 18060 "POST /maps/certificate/ HTTP/1.1" 200 12122
+INFO 2025-11-20 22:05:47 basehttp 8236 18060 "POST /maps/certificate/ HTTP/1.1" 200 12122
+INFO 2025-11-20 22:13:07 basehttp 8236 14456 "POST /maps/certificate/ HTTP/1.1" 200 12473
+INFO 2025-11-20 22:15:25 basehttp 8236 14456 "POST /maps/certificate/ HTTP/1.1" 200 12122
+ERROR 2025-11-20 22:18:16 log 8236 14456 Internal Server Error: /maps/certificate/
+Traceback (most recent call last):
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'static'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\views.py", line 213, in certificate_view
+    return render(request, 'maps/certificate.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\venv\Lib\site-packages\django\template\base.py", line 577, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 274: 'static'. Did you forget to register or load this tag?
+ERROR 2025-11-20 22:18:16 basehttp 8236 14456 "POST /maps/certificate/ HTTP/1.1" 500 178310
+INFO 2025-11-20 22:18:54 basehttp 8236 14456 "POST /maps/certificate/ HTTP/1.1" 200 10912
+INFO 2025-11-20 22:20:07 basehttp 8236 14456 "POST /maps/certificate/ HTTP/1.1" 200 11131
+INFO 2025-11-20 22:20:43 basehttp 8236 14456 "POST /maps/certificate/ HTTP/1.1" 200 11241
+INFO 2025-11-20 22:22:05 basehttp 8236 14456 "POST /maps/certificate/ HTTP/1.1" 200 11240
+INFO 2025-11-20 22:23:37 basehttp 8236 14456 "POST /maps/certificate/ HTTP/1.1" 200 11240
+INFO 2025-11-20 22:24:29 basehttp 8236 14456 "GET /maps/ HTTP/1.1" 200 1043302
+INFO 2025-11-20 22:24:35 basehttp 8236 14456 "POST /maps/save-assessment/ HTTP/1.1" 200 82
+INFO 2025-11-20 22:24:44 basehttp 8236 14456 "GET /maps/certificate/form/?barangay=Eustaquio%20Lopez&lat=10.811976&lon=123.022087&risk=LF HTTP/1.1" 200 24418
+INFO 2025-11-20 22:24:59 basehttp 8236 14456 "POST /maps/certificate/ HTTP/1.1" 200 11248
+INFO 2025-11-20 22:25:04 basehttp 8236 14456 "GET /maps/certificate/form/?barangay=Eustaquio%20Lopez&lat=10.811976&lon=123.022087&risk=LF HTTP/1.1" 200 24418
+INFO 2025-11-20 22:25:10 basehttp 8236 14456 "POST /maps/certificate/ HTTP/1.1" 200 10332
+INFO 2025-11-20 22:25:29 basehttp 8236 14456 "GET /home/ HTTP/1.1" 200 53097
+INFO 2025-11-20 22:26:45 basehttp 8236 14456 "GET /maps/ HTTP/1.1" 200 1043302
+INFO 2025-11-20 22:26:52 basehttp 8236 14456 "GET /home/ HTTP/1.1" 200 53097
+INFO 2025-11-20 22:26:57 views 8236 14456 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-20 22:26:58 views 8236 14456 API returned - Rain: 0.0mm, Temp: 26.2°C, Humidity: 93%, Wind: 13.5km/h
+INFO 2025-11-20 22:26:58 views 8236 14456 Processed 7 days of weather forecast
+INFO 2025-11-20 22:26:58 views 8236 14456 Created new rainfall record: 0.0mm
+INFO 2025-11-20 22:26:58 views 8236 14456 Created new weather record
+INFO 2025-11-20 22:26:58 views 8236 14456 Requesting WorldTides API for Cebu City: https://www.worldtides.info/api/v3
+INFO 2025-11-20 22:26:59 views 8236 14456 Created new tide record: 0.965m from WorldTides API
+INFO 2025-11-20 22:26:59 basehttp 8236 14456 "GET /monitoring/ HTTP/1.1" 200 92127
+INFO 2025-11-20 22:26:59 basehttp 8236 14456 "GET /static/js/chart.js HTTP/1.1" 304 0
+INFO 2025-11-20 22:28:42 basehttp 8236 14456 "GET /home/ HTTP/1.1" 200 53112
+INFO 2025-11-20 22:28:51 views 8236 14456 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-20 22:28:52 views 8236 14456 API returned - Rain: 0.0mm, Temp: 26.2°C, Humidity: 93%, Wind: 13.5km/h
+INFO 2025-11-20 22:28:52 views 8236 14456 Processed 7 days of weather forecast
+INFO 2025-11-20 22:28:52 basehttp 8236 14456 "GET /monitoring/ HTTP/1.1" 200 92127
+INFO 2025-11-20 22:29:31 basehttp 8236 14456 "GET /home/ HTTP/1.1" 200 53112
+INFO 2025-11-20 22:29:34 basehttp 8236 14456 "GET /logout/ HTTP/1.1" 302 0
+INFO 2025-11-20 22:29:34 basehttp 8236 14456 "GET / HTTP/1.1" 200 14056
+INFO 2025-11-20 22:29:57 basehttp 8236 14456 "GET /register/ HTTP/1.1" 200 26204
+INFO 2025-11-20 22:30:42 basehttp 8236 14456 "GET / HTTP/1.1" 200 14056
+INFO 2025-11-20 22:30:55 basehttp 8236 14456 "POST / HTTP/1.1" 302 0
+INFO 2025-11-20 22:30:55 basehttp 8236 14456 "GET /home/ HTTP/1.1" 200 53300

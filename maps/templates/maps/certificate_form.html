@@ -473,6 +473,7 @@
             <input type="hidden" name="longitude" value="{{ longitude }}">
             <input type="hidden" name="flood_susceptibility" value="{{ flood_susceptibility }}">
             <input type="hidden" name="risk_code" value="{{ risk_code }}">
+            <input type="hidden" id="mitigating_measures_hidden" name="mitigating_measures_value" value="true">
 
             <!-- Required Information Section -->
             <div style="margin-bottom: 32px; padding: 20px; background: linear-gradient(135deg, #fef3c7 0%, #fef0c3 100%); border-left: 4px solid var(--accent-gold); border-radius: 8px;">
@@ -504,6 +505,15 @@
                 <textarea id="location" name="location" required 
                           placeholder="e.g., SITIO LANTAWAN"></textarea>
                 <div class="hint">Street name, sitio, or specific location within the barangay</div>
+            </div>
+
+            <!-- Mitigating Measures Checkbox -->
+            <div class="form-group" style="margin-top: 32px; padding: 20px; background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left: 4px solid var(--success-green); border-radius: 8px;">
+                <label style="display: flex; align-items: center; gap: 12px; font-size: 14px; font-weight: 600; text-transform: none; letter-spacing: normal; margin-bottom: 0; cursor: pointer;">
+                    <input type="checkbox" id="mitigating_measures" name="mitigating_measures" value="true" checked style="width: 18px; height: 18px; cursor: pointer;">
+                    <span>Include Mitigating Measures in Certificate</span>
+                </label>
+                <div class="hint" style="margin-top: 12px;">When checked, disaster prevention and mitigation measures will be included in the certificate</div>
             </div>
 
             <!-- Zone Status -->
@@ -644,6 +654,13 @@
             const form = document.querySelector('form');
             const establishmentInput = document.getElementById('establishment_name');
             const ownerInput = document.getElementById('owner_name');
+            const mitigatingCheckbox = document.getElementById('mitigating_measures');
+            const mitigatingHidden = document.getElementById('mitigating_measures_hidden');
+            
+            // Sync checkbox with hidden field
+            mitigatingCheckbox.addEventListener('change', function() {
+                mitigatingHidden.value = this.checked ? 'true' : 'false';
+            });
             
             // Add real-time validation
             [establishmentInput, ownerInput].forEach(input => {

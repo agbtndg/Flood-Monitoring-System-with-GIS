@@ -383,6 +383,21 @@ def monitoring_view(request):
         'damage_infrastructure_php', 'damage_agriculture_php', 'damage_institutions_php',
         'damage_private_commercial_php', 'damage_total_php'
     ))
+    
+    # Format numbers with thousands separator for display
+    for record in flood_records:
+        record['casualties_dead_fmt'] = "{:,.0f}".format(record['casualties_dead'])
+        record['casualties_injured_fmt'] = "{:,.0f}".format(record['casualties_injured'])
+        record['casualties_missing_fmt'] = "{:,.0f}".format(record['casualties_missing'])
+        record['affected_persons_fmt'] = "{:,.0f}".format(record['affected_persons'])
+        record['affected_families_fmt'] = "{:,.0f}".format(record['affected_families'])
+        record['houses_damaged_partially_fmt'] = "{:,.0f}".format(record['houses_damaged_partially'])
+        record['houses_damaged_totally_fmt'] = "{:,.0f}".format(record['houses_damaged_totally'])
+        record['damage_infrastructure_php_fmt'] = "{:,.2f}".format(record['damage_infrastructure_php'])
+        record['damage_agriculture_php_fmt'] = "{:,.2f}".format(record['damage_agriculture_php'])
+        record['damage_institutions_php_fmt'] = "{:,.2f}".format(record['damage_institutions_php'])
+        record['damage_private_commercial_php_fmt'] = "{:,.2f}".format(record['damage_private_commercial_php'])
+        record['damage_total_php_fmt'] = "{:,.2f}".format(record['damage_total_php'])
 
     # Aggregate data for graphs
     dates = [record['date'].strftime('%Y-%m-%d') for record in flood_records]

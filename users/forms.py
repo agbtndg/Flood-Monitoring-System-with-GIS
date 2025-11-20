@@ -39,6 +39,10 @@ class CustomUserCreationForm(UserCreationForm):
             field.required = True
             if field_name in placeholders:
                 field.widget.attrs['placeholder'] = placeholders[field_name]
+        
+        # Set autofocus on first_name field (first field to fill)
+        if 'first_name' in self.fields:
+            self.fields['first_name'].widget.attrs['autofocus'] = True
     
     def clean_date_of_birth(self):
         """Validate date of birth: must be 18-80 years old, no future dates."""
@@ -123,6 +127,10 @@ class AdminRegistrationForm(UserCreationForm):
             field.required = True
             if field_name in placeholders:
                 field.widget.attrs['placeholder'] = placeholders[field_name]
+        
+        # Set autofocus on registration_key field (first field to fill)
+        if 'registration_key' in self.fields:
+            self.fields['registration_key'].widget.attrs['autofocus'] = True
     
     def clean_registration_key(self):
         key = self.cleaned_data.get('registration_key')

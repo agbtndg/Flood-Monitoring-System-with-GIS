@@ -404,6 +404,105 @@
     .badge-update { background: #fef3c7; color: #92400e; }
     .badge-delete { background: #fee2e2; color: #991b1b; }
 
+    /* Pagination Styles */
+    .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        margin-top: 24px;
+        flex-wrap: wrap;
+    }
+
+    .pagination a, .pagination span {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 36px;
+        height: 36px;
+        padding: 8px 12px;
+        border: 1px solid var(--border-gray);
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.2s;
+        color: var(--text-dark);
+    }
+
+    .pagination a:hover {
+        background: var(--light-gray);
+        border-color: var(--secondary-blue);
+        color: var(--secondary-blue);
+        transform: translateY(-1px);
+    }
+
+    .pagination .page-numbers.current {
+        background: linear-gradient(135deg, var(--secondary-blue), var(--primary-blue));
+        color: white;
+        border-color: var(--primary-blue);
+    }
+
+    .pagination .page-numbers.current:hover {
+        transform: none;
+    }
+
+    .pagination-info {
+        font-size: 12px;
+        color: var(--text-muted);
+        margin-top: 12px;
+        text-align: center;
+    }
+
+    /* Export Buttons */
+    .export-buttons {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-bottom: 16px;
+    }
+
+    .export-btn {
+        padding: 8px 14px;
+        background: white;
+        color: var(--text-dark);
+        border: 2px solid var(--border-gray);
+        border-radius: 8px;
+        font-size: 12px;
+        font-weight: 600;
+        cursor: pointer;
+        text-decoration: none;
+        transition: all 0.2s;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .export-btn:hover {
+        background: var(--light-gray);
+        border-color: var(--secondary-blue);
+        color: var(--secondary-blue);
+        transform: translateY(-1px);
+    }
+
+    .export-btn.csv {
+        border-color: #10b981;
+        color: #10b981;
+    }
+
+    .export-btn.csv:hover {
+        background: #d1fae5;
+    }
+
+    .export-btn.pdf {
+        border-color: #ef4444;
+        color: #ef4444;
+    }
+
+    .export-btn.pdf:hover {
+        background: #fee2e2;
+    }
+
     /* Override base template constraints for full-width content like other pages */
     .main-content {
         padding: 0 !important;
@@ -586,6 +685,14 @@
     </div>
 
     <div id="assessments" class="content-section {% if active_tab == 'assessments' or not active_tab %}active{% endif %}">
+        <div class="export-buttons">
+            <a href="{% url 'export_activities' %}?type=csv&activity=assessments{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}&sort={{ sort_order }}" class="export-btn csv">
+                <i class="fas fa-file-csv"></i> Export CSV
+            </a>
+            <a href="{% url 'export_activities' %}?type=pdf&activity=assessments{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}&sort={{ sort_order }}" class="export-btn pdf">
+                <i class="fas fa-file-pdf"></i> Export PDF
+            </a>
+        </div>
         {% if assessments %}
             {% for assessment in assessments %}
             <div class="activity-card">
@@ -632,6 +739,28 @@
                 </div>
             </div>
             {% endfor %}
+            {% if assessments.has_other_pages %}
+                <div class="pagination">
+                    {% if assessments.has_previous %}
+                        <a href="?tab=assessments&assessments_page=1{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}&sort={{ sort_order }}">First</a>
+                        <a href="?tab=assessments&assessments_page={{ assessments.previous_page_number }}{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}&sort={{ sort_order }}">Previous</a>
+                    {% endif %}
+                    {% for num in assessments.paginator.page_range %}
+                        {% if assessments.number == num %}
+                            <span class="page-numbers current">{{ num }}</span>
+                        {% elif num > assessments.number|add:'-3' and num < assessments.number|add:'3' %}
+                            <a href="?tab=assessments&assessments_page={{ num }}{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}&sort={{ sort_order }}" class="page-numbers">{{ num }}</a>
+                        {% endif %}
+                    {% endfor %}
+                    {% if assessments.has_next %}
+                        <a href="?tab=assessments&assessments_page={{ assessments.next_page_number }}{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}&sort={{ sort_order }}">Next</a>
+                        <a href="?tab=assessments&assessments_page={{ assessments.paginator.num_pages }}{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}&sort={{ sort_order }}">Last</a>
+                    {% endif %}
+                </div>
+                <div class="pagination-info">
+                    Page {{ assessments.number }} of {{ assessments.paginator.num_pages }} ({{ total_assessments }} total records)
+                </div>
+            {% endif %}
         {% else %}
             <div class="empty-state">
                 <i class="fas fa-map-marked-alt"></i>
@@ -642,6 +771,14 @@
     </div>
 
     <div id="reports" class="content-section {% if active_tab == 'reports' %}active{% endif %}">
+        <div class="export-buttons">
+            <a href="{% url 'export_activities' %}?type=csv&activity=reports{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}&sort={{ sort_order }}" class="export-btn csv">
+                <i class="fas fa-file-csv"></i> Export CSV
+            </a>
+            <a href="{% url 'export_activities' %}?type=pdf&activity=reports{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}&sort={{ sort_order }}" class="export-btn pdf">
+                <i class="fas fa-file-pdf"></i> Export PDF
+            </a>
+        </div>
         {% if reports %}
             {% for report in reports %}
             <div class="activity-card">
@@ -688,6 +825,28 @@
                 </div>
             </div>
             {% endfor %}
+            {% if reports.has_other_pages %}
+                <div class="pagination">
+                    {% if reports.has_previous %}
+                        <a href="?tab=reports&reports_page=1{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}&sort={{ sort_order }}">First</a>
+                        <a href="?tab=reports&reports_page={{ reports.previous_page_number }}{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}&sort={{ sort_order }}">Previous</a>
+                    {% endif %}
+                    {% for num in reports.paginator.page_range %}
+                        {% if reports.number == num %}
+                            <span class="page-numbers current">{{ num }}</span>
+                        {% elif num > reports.number|add:'-3' and num < reports.number|add:'3' %}
+                            <a href="?tab=reports&reports_page={{ num }}{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}&sort={{ sort_order }}" class="page-numbers">{{ num }}</a>
+                        {% endif %}
+                    {% endfor %}
+                    {% if reports.has_next %}
+                        <a href="?tab=reports&reports_page={{ reports.next_page_number }}{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}&sort={{ sort_order }}">Next</a>
+                        <a href="?tab=reports&reports_page={{ reports.paginator.num_pages }}{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}&sort={{ sort_order }}">Last</a>
+                    {% endif %}
+                </div>
+                <div class="pagination-info">
+                    Page {{ reports.number }} of {{ reports.paginator.num_pages }} ({{ total_reports }} total records)
+                </div>
+            {% endif %}
         {% else %}
             <div class="empty-state">
                 <i class="fas fa-file-alt"></i>
@@ -698,6 +857,14 @@
     </div>
 
     <div id="certificates" class="content-section {% if active_tab == 'certificates' %}active{% endif %}">
+        <div class="export-buttons">
+            <a href="{% url 'export_activities' %}?type=csv&activity=certificates{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}&sort={{ sort_order }}" class="export-btn csv">
+                <i class="fas fa-file-csv"></i> Export CSV
+            </a>
+            <a href="{% url 'export_activities' %}?type=pdf&activity=certificates{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}&sort={{ sort_order }}" class="export-btn pdf">
+                <i class="fas fa-file-pdf"></i> Export PDF
+            </a>
+        </div>
         {% if certificates %}
             {% for cert in certificates %}
             <div class="activity-card">
@@ -740,6 +907,28 @@
                 </div>
             </div>
             {% endfor %}
+            {% if certificates.has_other_pages %}
+                <div class="pagination">
+                    {% if certificates.has_previous %}
+                        <a href="?tab=certificates&certificates_page=1{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}&sort={{ sort_order }}">First</a>
+                        <a href="?tab=certificates&certificates_page={{ certificates.previous_page_number }}{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}&sort={{ sort_order }}">Previous</a>
+                    {% endif %}
+                    {% for num in certificates.paginator.page_range %}
+                        {% if certificates.number == num %}
+                            <span class="page-numbers current">{{ num }}</span>
+                        {% elif num > certificates.number|add:'-3' and num < certificates.number|add:'3' %}
+                            <a href="?tab=certificates&certificates_page={{ num }}{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}&sort={{ sort_order }}" class="page-numbers">{{ num }}</a>
+                        {% endif %}
+                    {% endfor %}
+                    {% if certificates.has_next %}
+                        <a href="?tab=certificates&certificates_page={{ certificates.next_page_number }}{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}&sort={{ sort_order }}">Next</a>
+                        <a href="?tab=certificates&certificates_page={{ certificates.paginator.num_pages }}{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}&sort={{ sort_order }}">Last</a>
+                    {% endif %}
+                </div>
+                <div class="pagination-info">
+                    Page {{ certificates.number }} of {{ certificates.paginator.num_pages }} ({{ total_certificates }} total records)
+                </div>
+            {% endif %}
         {% else %}
             <div class="empty-state">
                 <i class="fas fa-certificate"></i>
@@ -750,6 +939,14 @@
     </div>
 
     <div id="flood-records" class="content-section {% if active_tab == 'flood-records' %}active{% endif %}">
+        <div class="export-buttons">
+            <a href="{% url 'export_activities' %}?type=csv&activity=flood-records{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}&sort={{ sort_order }}" class="export-btn csv">
+                <i class="fas fa-file-csv"></i> Export CSV
+            </a>
+            <a href="{% url 'export_activities' %}?type=pdf&activity=flood-records{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}&sort={{ sort_order }}" class="export-btn pdf">
+                <i class="fas fa-file-pdf"></i> Export PDF
+            </a>
+        </div>
         {% if flood_activities %}
             {% for activity in flood_activities %}
             <div class="activity-card">
@@ -802,6 +999,28 @@
                 </div>
             </div>
             {% endfor %}
+            {% if flood_activities.has_other_pages %}
+                <div class="pagination">
+                    {% if flood_activities.has_previous %}
+                        <a href="?tab=flood-records&flood_page=1{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}&sort={{ sort_order }}">First</a>
+                        <a href="?tab=flood-records&flood_page={{ flood_activities.previous_page_number }}{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}&sort={{ sort_order }}">Previous</a>
+                    {% endif %}
+                    {% for num in flood_activities.paginator.page_range %}
+                        {% if flood_activities.number == num %}
+                            <span class="page-numbers current">{{ num }}</span>
+                        {% elif num > flood_activities.number|add:'-3' and num < flood_activities.number|add:'3' %}
+                            <a href="?tab=flood-records&flood_page={{ num }}{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}&sort={{ sort_order }}" class="page-numbers">{{ num }}</a>
+                        {% endif %}
+                    {% endfor %}
+                    {% if flood_activities.has_next %}
+                        <a href="?tab=flood-records&flood_page={{ flood_activities.next_page_number }}{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}&sort={{ sort_order }}">Next</a>
+                        <a href="?tab=flood-records&flood_page={{ flood_activities.paginator.num_pages }}{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}&sort={{ sort_order }}">Last</a>
+                    {% endif %}
+                </div>
+                <div class="pagination-info">
+                    Page {{ flood_activities.number }} of {{ flood_activities.paginator.num_pages }} ({{ total_flood_activities }} total records)
+                </div>
+            {% endif %}
         {% else %}
             <div class="empty-state">
                 <i class="fas fa-water"></i>
@@ -812,6 +1031,14 @@
     </div>
 
     <div id="user-logs" class="content-section {% if active_tab == 'user-logs' %}active{% endif %}">
+        <div class="export-buttons">
+            <a href="{% url 'export_activities' %}?type=csv&activity=user-logs{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}&sort={{ sort_order }}" class="export-btn csv">
+                <i class="fas fa-file-csv"></i> Export CSV
+            </a>
+            <a href="{% url 'export_activities' %}?type=pdf&activity=user-logs{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}&sort={{ sort_order }}" class="export-btn pdf">
+                <i class="fas fa-file-pdf"></i> Export PDF
+            </a>
+        </div>
         {% if user_logs %}
             {% for log in user_logs %}
             <div class="activity-card">
@@ -839,12 +1066,14 @@
                         <div class="detail-value">{{ log.user.username }} ({{ log.user.staff_id }})</div>
                     </div>
                     <div class="detail-item">
-                        <div class="detail-label">Department</div>
-                        <div class="detail-value">{{ log.user.department|default:"Not specified" }}</div>
-                    </div>
-                    <div class="detail-item">
                         <div class="detail-label">Position</div>
-                        <div class="detail-value">{{ log.user.position|default:"Not specified" }}</div>
+                        <div class="detail-value">
+                            {% if log.user.position == 'others' and log.user.custom_position %}
+                                {{ log.user.custom_position }}
+                            {% else %}
+                                {{ log.user.get_position_display|default:log.user.position|default:"Not specified" }}
+                            {% endif %}
+                        </div>
                     </div>
                     <div class="detail-item">
                         <div class="detail-label">Activity Type</div>
@@ -857,6 +1086,28 @@
                 </div>
             </div>
             {% endfor %}
+            {% if user_logs.has_other_pages %}
+                <div class="pagination">
+                    {% if user_logs.has_previous %}
+                        <a href="?tab=user-logs&logs_page=1{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}&sort={{ sort_order }}">First</a>
+                        <a href="?tab=user-logs&logs_page={{ user_logs.previous_page_number }}{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}&sort={{ sort_order }}">Previous</a>
+                    {% endif %}
+                    {% for num in user_logs.paginator.page_range %}
+                        {% if user_logs.number == num %}
+                            <span class="page-numbers current">{{ num }}</span>
+                        {% elif num > user_logs.number|add:'-3' and num < user_logs.number|add:'3' %}
+                            <a href="?tab=user-logs&logs_page={{ num }}{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}&sort={{ sort_order }}" class="page-numbers">{{ num }}</a>
+                        {% endif %}
+                    {% endfor %}
+                    {% if user_logs.has_next %}
+                        <a href="?tab=user-logs&logs_page={{ user_logs.next_page_number }}{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}&sort={{ sort_order }}">Next</a>
+                        <a href="?tab=user-logs&logs_page={{ user_logs.paginator.num_pages }}{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}&sort={{ sort_order }}">Last</a>
+                    {% endif %}
+                </div>
+                <div class="pagination-info">
+                    Page {{ user_logs.number }} of {{ user_logs.paginator.num_pages }} ({{ total_user_logs }} total records)
+                </div>
+            {% endif %}
         {% else %}
             <div class="empty-state">
                 <i class="fas fa-history"></i>
