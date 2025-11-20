@@ -7092,3 +7092,7 @@ INFO 2025-11-21 02:39:23 basehttp 3196 27556 "GET /monitoring/ HTTP/1.1" 200 922
 INFO 2025-11-21 02:39:36 basehttp 3196 27556 "GET /maps/all-activities/ HTTP/1.1" 200 103769
 INFO 2025-11-21 02:39:42 basehttp 3196 27556 "GET /home/ HTTP/1.1" 200 69558
 INFO 2025-11-21 02:39:42 basehttp 3196 27556 "GET /media/profile_images/rooftop5.jpg HTTP/1.1" 304 0
+INFO 2025-11-21 02:45:05 basehttp 3196 13616 "GET /home/ HTTP/1.1" 200 69558
+INFO 2025-11-21 02:45:05 basehttp 3196 13616 "GET /media/profile_images/istockphoto-1192049556-612x612.webp HTTP/1.1" 304 0
+INFO 2025-11-21 02:45:05 basehttp 3196 13616 "GET /media/profile_images/rooftop5.jpg HTTP/1.1" 304 0
+INFO 2025-11-21 02:45:09 basehttp 3196 13616 "GET /admin/ HTTP/1.1" 200 13982
