@@ -55,11 +55,17 @@ class AssessmentRecord(models.Model):
     flood_risk_code = models.CharField(max_length=3, verbose_name="Flood Risk Code")
     flood_risk_description = models.CharField(max_length=100, verbose_name="Flood Risk Description")
     timestamp = models.DateTimeField(auto_now_add=True, verbose_name="Assessment Date/Time")
+    is_archived = models.BooleanField(default=False, verbose_name="Archived", db_index=True)
+    archived_at = models.DateTimeField(null=True, blank=True, verbose_name="Archived Date/Time")
     
     class Meta:
         ordering = ['-timestamp']
         verbose_name = "Assessment Record"
         verbose_name_plural = "Assessment Records"
+        indexes = [
+            models.Index(fields=['-timestamp']),
+            models.Index(fields=['is_archived', '-timestamp']),
+        ]
     
     def __str__(self):
         return f"{self.user.username} - {self.barangay} ({self.timestamp.strftime('%Y-%m-%d %H:%M')})"
@@ -73,11 +79,17 @@ class ReportRecord(models.Model):
     flood_risk_code = models.CharField(max_length=3, verbose_name="Flood Risk Code")
     flood_risk_label = models.CharField(max_length=100, verbose_name="Flood Risk Label")
     timestamp = models.DateTimeField(auto_now_add=True, verbose_name="Report Generated Date/Time")
+    is_archived = models.BooleanField(default=False, verbose_name="Archived", db_index=True)
+    archived_at = models.DateTimeField(null=True, blank=True, verbose_name="Archived Date/Time")
     
     class Meta:
         ordering = ['-timestamp']
         verbose_name = "Report Record"
         verbose_name_plural = "Report Records"
+        indexes = [
+            models.Index(fields=['-timestamp']),
+            models.Index(fields=['is_archived', '-timestamp']),
+        ]
     
     def __str__(self):
         return f"{self.user.username} - Report for {self.barangay} ({self.timestamp.strftime('%Y-%m-%d %H:%M')})"
@@ -95,11 +107,17 @@ class CertificateRecord(models.Model):
     zone_status = models.CharField(max_length=100, verbose_name="Zone Status")
     issue_date = models.CharField(max_length=100, verbose_name="Issue Date")
     timestamp = models.DateTimeField(auto_now_add=True, verbose_name="Certificate Generated Date/Time")
+    is_archived = models.BooleanField(default=False, verbose_name="Archived", db_index=True)
+    archived_at = models.DateTimeField(null=True, blank=True, verbose_name="Archived Date/Time")
     
     class Meta:
         ordering = ['-timestamp']
         verbose_name = "Certificate Record"
         verbose_name_plural = "Certificate Records"
+        indexes = [
+            models.Index(fields=['-timestamp']),
+            models.Index(fields=['is_archived', '-timestamp']),
+        ]
     
     def __str__(self):
         return f"{self.user.username} - {self.establishment_name} ({self.timestamp.strftime('%Y-%m-%d %H:%M')})"
@@ -125,11 +143,17 @@ class FloodRecordActivity(models.Model):
     affected_families = models.IntegerField(default=0, verbose_name="Affected Families")
     damage_total_php = models.FloatField(default=0, verbose_name="Total Damage (PHP)")
     timestamp = models.DateTimeField(auto_now_add=True, verbose_name="Activity Date/Time")
+    is_archived = models.BooleanField(default=False, verbose_name="Archived", db_index=True)
+    archived_at = models.DateTimeField(null=True, blank=True, verbose_name="Archived Date/Time")
     
     class Meta:
         ordering = ['-timestamp']
         verbose_name = "Flood Record Activity"
         verbose_name_plural = "Flood Record Activities"
+        indexes = [
+            models.Index(fields=['-timestamp']),
+            models.Index(fields=['is_archived', '-timestamp']),
+        ]
     
     def __str__(self):
         return f"{self.user.username} - {self.get_action_display()} flood record for {self.event_type} ({self.timestamp.strftime('%Y-%m-%d %H:%M')})"

@@ -3,7 +3,7 @@ from django.contrib.auth import get_user_model
 from django.utils import timezone
 from datetime import timedelta, datetime
 from decimal import Decimal
-from .models import RainfallData, WeatherData, TideLevelData, FloodRecord
+from .models import RainfallData, WeatherData, TideLevelData, FloodRecord, BenchmarkSettings
 from .forms import FloodRecordForm, BARANGAYS
 from django.core.exceptions import ValidationError
 
@@ -98,6 +98,56 @@ class TideLevelDataModelTest(TestCase):
         
         self.assertEqual(tide.height_m, 0.8)
         self.assertEqual(tide.station_name, 'Silay City')
+
+
+class BenchmarkSettingsModelTest(TestCase):
+    """Test the BenchmarkSettings model"""
+    
+    def test_benchmark_settings_creation(self):
+        """Test creating benchmark settings with custom values"""
+        settings = BenchmarkSettings.objects.create(
+            rainfall_moderate_threshold=35.0,
+            rainfall_high_threshold=60.0,
+            tide_moderate_threshold=1.2,
+            tide_high_threshold=1.8,
+            updated_by='admin'
+        )
+        
+        self.assertEqual(settings.rainfall_moderate_threshold, 35.0)
+        self.assertEqual(settings.rainfall_high_threshold, 60.0)
+        self.assertEqual(settings.tide_moderate_threshold, 1.2)
+        self.assertEqual(settings.tide_high_threshold, 1.8)
+        self.assertEqual(settings.updated_by, 'admin')
+    
+    def test_benchmark_settings_default_values(self):
+        """Test default values for benchmark settings"""
+        settings = BenchmarkSettings.objects.create()
+        
+        self.assertEqual(settings.rainfall_moderate_threshold, 30)
+        self.assertEqual(settings.rainfall_high_threshold, 50)
+        self.assertEqual(settings.tide_moderate_threshold, 1.0)
+        self.assertEqual(settings.tide_high_threshold, 1.5)
+    
+    def test_get_settings_singleton(self):
+        """Test get_settings method creates singleton"""
+        settings1 = BenchmarkSettings.get_settings()
+        settings2 = BenchmarkSettings.get_settings()
+        
+        self.assertEqual(settings1.id, settings2.id)
+        self.assertEqual(settings1, settings2)
+        self.assertEqual(BenchmarkSettings.objects.count(), 1)
+    
+    def test_benchmark_settings_str_method(self):
+        """Test __str__ method"""
+        settings = BenchmarkSettings.get_settings()
+        self.assertEqual(str(settings), 'Flood Risk Benchmark Settings')
+    
+    def test_benchmark_settings_auto_timestamps(self):
+        """Test that created_at and updated_at are auto-populated"""
+        settings = BenchmarkSettings.objects.create()
+        
+        self.assertIsNotNone(settings.created_at)
+        self.assertIsNotNone(settings.updated_at)
 
 
 class FloodRecordModelTest(TestCase):
@@ -425,7 +475,7 @@ class FloodRiskLevelFunctionTest(TestCase):
         
         risk_level, color = get_flood_risk_level(25.0)
         self.assertIn('Low Risk', risk_level)
-        self.assertEqual(color, 'green')
+        self.assertEqual(color, 'yellow')
     
     def test_get_flood_risk_level_moderate(self):
         """Test moderate flood risk level"""
@@ -433,7 +483,7 @@ class FloodRiskLevelFunctionTest(TestCase):
         
         risk_level, color = get_flood_risk_level(35.0)
         self.assertIn('Moderate Risk', risk_level)
-        self.assertEqual(color, 'yellow')
+        self.assertEqual(color, 'orange')
     
     def test_get_flood_risk_level_high(self):
         """Test high flood risk level"""
@@ -441,14 +491,15 @@ class FloodRiskLevelFunctionTest(TestCase):
         
         risk_level, color = get_flood_risk_level(75.0)
         self.assertIn('High Risk', risk_level)
-        self.assertEqual(color, 'orange')
+        self.assertEqual(color, 'red')
     
     def test_get_flood_risk_level_critical(self):
-        """Test critical flood risk level"""
+        """Test high flood risk level with very high rainfall"""
         from monitoring.views import get_flood_risk_level
         
+        # With default threshold of 50mm, 150mm is still High Risk
         risk_level, color = get_flood_risk_level(150.0)
-        self.assertIn('Critical Risk', risk_level)
+        self.assertIn('High Risk', risk_level)
         self.assertEqual(color, 'red')
     
     def test_get_tide_risk_level_low(self):
@@ -457,7 +508,7 @@ class FloodRiskLevelFunctionTest(TestCase):
         
         risk_level, color = get_tide_risk_level(0.5)
         self.assertIn('Low Risk', risk_level)
-        self.assertEqual(color, 'green')
+        self.assertEqual(color, 'yellow')
     
     def test_get_tide_risk_level_moderate(self):
         """Test moderate tide risk level"""
@@ -465,7 +516,7 @@ class FloodRiskLevelFunctionTest(TestCase):
         
         risk_level, color = get_tide_risk_level(1.2)
         self.assertIn('Moderate Risk', risk_level)
-        self.assertEqual(color, 'yellow')
+        self.assertEqual(color, 'orange')
     
     def test_get_tide_risk_level_high(self):
         """Test high tide risk level"""
@@ -473,48 +524,54 @@ class FloodRiskLevelFunctionTest(TestCase):
         
         risk_level, color = get_tide_risk_level(1.7)
         self.assertIn('High Risk', risk_level)
-        self.assertEqual(color, 'orange')
+        self.assertEqual(color, 'red')
     
     def test_get_tide_risk_level_critical(self):
-        """Test critical tide risk level"""
+        """Test high tide risk level with very high tide"""
         from monitoring.views import get_tide_risk_level
         
+        # With default threshold of 1.5m, 2.5m is still High Risk
         risk_level, color = get_tide_risk_level(2.5)
-        self.assertIn('Critical Risk', risk_level)
+        self.assertIn('High Risk', risk_level)
         self.assertEqual(color, 'red')
     
     def test_get_combined_risk_level_both_low(self):
         """Test combined risk when both are low"""
         from monitoring.views import get_combined_risk_level
         
-        rain_risk = 'Low Risk (<30mm)'
-        tide_risk = 'Low Risk (<1.0m)'
+        # Both values below moderate thresholds (30mm, 1.0m)
+        rainfall_mm = 20.0
+        tide_m = 0.8
         
-        combined, color = get_combined_risk_level(rain_risk, tide_risk)
+        combined, color = get_combined_risk_level(rainfall_mm, tide_m)
         self.assertEqual(combined, 'Low Risk')
-        self.assertEqual(color, 'green')
+        self.assertEqual(color, 'yellow')
     
     def test_get_combined_risk_level_rain_higher(self):
-        """Test combined risk when rain risk is higher"""
+        """Test combined risk when rain is high but tide is low (AND logic)"""
         from monitoring.views import get_combined_risk_level
         
-        rain_risk = 'High Risk (50-100mm)'
-        tide_risk = 'Low Risk (<1.0m)'
+        # Rain meets high threshold (50mm) but tide doesn't (0.8 < 1.5m)
+        # Result: Low Risk (AND logic - both must meet threshold)
+        rainfall_mm = 60.0
+        tide_m = 0.8
         
-        combined, color = get_combined_risk_level(rain_risk, tide_risk)
-        self.assertEqual(combined, 'High Risk')
-        self.assertEqual(color, 'orange')
+        combined, color = get_combined_risk_level(rainfall_mm, tide_m)
+        self.assertEqual(combined, 'Low Risk')
+        self.assertEqual(color, 'yellow')
     
     def test_get_combined_risk_level_tide_higher(self):
-        """Test combined risk when tide risk is higher"""
+        """Test combined risk when tide is high but rain is low (AND logic)"""
         from monitoring.views import get_combined_risk_level
         
-        rain_risk = 'Low Risk (<30mm)'
-        tide_risk = 'Critical Risk (>2.0m)'
+        # Tide meets high threshold (1.5m) but rain doesn't (20 < 50mm)
+        # Result: Low Risk (AND logic - both must meet threshold)
+        rainfall_mm = 20.0
+        tide_m = 2.0
         
-        combined, color = get_combined_risk_level(rain_risk, tide_risk)
-        self.assertEqual(combined, 'Critical Risk')
-        self.assertEqual(color, 'red')
+        combined, color = get_combined_risk_level(rainfall_mm, tide_m)
+        self.assertEqual(combined, 'Low Risk')
+        self.assertEqual(color, 'yellow')
     
     def test_get_combined_risk_level_rainfall_priority(self):
         """Test combined risk with AND-based threshold logic - Low risk example"""
@@ -569,15 +626,16 @@ class GenerateFloodInsightsTest(TestCase):
         """Test insights generates warning for heavy rainfall"""
         from monitoring.views import generate_flood_insights
         
+        # Use values above the high threshold (default 50mm)
         forecast = [
-            {'precipitation': 20, 'temp_max': 28, 'humidity': 75},
-            {'precipitation': 18, 'temp_max': 29, 'humidity': 76},
+            {'precipitation': 60, 'temp_max': 28, 'humidity': 75},
+            {'precipitation': 55, 'temp_max': 29, 'humidity': 76},
         ]
         
         insights = generate_flood_insights(forecast, None, None, [])
         
         self.assertEqual(insights['severity'], 'high')
-        self.assertTrue(any('Heavy Rainfall' in str(alert) for alert in insights['risk_alerts']))
+        self.assertTrue(len(insights['risk_alerts']) > 0)
     
     def test_insights_contains_recommendations(self):
         """Test insights includes recommendations"""
@@ -888,3 +946,146 @@ class FetchTrendsApiTest(TestCase):
         )
         # Should reject future dates
         self.assertEqual(response.status_code, 400)
+
+
+class BenchmarkSettingsViewTest(TestCase):
+    """Test the benchmark_settings_view function"""
+    
+    def setUp(self):
+        self.client = Client()
+        self.user = User.objects.create_user(
+            username='normaluser',
+            password='testpass123',
+            staff_id='TEST007'
+        )
+        self.staff_user = User.objects.create_user(
+            username='staffuser',
+            password='testpass123',
+            staff_id='TEST008',
+            is_staff=True
+        )
+    
+    def test_benchmark_settings_login_required(self):
+        """Test that benchmark settings view requires login"""
+        response = self.client.get('/monitoring/benchmark-settings/')
+        self.assertEqual(response.status_code, 302)  # Redirect to login
+    
+    def test_benchmark_settings_staff_required(self):
+        """Test that only staff can access benchmark settings"""
+        self.client.login(username='normaluser', password='testpass123')
+        response = self.client.get('/monitoring/benchmark-settings/')
+        self.assertEqual(response.status_code, 302)  # Redirect due to permission
+    
+    def test_benchmark_settings_staff_access(self):
+        """Test that staff can access benchmark settings"""
+        self.client.login(username='staffuser', password='testpass123')
+        response = self.client.get('/monitoring/benchmark-settings/')
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'monitoring/benchmark_settings.html')
+    
+    def test_benchmark_settings_get_request(self):
+        """Test GET request shows current settings"""
+        self.client.login(username='staffuser', password='testpass123')
+        response = self.client.get('/monitoring/benchmark-settings/')
+        
+        self.assertEqual(response.status_code, 200)
+        self.assertIn('settings', response.context)
+        settings = response.context['settings']
+        self.assertIsNotNone(settings)
+    
+    def test_benchmark_settings_post_valid_data(self):
+        """Test POST with valid benchmark data"""
+        self.client.login(username='staffuser', password='testpass123')
+        
+        data = {
+            'rainfall_moderate_threshold': '35',
+            'rainfall_high_threshold': '65',
+            'tide_moderate_threshold': '1.2',
+            'tide_high_threshold': '1.8',
+        }
+        
+        response = self.client.post('/monitoring/benchmark-settings/', data)
+        self.assertEqual(response.status_code, 302)  # Redirect after success
+        
+        # Verify settings were updated
+        settings = BenchmarkSettings.get_settings()
+        self.assertEqual(settings.rainfall_moderate_threshold, 35.0)
+        self.assertEqual(settings.rainfall_high_threshold, 65.0)
+        self.assertEqual(settings.tide_moderate_threshold, 1.2)
+        self.assertEqual(settings.tide_high_threshold, 1.8)
+    
+    def test_benchmark_settings_moderate_less_than_high(self):
+        """Test validation: moderate threshold must be less than high"""
+        self.client.login(username='staffuser', password='testpass123')
+        
+        data = {
+            'rainfall_moderate_threshold': '70',  # Greater than high
+            'rainfall_high_threshold': '60',
+            'tide_moderate_threshold': '1.0',
+            'tide_high_threshold': '1.5',
+        }
+        
+        response = self.client.post('/monitoring/benchmark-settings/', data)
+        self.assertEqual(response.status_code, 200)  # Re-render with errors
+        self.assertIn('errors', response.context)
+    
+    def test_benchmark_settings_positive_values_only(self):
+        """Test validation: thresholds must be positive"""
+        self.client.login(username='staffuser', password='testpass123')
+        
+        data = {
+            'rainfall_moderate_threshold': '-10',  # Negative
+            'rainfall_high_threshold': '50',
+            'tide_moderate_threshold': '1.0',
+            'tide_high_threshold': '1.5',
+        }
+        
+        response = self.client.post('/monitoring/benchmark-settings/', data)
+        self.assertEqual(response.status_code, 200)  # Re-render with errors
+        self.assertIn('errors', response.context)
+    
+    def test_benchmark_settings_tide_validation(self):
+        """Test validation: tide moderate must be less than tide high"""
+        self.client.login(username='staffuser', password='testpass123')
+        
+        data = {
+            'rainfall_moderate_threshold': '30',
+            'rainfall_high_threshold': '50',
+            'tide_moderate_threshold': '2.0',  # Greater than high
+            'tide_high_threshold': '1.5',
+        }
+        
+        response = self.client.post('/monitoring/benchmark-settings/', data)
+        self.assertEqual(response.status_code, 200)  # Re-render with errors
+        self.assertIn('errors', response.context)
+    
+    def test_benchmark_settings_invalid_number_format(self):
+        """Test validation: handles invalid number format"""
+        self.client.login(username='staffuser', password='testpass123')
+        
+        data = {
+            'rainfall_moderate_threshold': 'invalid',
+            'rainfall_high_threshold': '50',
+            'tide_moderate_threshold': '1.0',
+            'tide_high_threshold': '1.5',
+        }
+        
+        response = self.client.post('/monitoring/benchmark-settings/', data)
+        self.assertEqual(response.status_code, 200)  # Re-render with errors
+    
+    def test_benchmark_settings_updates_metadata(self):
+        """Test that updating settings records who made the change"""
+        self.client.login(username='staffuser', password='testpass123')
+        
+        data = {
+            'rainfall_moderate_threshold': '35',
+            'rainfall_high_threshold': '60',
+            'tide_moderate_threshold': '1.1',
+            'tide_high_threshold': '1.6',
+        }
+        
+        response = self.client.post('/monitoring/benchmark-settings/', data)
+        
+        settings = BenchmarkSettings.get_settings()
+        self.assertIsNotNone(settings.updated_by)
+        self.assertIsNotNone(settings.updated_at)

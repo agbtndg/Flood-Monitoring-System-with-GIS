@@ -7096,3 +7096,1193 @@ INFO 2025-11-21 02:45:05 basehttp 3196 13616 "GET /home/ HTTP/1.1" 200 69558
 INFO 2025-11-21 02:45:05 basehttp 3196 13616 "GET /media/profile_images/istockphoto-1192049556-612x612.webp HTTP/1.1" 304 0
 INFO 2025-11-21 02:45:05 basehttp 3196 13616 "GET /media/profile_images/rooftop5.jpg HTTP/1.1" 304 0
 INFO 2025-11-21 02:45:09 basehttp 3196 13616 "GET /admin/ HTTP/1.1" 200 13982
+INFO 2025-11-21 04:03:28 autoreload 28056 21448 Watching for file changes with StatReloader
+INFO 2025-11-21 04:03:30 basehttp 28056 8280 "GET / HTTP/1.1" 302 0
+INFO 2025-11-21 04:03:30 basehttp 28056 8280 "GET /home/ HTTP/1.1" 200 69103
+INFO 2025-11-21 04:03:30 basehttp 28056 8280 "GET /media/profile_images/istockphoto-1192049556-612x612.webp HTTP/1.1" 304 0
+INFO 2025-11-21 04:03:30 basehttp 28056 8280 "GET /media/profile_images/rooftop5.jpg HTTP/1.1" 304 0
+INFO 2025-11-21 04:03:40 views 28056 8280 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-21 04:03:41 views 28056 8280 API returned - Rain: 0.0mm, Temp: 26.1°C, Humidity: 93%, Wind: 12.5km/h
+INFO 2025-11-21 04:03:41 views 28056 8280 Processed 7 days of weather forecast
+INFO 2025-11-21 04:03:41 basehttp 28056 8280 "GET /monitoring/ HTTP/1.1" 200 92745
+INFO 2025-11-21 04:04:05 basehttp 28056 8280 "GET /admin/ HTTP/1.1" 200 13982
+INFO 2025-11-21 04:04:07 basehttp 28056 8280 "GET /admin/monitoring/rainfalldata/ HTTP/1.1" 200 20312
+INFO 2025-11-21 04:04:07 basehttp 28056 8280 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-21 04:04:10 basehttp 28056 8280 "GET /admin/monitoring/rainfalldata/35/change/ HTTP/1.1" 200 15173
+INFO 2025-11-21 04:04:10 basehttp 28056 8280 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-21 04:04:14 basehttp 28056 8280 "GET /admin/monitoring/rainfalldata/ HTTP/1.1" 200 20312
+INFO 2025-11-21 04:04:15 basehttp 28056 8280 "GET /admin/monitoring/rainfalldata/34/change/ HTTP/1.1" 200 15173
+INFO 2025-11-21 04:04:15 basehttp 28056 8280 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-21 04:04:17 basehttp 28056 8280 "GET /admin/monitoring/rainfalldata/ HTTP/1.1" 200 20312
+INFO 2025-11-21 04:04:18 basehttp 28056 8280 "GET /admin/monitoring/rainfalldata/33/change/ HTTP/1.1" 200 15173
+INFO 2025-11-21 04:04:18 basehttp 28056 8280 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-21 04:04:19 basehttp 28056 8280 "GET /admin/monitoring/rainfalldata/ HTTP/1.1" 200 20312
+INFO 2025-11-21 04:04:20 basehttp 28056 8280 "GET /admin/monitoring/rainfalldata/33/change/ HTTP/1.1" 200 15173
+INFO 2025-11-21 04:04:20 basehttp 28056 8280 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-21 04:04:22 basehttp 28056 8280 "GET /admin/monitoring/rainfalldata/ HTTP/1.1" 200 20312
+INFO 2025-11-21 04:04:23 basehttp 28056 8280 "GET /admin/monitoring/rainfalldata/17/change/ HTTP/1.1" 200 15173
+INFO 2025-11-21 04:04:23 basehttp 28056 8280 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-21 04:04:24 basehttp 28056 8280 "GET /admin/monitoring/rainfalldata/ HTTP/1.1" 200 20312
+INFO 2025-11-21 04:04:26 basehttp 28056 8280 "GET /admin/monitoring/rainfalldata/14/change/ HTTP/1.1" 200 15173
+INFO 2025-11-21 04:04:26 basehttp 28056 8280 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-21 04:04:27 basehttp 28056 8280 "GET /admin/monitoring/rainfalldata/ HTTP/1.1" 200 20312
+INFO 2025-11-21 04:04:38 views 28056 8280 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-21 04:04:39 views 28056 8280 API returned - Rain: 0.0mm, Temp: 26.1°C, Humidity: 93%, Wind: 12.5km/h
+INFO 2025-11-21 04:04:39 views 28056 8280 Processed 7 days of weather forecast
+INFO 2025-11-21 04:04:39 basehttp 28056 8280 "GET /monitoring/ HTTP/1.1" 200 92745
+INFO 2025-11-21 04:04:44 views 28056 8280 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-21 04:04:45 views 28056 8280 API returned - Rain: 0.0mm, Temp: 26.1°C, Humidity: 93%, Wind: 12.5km/h
+INFO 2025-11-21 04:04:45 views 28056 8280 Processed 7 days of weather forecast
+INFO 2025-11-21 04:04:45 basehttp 28056 8280 "GET /monitoring/ HTTP/1.1" 200 92745
+INFO 2025-11-21 04:04:46 basehttp 28056 8280 "GET /approve/ HTTP/1.1" 200 41423
+INFO 2025-11-21 04:04:49 basehttp 28056 8280 "GET /maps/all-activities/ HTTP/1.1" 200 103956
+INFO 2025-11-21 04:28:13 basehttp 28056 24284 "GET /home/ HTTP/1.1" 200 69103
+INFO 2025-11-21 04:28:13 basehttp 28056 6336 "GET /media/profile_images/rooftop5.jpg HTTP/1.1" 304 0
+INFO 2025-11-21 04:28:13 basehttp 28056 24284 "GET /media/profile_images/istockphoto-1192049556-612x612.webp HTTP/1.1" 304 0
+INFO 2025-11-21 04:28:27 basehttp 28056 24284 "GET /monitoring/benchmark-settings/ HTTP/1.1" 200 46086
+INFO 2025-11-21 04:28:32 basehttp 28056 24284 "GET /maps/my-activity/ HTTP/1.1" 200 63186
+INFO 2025-11-21 04:28:35 basehttp 28056 24284 "GET /approve/ HTTP/1.1" 200 41423
+INFO 2025-11-21 04:28:38 basehttp 28056 24284 "GET /maps/ HTTP/1.1" 200 1045162
+INFO 2025-11-21 04:32:13 autoreload 28056 21448 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\export_utils.py changed, reloading.
+INFO 2025-11-21 04:32:13 autoreload 25660 22348 Watching for file changes with StatReloader
+INFO 2025-11-21 04:32:34 autoreload 25660 22348 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\export_utils.py changed, reloading.
+INFO 2025-11-21 04:32:35 autoreload 28372 10516 Watching for file changes with StatReloader
+INFO 2025-11-21 04:32:55 autoreload 28372 10516 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\export_utils.py changed, reloading.
+INFO 2025-11-21 04:32:56 autoreload 6416 8660 Watching for file changes with StatReloader
+INFO 2025-11-21 04:33:09 autoreload 6416 8660 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\export_utils.py changed, reloading.
+INFO 2025-11-21 04:33:10 autoreload 8100 2320 Watching for file changes with StatReloader
+INFO 2025-11-21 04:33:25 autoreload 8100 2320 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\export_utils.py changed, reloading.
+INFO 2025-11-21 04:33:26 autoreload 24708 8168 Watching for file changes with StatReloader
+INFO 2025-11-21 04:33:40 autoreload 24708 8168 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\export_utils.py changed, reloading.
+INFO 2025-11-21 04:33:41 autoreload 10836 7752 Watching for file changes with StatReloader
+INFO 2025-11-21 04:34:01 autoreload 10836 7752 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\export_utils.py changed, reloading.
+INFO 2025-11-21 04:34:02 autoreload 13796 9908 Watching for file changes with StatReloader
+INFO 2025-11-21 04:41:00 autoreload 13796 9908 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\export_utils.py changed, reloading.
+INFO 2025-11-21 04:41:01 autoreload 28836 11752 Watching for file changes with StatReloader
+INFO 2025-11-21 04:42:49 autoreload 16832 10068 Watching for file changes with StatReloader
+INFO 2025-11-21 04:43:21 autoreload 16832 10068 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\export_utils.py changed, reloading.
+INFO 2025-11-21 04:43:21 autoreload 5244 24864 Watching for file changes with StatReloader
+INFO 2025-11-21 04:43:45 autoreload 5244 24864 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\export_utils.py changed, reloading.
+INFO 2025-11-21 04:43:46 autoreload 16972 27584 Watching for file changes with StatReloader
+INFO 2025-11-21 04:44:12 basehttp 16972 5316 "GET /maps/all-activities/ HTTP/1.1" 200 103956
+INFO 2025-11-21 04:51:41 basehttp 16972 10296 "GET / HTTP/1.1" 302 0
+INFO 2025-11-21 04:51:41 basehttp 16972 10296 "GET /home/ HTTP/1.1" 200 69103
+INFO 2025-11-21 04:51:42 basehttp 16972 10296 "GET /media/profile_images/rooftop5.jpg HTTP/1.1" 304 0
+INFO 2025-11-21 04:51:46 basehttp 16972 10296 "GET /maps/all-activities/ HTTP/1.1" 200 103949
+INFO 2025-11-21 04:52:00 autoreload 16972 27584 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\export_utils.py changed, reloading.
+INFO 2025-11-21 04:52:01 autoreload 23992 27400 Watching for file changes with StatReloader
+INFO 2025-11-21 04:52:06 basehttp 23992 23524 "GET /maps/all-activities/ HTTP/1.1" 200 103950
+INFO 2025-11-21 04:59:26 basehttp 23992 24132 "GET /maps/all-activities/ HTTP/1.1" 200 103953
+INFO 2025-11-21 04:59:30 basehttp 23992 24132 "GET /maps/export-activities/?type=pdf&activity=assessments&sort=recent HTTP/1.1" 200 2716
+INFO 2025-11-21 05:25:34 autoreload 19672 23620 Watching for file changes with StatReloader
+INFO 2025-11-21 05:25:35 basehttp 19672 16832 "GET / HTTP/1.1" 302 0
+INFO 2025-11-21 05:25:36 basehttp 19672 16832 "GET /home/ HTTP/1.1" 200 69103
+INFO 2025-11-21 05:25:36 basehttp 19672 16832 "GET /media/profile_images/istockphoto-1192049556-612x612.webp HTTP/1.1" 304 0
+INFO 2025-11-21 05:25:36 basehttp 19672 16832 "GET /media/profile_images/rooftop5.jpg HTTP/1.1" 304 0
+INFO 2025-11-21 05:25:52 basehttp 19672 16832 "GET /maps/ HTTP/1.1" 200 1045162
+INFO 2025-11-21 05:25:55 basehttp 19672 16832 "GET /approve/ HTTP/1.1" 200 41423
+INFO 2025-11-21 05:38:13 autoreload 19672 23620 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\views.py changed, reloading.
+INFO 2025-11-21 05:38:13 autoreload 19464 29436 Watching for file changes with StatReloader
+INFO 2025-11-21 05:47:12 autoreload 22748 8376 Watching for file changes with StatReloader
+INFO 2025-11-21 05:49:22 basehttp 19464 23556 "GET / HTTP/1.1" 302 0
+INFO 2025-11-21 05:49:22 basehttp 19464 23556 "GET /home/ HTTP/1.1" 200 69103
+INFO 2025-11-21 05:49:22 basehttp 19464 23556 "GET /media/profile_images/rooftop5.jpg HTTP/1.1" 304 0
+INFO 2025-11-21 05:49:25 basehttp 19464 23556 "GET /maps/all-activities/ HTTP/1.1" 200 116996
+INFO 2025-11-21 05:49:44 basehttp 19464 23556 "GET /maps/all-activities/?date_range=90&tab=assessments HTTP/1.1" 200 116972
+INFO 2025-11-21 05:49:45 basehttp 19464 23556 "GET /maps/all-activities/?tab=assessments&show_all=1 HTTP/1.1" 200 116457
+INFO 2025-11-21 05:49:47 basehttp 19464 23556 "GET /maps/all-activities/?tab=assessments&date_range=7 HTTP/1.1" 200 116960
+INFO 2025-11-21 05:49:54 basehttp 19464 23556 "GET /maps/all-activities/?tab=assessments&date_range=7&search=&per_page=25&user=14&date=&date_from=&date_to=&sort=recent HTTP/1.1" 200 84583
+INFO 2025-11-21 05:50:03 basehttp 19464 23556 "GET /maps/all-activities/?tab=assessments&date_range=7&search=&per_page=25&user=14&date=2025-11-20&date_from=&date_to=&sort=recent HTTP/1.1" 200 64632
+INFO 2025-11-21 05:50:07 basehttp 19464 23556 "GET /maps/all-activities/?tab=assessments&date_range=7&search=&per_page=25&user=14&date=2025-11-21&date_from=&date_to=&sort=recent HTTP/1.1" 200 84951
+INFO 2025-11-21 05:50:08 basehttp 19464 23556 "GET /maps/all-activities/?tab=assessments&date_range=7&search=&per_page=25&user=14&date_from=&date_to=&sort=recent HTTP/1.1" 200 84587
+INFO 2025-11-21 05:50:16 basehttp 19464 23556 "GET /maps/all-activities/?tab=assessments&per_page=25&date_range=30 HTTP/1.1" 200 116959
+INFO 2025-11-21 05:50:27 basehttp 19464 23556 "GET /maps/all-activities/?tab=assessments&per_page=25&date_range=7 HTTP/1.1" 200 116947
+INFO 2025-11-21 05:50:32 basehttp 19464 23556 "GET /maps/all-activities/?tab=certificates&per_page=25&date_range=30 HTTP/1.1" 200 116971
+INFO 2025-11-21 05:50:38 basehttp 19464 23556 "GET /maps/all-activities/?tab=reports&date_range=30&search=&per_page=25&user=&date=2025-11-21&date_from=&date_to=&sort=recent HTTP/1.1" 200 113880
+INFO 2025-11-21 05:50:42 basehttp 19464 23556 "GET /maps/all-activities/?tab=certificates&date_range=30&search=&per_page=25&user=&date=2025-11-21&date_from=2025-11-20&date_to=&sort=recent HTTP/1.1" 200 114308
+INFO 2025-11-21 05:50:47 basehttp 19464 23556 "GET /maps/all-activities/?tab=certificates&date_range=30&search=&per_page=25&user=&date=2025-11-21&date_from=2025-11-19&date_to=&sort=recent HTTP/1.1" 200 114308
+INFO 2025-11-21 05:50:55 basehttp 19464 23556 "GET /maps/all-activities/?tab=certificates&date_range=30&search=&per_page=25&user=&date=2025-11-21&date_from=2025-11-19&date_to=2025-11-22&sort=recent HTTP/1.1" 200 114707
+INFO 2025-11-21 05:51:07 basehttp 19464 23556 "GET /maps/all-activities/?tab=certificates&date_range=30&search=&per_page=25&user=&date=2025-11-21&date_from=2025-11-19&date_to=2025-11-22&sort=oldest HTTP/1.1" 200 114707
+INFO 2025-11-21 05:57:54 autoreload 22748 8376 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\models.py changed, reloading.
+INFO 2025-11-21 05:57:55 autoreload 19464 29436 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\models.py changed, reloading.
+INFO 2025-11-21 05:57:56 autoreload 24600 2456 Watching for file changes with StatReloader
+INFO 2025-11-21 05:57:56 autoreload 16744 21168 Watching for file changes with StatReloader
+INFO 2025-11-21 05:58:24 autoreload 16744 21168 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\models.py changed, reloading.
+INFO 2025-11-21 05:58:24 autoreload 24600 2456 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\models.py changed, reloading.
+INFO 2025-11-21 05:58:25 autoreload 16852 2852 Watching for file changes with StatReloader
+INFO 2025-11-21 05:58:25 autoreload 21488 10044 Watching for file changes with StatReloader
+INFO 2025-11-21 05:58:47 autoreload 21488 10044 C:\Users\aldri\Flood-Monitoring-System-with-GIS\users\models.py changed, reloading.
+INFO 2025-11-21 05:58:47 autoreload 16852 2852 C:\Users\aldri\Flood-Monitoring-System-with-GIS\users\models.py changed, reloading.
+INFO 2025-11-21 05:58:48 autoreload 22288 13648 Watching for file changes with StatReloader
+INFO 2025-11-21 05:58:49 autoreload 19284 27904 Watching for file changes with StatReloader
+INFO 2025-11-21 06:01:49 autoreload 19284 27904 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\views.py changed, reloading.
+INFO 2025-11-21 06:01:49 autoreload 22288 13648 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\views.py changed, reloading.
+INFO 2025-11-21 06:01:49 autoreload 14304 3632 Watching for file changes with StatReloader
+INFO 2025-11-21 06:01:49 autoreload 26836 13616 Watching for file changes with StatReloader
+INFO 2025-11-21 06:02:17 autoreload 26836 13616 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\views.py changed, reloading.
+INFO 2025-11-21 06:02:18 autoreload 14304 3632 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\views.py changed, reloading.
+INFO 2025-11-21 06:02:19 autoreload 17052 21476 Watching for file changes with StatReloader
+INFO 2025-11-21 06:02:19 autoreload 11312 10404 Watching for file changes with StatReloader
+INFO 2025-11-21 06:12:09 autoreload 7872 19076 Watching for file changes with StatReloader
+INFO 2025-11-21 06:12:11 basehttp 7872 1492 "GET / HTTP/1.1" 302 0
+INFO 2025-11-21 06:12:12 basehttp 7872 1492 "GET /home/ HTTP/1.1" 200 69103
+INFO 2025-11-21 06:12:12 basehttp 7872 1492 "GET /media/profile_images/istockphoto-1192049556-612x612.webp HTTP/1.1" 304 0
+INFO 2025-11-21 06:12:18 basehttp 7872 1948 "GET /maps/all-activities/ HTTP/1.1" 200 117001
+INFO 2025-11-21 06:12:27 basehttp 7872 1948 "GET /logout/ HTTP/1.1" 302 0
+INFO 2025-11-21 06:12:27 basehttp 7872 1948 "GET / HTTP/1.1" 200 14056
+INFO 2025-11-21 06:12:39 basehttp 7872 1948 "POST / HTTP/1.1" 302 0
+INFO 2025-11-21 06:12:39 basehttp 7872 1948 "GET /home/ HTTP/1.1" 200 59531
+INFO 2025-11-21 06:12:43 basehttp 7872 1948 "GET /maps/my-activity/ HTTP/1.1" 200 58130
+INFO 2025-11-21 06:12:47 basehttp 7872 1948 "GET /logout/ HTTP/1.1" 302 0
+INFO 2025-11-21 06:12:47 basehttp 7872 1948 "GET / HTTP/1.1" 200 14056
+INFO 2025-11-21 06:12:57 basehttp 7872 1948 "POST / HTTP/1.1" 302 0
+INFO 2025-11-21 06:12:57 basehttp 7872 1948 "GET /home/ HTTP/1.1" 200 69309
+INFO 2025-11-21 06:13:01 basehttp 7872 1948 "GET /maps/all-activities/ HTTP/1.1" 200 124129
+INFO 2025-11-21 06:13:08 autoreload 7872 19076 C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\views.py changed, reloading.
+INFO 2025-11-21 06:13:09 autoreload 25408 1820 Watching for file changes with StatReloader
+INFO 2025-11-21 06:15:39 basehttp 25408 12740 "GET /maps/all-activities/ HTTP/1.1" 200 124568
+INFO 2025-11-21 06:18:26 basehttp 25408 12740 "GET /admin/ HTTP/1.1" 200 13982
+INFO 2025-11-21 06:18:38 basehttp 25408 12740 "GET /admin/maps/certificaterecord/ HTTP/1.1" 200 19390
+INFO 2025-11-21 06:18:38 basehttp 25408 12740 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-11-21 06:18:38 basehttp 25408 12616 "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+INFO 2025-11-21 06:18:38 basehttp 25408 12740 "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+INFO 2025-11-21 06:18:38 basehttp 25408 12616 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+INFO 2025-11-21 06:20:48 basehttp 25408 12616 "GET /maps/all-activities/ HTTP/1.1" 200 124628
+INFO 2025-11-21 06:21:02 basehttp 25408 12616 "GET /maps/all-activities/?show_all=1&tab=assessments HTTP/1.1" 200 124113
+INFO 2025-11-21 06:21:03 basehttp 25408 12616 "GET /maps/all-activities/?tab=assessments&date_range=90 HTTP/1.1" 200 124628
+INFO 2025-11-21 06:21:05 basehttp 25408 12616 "GET /maps/all-activities/?tab=assessments&date_range=30 HTTP/1.1" 200 124628
+INFO 2025-11-21 06:21:06 basehttp 25408 12616 "GET /maps/all-activities/?tab=assessments&show_all=1 HTTP/1.1" 200 124113
+INFO 2025-11-21 06:21:08 basehttp 25408 12616 "GET /maps/all-activities/?tab=assessments&show_all=1 HTTP/1.1" 200 124113
+INFO 2025-11-21 06:21:09 basehttp 25408 12616 "GET /maps/all-activities/?tab=assessments&date_range=90 HTTP/1.1" 200 124628
+INFO 2025-11-21 06:21:10 basehttp 25408 12616 "GET /maps/all-activities/?tab=assessments&date_range=30 HTTP/1.1" 200 124628
+INFO 2025-11-21 06:21:11 basehttp 25408 12616 "GET /maps/all-activities/?tab=assessments&show_all=1 HTTP/1.1" 200 124113
+INFO 2025-11-21 06:21:13 basehttp 25408 12616 "GET /maps/all-activities/?tab=assessments&date_range=90 HTTP/1.1" 200 124628
+INFO 2025-11-21 06:21:14 basehttp 25408 12616 "GET /maps/all-activities/?tab=assessments&date_range=7 HTTP/1.1" 200 124616
+INFO 2025-11-21 06:22:29 basehttp 25408 12616 "GET /maps/all-activities/?tab=assessments&date_range=7 HTTP/1.1" 200 124997
+INFO 2025-11-21 06:22:50 basehttp 25408 12616 "GET /maps/all-activities/?tab=assessments&date_range=7&search=aldrian HTTP/1.1" 200 92789
+INFO 2025-11-21 06:23:01 basehttp 25408 12616 "GET /maps/all-activities/?tab=assessments&per_page=25&date_range=30 HTTP/1.1" 200 124984
+INFO 2025-11-21 06:26:52 basehttp 25408 12616 "GET /approve/ HTTP/1.1" 200 41423
+INFO 2025-11-21 06:26:57 basehttp 25408 12616 "GET /home/ HTTP/1.1" 200 69093
+INFO 2025-11-21 06:26:57 basehttp 25408 12616 "GET /media/profile_images/rooftop5.jpg HTTP/1.1" 304 0
+ERROR 2025-11-21 07:35:39 log 16328 26060 Internal Server Error: /monitoring/benchmark-settings/
+Traceback (most recent call last):
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 946, in get_or_create
+    return self.get(**kwargs), False
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 633, in get
+    raise self.model.DoesNotExist(
+monitoring.models.BenchmarkSettings.DoesNotExist: BenchmarkSettings matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.NotNullViolation: null value in column "combined_risk_method" of relation "monitoring_benchmarksettings" violates not-null constraint
+DETAIL:  Failing row contains (1, 30, 50, 1, 1.5, 2025-11-20 23:35:39.767912+00, 2025-11-20 23:35:39.767912+00, , null).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\monitoring\views.py", line 824, in benchmark_settings_view
+    settings = BenchmarkSettings.get_settings()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\monitoring\models.py", line 78, in get_settings
+    settings, created = cls.objects.get_or_create(pk=1)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 953, in get_or_create
+    return self.create(**params), True
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 663, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\base.py", line 902, in save
+    self.save_base(
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\base.py", line 1008, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\base.py", line 1169, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\base.py", line 1210, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 1868, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\sql\compiler.py", line 1882, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: null value in column "combined_risk_method" of relation "monitoring_benchmarksettings" violates not-null constraint
+DETAIL:  Failing row contains (1, 30, 50, 1, 1.5, 2025-11-20 23:35:39.767912+00, 2025-11-20 23:35:39.767912+00, , null).
+
+ERROR 2025-11-21 07:35:40 log 16328 26060 Internal Server Error: /monitoring/benchmark-settings/
+Traceback (most recent call last):
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 946, in get_or_create
+    return self.get(**kwargs), False
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 633, in get
+    raise self.model.DoesNotExist(
+monitoring.models.BenchmarkSettings.DoesNotExist: BenchmarkSettings matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.NotNullViolation: null value in column "combined_risk_method" of relation "monitoring_benchmarksettings" violates not-null constraint
+DETAIL:  Failing row contains (1, 30, 50, 1, 1.5, 2025-11-20 23:35:40.818051+00, 2025-11-20 23:35:40.818051+00, , null).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\monitoring\views.py", line 824, in benchmark_settings_view
+    settings = BenchmarkSettings.get_settings()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\monitoring\models.py", line 78, in get_settings
+    settings, created = cls.objects.get_or_create(pk=1)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 953, in get_or_create
+    return self.create(**params), True
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 663, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\base.py", line 902, in save
+    self.save_base(
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\base.py", line 1008, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\base.py", line 1169, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\base.py", line 1210, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 1868, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\sql\compiler.py", line 1882, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: null value in column "combined_risk_method" of relation "monitoring_benchmarksettings" violates not-null constraint
+DETAIL:  Failing row contains (1, 30, 50, 1, 1.5, 2025-11-20 23:35:40.818051+00, 2025-11-20 23:35:40.818051+00, , null).
+
+ERROR 2025-11-21 07:35:42 log 16328 26060 Internal Server Error: /monitoring/benchmark-settings/
+Traceback (most recent call last):
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 946, in get_or_create
+    return self.get(**kwargs), False
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 633, in get
+    raise self.model.DoesNotExist(
+monitoring.models.BenchmarkSettings.DoesNotExist: BenchmarkSettings matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.NotNullViolation: null value in column "combined_risk_method" of relation "monitoring_benchmarksettings" violates not-null constraint
+DETAIL:  Failing row contains (1, 30, 50, 1, 1.5, 2025-11-20 23:35:42.579218+00, 2025-11-20 23:35:42.579218+00, , null).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\monitoring\views.py", line 824, in benchmark_settings_view
+    settings = BenchmarkSettings.get_settings()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\monitoring\models.py", line 78, in get_settings
+    settings, created = cls.objects.get_or_create(pk=1)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 953, in get_or_create
+    return self.create(**params), True
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 663, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\base.py", line 902, in save
+    self.save_base(
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\base.py", line 1008, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\base.py", line 1169, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\base.py", line 1210, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 1868, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\sql\compiler.py", line 1882, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: null value in column "combined_risk_method" of relation "monitoring_benchmarksettings" violates not-null constraint
+DETAIL:  Failing row contains (1, 30, 50, 1, 1.5, 2025-11-20 23:35:42.579218+00, 2025-11-20 23:35:42.579218+00, , null).
+
+ERROR 2025-11-21 07:35:43 log 16328 26060 Internal Server Error: /monitoring/benchmark-settings/
+Traceback (most recent call last):
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 946, in get_or_create
+    return self.get(**kwargs), False
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 633, in get
+    raise self.model.DoesNotExist(
+monitoring.models.BenchmarkSettings.DoesNotExist: BenchmarkSettings matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.NotNullViolation: null value in column "combined_risk_method" of relation "monitoring_benchmarksettings" violates not-null constraint
+DETAIL:  Failing row contains (1, 30, 50, 1, 1.5, 2025-11-20 23:35:43.637983+00, 2025-11-20 23:35:43.637983+00, , null).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\monitoring\views.py", line 824, in benchmark_settings_view
+    settings = BenchmarkSettings.get_settings()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\monitoring\models.py", line 78, in get_settings
+    settings, created = cls.objects.get_or_create(pk=1)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 953, in get_or_create
+    return self.create(**params), True
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 663, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\base.py", line 902, in save
+    self.save_base(
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\base.py", line 1008, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\base.py", line 1169, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\base.py", line 1210, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 1868, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\sql\compiler.py", line 1882, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: null value in column "combined_risk_method" of relation "monitoring_benchmarksettings" violates not-null constraint
+DETAIL:  Failing row contains (1, 30, 50, 1, 1.5, 2025-11-20 23:35:43.637983+00, 2025-11-20 23:35:43.637983+00, , null).
+
+ERROR 2025-11-21 07:35:44 log 16328 26060 Internal Server Error: /monitoring/benchmark-settings/
+Traceback (most recent call last):
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 946, in get_or_create
+    return self.get(**kwargs), False
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 633, in get
+    raise self.model.DoesNotExist(
+monitoring.models.BenchmarkSettings.DoesNotExist: BenchmarkSettings matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.NotNullViolation: null value in column "combined_risk_method" of relation "monitoring_benchmarksettings" violates not-null constraint
+DETAIL:  Failing row contains (1, 30, 50, 1, 1.5, 2025-11-20 23:35:44.678125+00, 2025-11-20 23:35:44.678125+00, , null).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\monitoring\views.py", line 824, in benchmark_settings_view
+    settings = BenchmarkSettings.get_settings()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\monitoring\models.py", line 78, in get_settings
+    settings, created = cls.objects.get_or_create(pk=1)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 953, in get_or_create
+    return self.create(**params), True
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 663, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\base.py", line 902, in save
+    self.save_base(
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\base.py", line 1008, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\base.py", line 1169, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\base.py", line 1210, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 1868, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\sql\compiler.py", line 1882, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: null value in column "combined_risk_method" of relation "monitoring_benchmarksettings" violates not-null constraint
+DETAIL:  Failing row contains (1, 30, 50, 1, 1.5, 2025-11-20 23:35:44.678125+00, 2025-11-20 23:35:44.678125+00, , null).
+
+ERROR 2025-11-21 07:35:45 log 16328 26060 Internal Server Error: /monitoring/benchmark-settings/
+Traceback (most recent call last):
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 946, in get_or_create
+    return self.get(**kwargs), False
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 633, in get
+    raise self.model.DoesNotExist(
+monitoring.models.BenchmarkSettings.DoesNotExist: BenchmarkSettings matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.NotNullViolation: null value in column "combined_risk_method" of relation "monitoring_benchmarksettings" violates not-null constraint
+DETAIL:  Failing row contains (1, 30, 50, 1, 1.5, 2025-11-20 23:35:45.722191+00, 2025-11-20 23:35:45.722191+00, , null).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\monitoring\views.py", line 824, in benchmark_settings_view
+    settings = BenchmarkSettings.get_settings()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\monitoring\models.py", line 78, in get_settings
+    settings, created = cls.objects.get_or_create(pk=1)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 953, in get_or_create
+    return self.create(**params), True
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 663, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\base.py", line 902, in save
+    self.save_base(
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\base.py", line 1008, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\base.py", line 1169, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\base.py", line 1210, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 1868, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\sql\compiler.py", line 1882, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: null value in column "combined_risk_method" of relation "monitoring_benchmarksettings" violates not-null constraint
+DETAIL:  Failing row contains (1, 30, 50, 1, 1.5, 2025-11-20 23:35:45.722191+00, 2025-11-20 23:35:45.722191+00, , null).
+
+ERROR 2025-11-21 07:35:47 log 16328 26060 Internal Server Error: /monitoring/benchmark-settings/
+Traceback (most recent call last):
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 946, in get_or_create
+    return self.get(**kwargs), False
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 633, in get
+    raise self.model.DoesNotExist(
+monitoring.models.BenchmarkSettings.DoesNotExist: BenchmarkSettings matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.NotNullViolation: null value in column "combined_risk_method" of relation "monitoring_benchmarksettings" violates not-null constraint
+DETAIL:  Failing row contains (1, 30, 50, 1, 1.5, 2025-11-20 23:35:47.778103+00, 2025-11-20 23:35:47.778103+00, , null).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\monitoring\views.py", line 824, in benchmark_settings_view
+    settings = BenchmarkSettings.get_settings()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\monitoring\models.py", line 78, in get_settings
+    settings, created = cls.objects.get_or_create(pk=1)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 953, in get_or_create
+    return self.create(**params), True
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 663, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\base.py", line 902, in save
+    self.save_base(
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\base.py", line 1008, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\base.py", line 1169, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\base.py", line 1210, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 1868, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\sql\compiler.py", line 1882, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: null value in column "combined_risk_method" of relation "monitoring_benchmarksettings" violates not-null constraint
+DETAIL:  Failing row contains (1, 30, 50, 1, 1.5, 2025-11-20 23:35:47.778103+00, 2025-11-20 23:35:47.778103+00, , null).
+
+ERROR 2025-11-21 07:35:48 log 16328 26060 Internal Server Error: /monitoring/benchmark-settings/
+Traceback (most recent call last):
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 946, in get_or_create
+    return self.get(**kwargs), False
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 633, in get
+    raise self.model.DoesNotExist(
+monitoring.models.BenchmarkSettings.DoesNotExist: BenchmarkSettings matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.NotNullViolation: null value in column "combined_risk_method" of relation "monitoring_benchmarksettings" violates not-null constraint
+DETAIL:  Failing row contains (1, 30, 50, 1, 1.5, 2025-11-20 23:35:48.827981+00, 2025-11-20 23:35:48.827981+00, , null).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\views\decorators\http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\monitoring\views.py", line 824, in benchmark_settings_view
+    settings = BenchmarkSettings.get_settings()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\monitoring\models.py", line 78, in get_settings
+    settings, created = cls.objects.get_or_create(pk=1)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 953, in get_or_create
+    return self.create(**params), True
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 663, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\base.py", line 902, in save
+    self.save_base(
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\base.py", line 1008, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\base.py", line 1169, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\base.py", line 1210, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\query.py", line 1868, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\models\sql\compiler.py", line 1882, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: null value in column "combined_risk_method" of relation "monitoring_benchmarksettings" violates not-null constraint
+DETAIL:  Failing row contains (1, 30, 50, 1, 1.5, 2025-11-20 23:35:48.827981+00, 2025-11-20 23:35:48.827981+00, , null).
+
+WARNING 2025-11-21 07:35:50 log 16328 26060 Bad Request: /maps/export-activities/
+WARNING 2025-11-21 07:35:52 log 16328 26060 Bad Request: /maps/export-activities/
+WARNING 2025-11-21 07:36:01 log 16328 26060 Forbidden (Permission denied): /maps/export-activities/
+Traceback (most recent call last):
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\views.py", line 561, in export_activities
+    raise PermissionDenied
+django.core.exceptions.PermissionDenied
+WARNING 2025-11-21 07:38:44 log 13584 17528 Bad Request: /maps/export-activities/
+WARNING 2025-11-21 07:38:46 log 13584 17528 Bad Request: /maps/export-activities/
+WARNING 2025-11-21 07:38:58 log 13584 17528 Forbidden (Permission denied): /maps/export-activities/
+Traceback (most recent call last):
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\views.py", line 561, in export_activities
+    raise PermissionDenied
+django.core.exceptions.PermissionDenied
+WARNING 2025-11-21 07:44:17 log 29424 6864 Bad Request: /maps/export-activities/
+WARNING 2025-11-21 07:44:27 log 29424 6864 Forbidden (Permission denied): /maps/export-activities/
+Traceback (most recent call last):
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\views.py", line 561, in export_activities
+    raise PermissionDenied
+django.core.exceptions.PermissionDenied
+WARNING 2025-11-21 07:46:52 log 23204 24444 Forbidden (Permission denied): /maps/export-activities/
+Traceback (most recent call last):
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\views.py", line 561, in export_activities
+    raise PermissionDenied
+django.core.exceptions.PermissionDenied
+WARNING 2025-11-21 07:47:34 log 8180 19436 Forbidden (Permission denied): /maps/all-activities/
+Traceback (most recent call last):
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\views.py", line 323, in all_activities
+    raise PermissionDenied
+django.core.exceptions.PermissionDenied
+WARNING 2025-11-21 07:48:34 log 8180 19436 Forbidden (Permission denied): /maps/export-activities/
+Traceback (most recent call last):
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\views.py", line 561, in export_activities
+    raise PermissionDenied
+django.core.exceptions.PermissionDenied
+WARNING 2025-11-21 07:49:58 log 8180 19436 Bad Request: /monitoring/api/trends/
+WARNING 2025-11-21 07:50:03 log 8180 19436 Not Found: /monitoring/flood-record/delete/99999/
+INFO 2025-11-21 07:50:04 views 8180 19436 Flood record deleted: 4 - Test Flood
+WARNING 2025-11-21 07:50:07 log 8180 19436 Not Found: /monitoring/flood-record/edit/99999/
+WARNING 2025-11-21 07:50:08 views 8180 19436 Form validation errors: <ul class="errorlist"><li>event<ul class="errorlist" id="id_event_error"><li>Select a valid choice. Updated Flood is not one of the available choices.</li></ul></li></ul>
+WARNING 2025-11-21 07:50:10 views 8180 19436 Form validation errors: <ul class="errorlist"><li>affected_barangays<ul class="errorlist" id="id_affected_barangays_error"><li>Please select at least one affected barangay.</li></ul></li><li>casualties_dead<ul class="errorlist" id="id_casualties_dead_error"><li>This field is required.</li></ul></li><li>casualties_injured<ul class="errorlist" id="id_casualties_injured_error"><li>This field is required.</li></ul></li><li>casualties_missing<ul class="errorlist" id="id_casualties_missing_error"><li>This field is required.</li></ul></li><li>affected_persons<ul class="errorlist" id="id_affected_persons_error"><li>This field is required.</li></ul></li><li>affected_families<ul class="errorlist" id="id_affected_families_error"><li>This field is required.</li></ul></li><li>houses_damaged_partially<ul class="errorlist" id="id_houses_damaged_partially_error"><li>This field is required.</li></ul></li><li>houses_damaged_totally<ul class="errorlist" id="id_houses_damaged_totally_error"><li>This field is required.</li></ul></li><li>damage_infrastructure_php<ul class="errorlist" id="id_damage_infrastructure_php_error"><li>This field is required.</li></ul></li><li>damage_agriculture_php<ul class="errorlist" id="id_damage_agriculture_php_error"><li>This field is required.</li></ul></li><li>damage_institutions_php<ul class="errorlist" id="id_damage_institutions_php_error"><li>This field is required.</li></ul></li><li>damage_private_commercial_php<ul class="errorlist" id="id_damage_private_commercial_php_error"><li>This field is required.</li></ul></li><li>damage_total_php<ul class="errorlist" id="id_damage_total_php_error"><li>This field is required.</li></ul></li></ul>
+INFO 2025-11-21 07:50:11 views 8180 19436 Flood record created: 9 - Flood
+INFO 2025-11-21 07:50:13 views 8180 19436 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-21 07:50:14 views 8180 19436 API returned - Rain: 0.0mm, Temp: 27.8°C, Humidity: 84%, Wind: 17.8km/h
+INFO 2025-11-21 07:50:14 views 8180 19436 Processed 7 days of weather forecast
+INFO 2025-11-21 07:50:14 views 8180 19436 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-21 07:50:15 views 8180 19436 API returned - Rain: 0.0mm, Temp: 27.8°C, Humidity: 84%, Wind: 17.8km/h
+INFO 2025-11-21 07:50:15 views 8180 19436 Processed 7 days of weather forecast
+INFO 2025-11-21 07:50:16 views 8180 19436 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-21 07:50:17 views 8180 19436 API returned - Rain: 0.0mm, Temp: 27.8°C, Humidity: 84%, Wind: 17.8km/h
+INFO 2025-11-21 07:50:17 views 8180 19436 Processed 7 days of weather forecast
+INFO 2025-11-21 07:50:18 views 8180 19436 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-21 07:50:19 views 8180 19436 API returned - Rain: 0.0mm, Temp: 27.8°C, Humidity: 84%, Wind: 17.8km/h
+INFO 2025-11-21 07:50:19 views 8180 19436 Processed 7 days of weather forecast
+INFO 2025-11-21 07:50:20 views 8180 19436 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-21 07:50:21 views 8180 19436 API returned - Rain: 0.0mm, Temp: 27.8°C, Humidity: 84%, Wind: 17.8km/h
+INFO 2025-11-21 07:50:21 views 8180 19436 Processed 7 days of weather forecast
+INFO 2025-11-21 07:50:22 views 8180 19436 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-21 07:50:23 views 8180 19436 API returned - Rain: 0.0mm, Temp: 27.8°C, Humidity: 84%, Wind: 17.8km/h
+INFO 2025-11-21 07:50:23 views 8180 19436 Processed 7 days of weather forecast
+WARNING 2025-11-21 07:55:43 log 21248 23580 Forbidden (Permission denied): /maps/all-activities/
+Traceback (most recent call last):
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\views.py", line 323, in all_activities
+    raise PermissionDenied
+django.core.exceptions.PermissionDenied
+WARNING 2025-11-21 07:56:23 log 21248 23580 Forbidden (Permission denied): /maps/export-activities/
+Traceback (most recent call last):
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\views.py", line 561, in export_activities
+    raise PermissionDenied
+django.core.exceptions.PermissionDenied
+WARNING 2025-11-21 07:58:41 log 14544 22908 Forbidden (Permission denied): /maps/all-activities/
+Traceback (most recent call last):
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\views.py", line 323, in all_activities
+    raise PermissionDenied
+django.core.exceptions.PermissionDenied
+WARNING 2025-11-21 07:59:31 log 14544 22908 Forbidden (Permission denied): /maps/export-activities/
+Traceback (most recent call last):
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\views.py", line 561, in export_activities
+    raise PermissionDenied
+django.core.exceptions.PermissionDenied
+WARNING 2025-11-21 08:01:00 log 23348 23248 Forbidden (Permission denied): /maps/all-activities/
+Traceback (most recent call last):
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\views.py", line 323, in all_activities
+    raise PermissionDenied
+django.core.exceptions.PermissionDenied
+WARNING 2025-11-21 08:01:37 log 23348 23248 Forbidden (Permission denied): /maps/export-activities/
+Traceback (most recent call last):
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\views.py", line 561, in export_activities
+    raise PermissionDenied
+django.core.exceptions.PermissionDenied
+WARNING 2025-11-21 08:02:53 log 10516 10752 Forbidden (Permission denied): /maps/all-activities/
+Traceback (most recent call last):
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\views.py", line 323, in all_activities
+    raise PermissionDenied
+django.core.exceptions.PermissionDenied
+WARNING 2025-11-21 08:03:32 log 10516 10752 Forbidden (Permission denied): /maps/export-activities/
+Traceback (most recent call last):
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aldri\Flood-Monitoring-System-with-GIS\maps\views.py", line 561, in export_activities
+    raise PermissionDenied
+django.core.exceptions.PermissionDenied
+WARNING 2025-11-21 08:14:02 log 16264 29308 Bad Request: /monitoring/api/trends/
+WARNING 2025-11-21 08:14:04 log 16264 29308 Not Found: /monitoring/flood-record/delete/99999/
+INFO 2025-11-21 08:14:05 views 16264 29308 Flood record deleted: 4 - Test Flood
+WARNING 2025-11-21 08:14:06 log 16264 29308 Not Found: /monitoring/flood-record/edit/99999/
+WARNING 2025-11-21 08:14:07 views 16264 29308 Form validation errors: <ul class="errorlist"><li>event<ul class="errorlist" id="id_event_error"><li>Select a valid choice. Updated Flood is not one of the available choices.</li></ul></li></ul>
+WARNING 2025-11-21 08:14:09 views 16264 29308 Form validation errors: <ul class="errorlist"><li>affected_barangays<ul class="errorlist" id="id_affected_barangays_error"><li>Please select at least one affected barangay.</li></ul></li><li>casualties_dead<ul class="errorlist" id="id_casualties_dead_error"><li>This field is required.</li></ul></li><li>casualties_injured<ul class="errorlist" id="id_casualties_injured_error"><li>This field is required.</li></ul></li><li>casualties_missing<ul class="errorlist" id="id_casualties_missing_error"><li>This field is required.</li></ul></li><li>affected_persons<ul class="errorlist" id="id_affected_persons_error"><li>This field is required.</li></ul></li><li>affected_families<ul class="errorlist" id="id_affected_families_error"><li>This field is required.</li></ul></li><li>houses_damaged_partially<ul class="errorlist" id="id_houses_damaged_partially_error"><li>This field is required.</li></ul></li><li>houses_damaged_totally<ul class="errorlist" id="id_houses_damaged_totally_error"><li>This field is required.</li></ul></li><li>damage_infrastructure_php<ul class="errorlist" id="id_damage_infrastructure_php_error"><li>This field is required.</li></ul></li><li>damage_agriculture_php<ul class="errorlist" id="id_damage_agriculture_php_error"><li>This field is required.</li></ul></li><li>damage_institutions_php<ul class="errorlist" id="id_damage_institutions_php_error"><li>This field is required.</li></ul></li><li>damage_private_commercial_php<ul class="errorlist" id="id_damage_private_commercial_php_error"><li>This field is required.</li></ul></li><li>damage_total_php<ul class="errorlist" id="id_damage_total_php_error"><li>This field is required.</li></ul></li></ul>
+INFO 2025-11-21 08:14:10 views 16264 29308 Flood record created: 9 - Flood
+INFO 2025-11-21 08:14:11 views 16264 29308 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-21 08:14:12 views 16264 29308 API returned - Rain: 0.0mm, Temp: 28.0°C, Humidity: 82%, Wind: 18.8km/h
+INFO 2025-11-21 08:14:12 views 16264 29308 Processed 7 days of weather forecast
+INFO 2025-11-21 08:14:13 views 16264 29308 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-21 08:14:14 views 16264 29308 API returned - Rain: 0.0mm, Temp: 28.0°C, Humidity: 82%, Wind: 18.8km/h
+INFO 2025-11-21 08:14:14 views 16264 29308 Processed 7 days of weather forecast
+INFO 2025-11-21 08:14:14 views 16264 29308 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-21 08:14:15 views 16264 29308 API returned - Rain: 0.0mm, Temp: 28.0°C, Humidity: 82%, Wind: 18.8km/h
+INFO 2025-11-21 08:14:15 views 16264 29308 Processed 7 days of weather forecast
+INFO 2025-11-21 08:14:17 views 16264 29308 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-21 08:14:18 views 16264 29308 API returned - Rain: 0.0mm, Temp: 28.0°C, Humidity: 82%, Wind: 18.8km/h
+INFO 2025-11-21 08:14:18 views 16264 29308 Processed 7 days of weather forecast
+INFO 2025-11-21 08:14:18 views 16264 29308 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-21 08:14:19 views 16264 29308 API returned - Rain: 0.0mm, Temp: 28.0°C, Humidity: 82%, Wind: 18.8km/h
+INFO 2025-11-21 08:14:19 views 16264 29308 Processed 7 days of weather forecast
+INFO 2025-11-21 08:14:20 views 16264 29308 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-21 08:14:20 views 16264 29308 API returned - Rain: 0.0mm, Temp: 28.0°C, Humidity: 82%, Wind: 18.8km/h
+INFO 2025-11-21 08:14:21 views 16264 29308 Processed 7 days of weather forecast
+WARNING 2025-11-21 08:14:49 log 22096 26744 Bad Request: /monitoring/api/trends/
+WARNING 2025-11-21 08:14:51 log 22096 26744 Not Found: /monitoring/flood-record/delete/99999/
+INFO 2025-11-21 08:14:52 views 22096 26744 Flood record deleted: 4 - Test Flood
+WARNING 2025-11-21 08:14:54 log 22096 26744 Not Found: /monitoring/flood-record/edit/99999/
+WARNING 2025-11-21 08:14:54 views 22096 26744 Form validation errors: <ul class="errorlist"><li>event<ul class="errorlist" id="id_event_error"><li>Select a valid choice. Updated Flood is not one of the available choices.</li></ul></li></ul>
+WARNING 2025-11-21 08:14:56 views 22096 26744 Form validation errors: <ul class="errorlist"><li>affected_barangays<ul class="errorlist" id="id_affected_barangays_error"><li>Please select at least one affected barangay.</li></ul></li><li>casualties_dead<ul class="errorlist" id="id_casualties_dead_error"><li>This field is required.</li></ul></li><li>casualties_injured<ul class="errorlist" id="id_casualties_injured_error"><li>This field is required.</li></ul></li><li>casualties_missing<ul class="errorlist" id="id_casualties_missing_error"><li>This field is required.</li></ul></li><li>affected_persons<ul class="errorlist" id="id_affected_persons_error"><li>This field is required.</li></ul></li><li>affected_families<ul class="errorlist" id="id_affected_families_error"><li>This field is required.</li></ul></li><li>houses_damaged_partially<ul class="errorlist" id="id_houses_damaged_partially_error"><li>This field is required.</li></ul></li><li>houses_damaged_totally<ul class="errorlist" id="id_houses_damaged_totally_error"><li>This field is required.</li></ul></li><li>damage_infrastructure_php<ul class="errorlist" id="id_damage_infrastructure_php_error"><li>This field is required.</li></ul></li><li>damage_agriculture_php<ul class="errorlist" id="id_damage_agriculture_php_error"><li>This field is required.</li></ul></li><li>damage_institutions_php<ul class="errorlist" id="id_damage_institutions_php_error"><li>This field is required.</li></ul></li><li>damage_private_commercial_php<ul class="errorlist" id="id_damage_private_commercial_php_error"><li>This field is required.</li></ul></li><li>damage_total_php<ul class="errorlist" id="id_damage_total_php_error"><li>This field is required.</li></ul></li></ul>
+INFO 2025-11-21 08:14:57 views 22096 26744 Flood record created: 9 - Flood
+INFO 2025-11-21 08:14:59 views 22096 26744 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-21 08:15:00 views 22096 26744 API returned - Rain: 0.0mm, Temp: 28.0°C, Humidity: 82%, Wind: 18.8km/h
+INFO 2025-11-21 08:15:00 views 22096 26744 Processed 7 days of weather forecast
+INFO 2025-11-21 08:15:00 views 22096 26744 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-21 08:15:01 views 22096 26744 API returned - Rain: 0.0mm, Temp: 28.4°C, Humidity: 80%, Wind: 19.4km/h
+INFO 2025-11-21 08:15:01 views 22096 26744 Processed 7 days of weather forecast
+INFO 2025-11-21 08:15:02 views 22096 26744 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-21 08:15:03 views 22096 26744 API returned - Rain: 0.0mm, Temp: 28.4°C, Humidity: 80%, Wind: 19.4km/h
+INFO 2025-11-21 08:15:03 views 22096 26744 Processed 7 days of weather forecast
+INFO 2025-11-21 08:15:04 views 22096 26744 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-21 08:15:05 views 22096 26744 API returned - Rain: 0.0mm, Temp: 28.4°C, Humidity: 80%, Wind: 19.4km/h
+INFO 2025-11-21 08:15:05 views 22096 26744 Processed 7 days of weather forecast
+INFO 2025-11-21 08:15:06 views 22096 26744 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-21 08:15:06 views 22096 26744 API returned - Rain: 0.0mm, Temp: 28.4°C, Humidity: 80%, Wind: 19.4km/h
+INFO 2025-11-21 08:15:06 views 22096 26744 Processed 7 days of weather forecast
+INFO 2025-11-21 08:15:07 views 22096 26744 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-21 08:15:08 views 22096 26744 API returned - Rain: 0.0mm, Temp: 28.4°C, Humidity: 80%, Wind: 19.4km/h
+INFO 2025-11-21 08:15:08 views 22096 26744 Processed 7 days of weather forecast
+WARNING 2025-11-21 08:17:27 log 6052 1836 Bad Request: /monitoring/api/trends/
+WARNING 2025-11-21 08:17:30 log 6052 1836 Not Found: /monitoring/flood-record/delete/99999/
+INFO 2025-11-21 08:17:31 views 6052 1836 Flood record deleted: 4 - Test Flood
+WARNING 2025-11-21 08:17:32 log 6052 1836 Not Found: /monitoring/flood-record/edit/99999/
+WARNING 2025-11-21 08:17:33 views 6052 1836 Form validation errors: <ul class="errorlist"><li>event<ul class="errorlist" id="id_event_error"><li>Select a valid choice. Updated Flood is not one of the available choices.</li></ul></li></ul>
+WARNING 2025-11-21 08:17:35 views 6052 1836 Form validation errors: <ul class="errorlist"><li>affected_barangays<ul class="errorlist" id="id_affected_barangays_error"><li>Please select at least one affected barangay.</li></ul></li><li>casualties_dead<ul class="errorlist" id="id_casualties_dead_error"><li>This field is required.</li></ul></li><li>casualties_injured<ul class="errorlist" id="id_casualties_injured_error"><li>This field is required.</li></ul></li><li>casualties_missing<ul class="errorlist" id="id_casualties_missing_error"><li>This field is required.</li></ul></li><li>affected_persons<ul class="errorlist" id="id_affected_persons_error"><li>This field is required.</li></ul></li><li>affected_families<ul class="errorlist" id="id_affected_families_error"><li>This field is required.</li></ul></li><li>houses_damaged_partially<ul class="errorlist" id="id_houses_damaged_partially_error"><li>This field is required.</li></ul></li><li>houses_damaged_totally<ul class="errorlist" id="id_houses_damaged_totally_error"><li>This field is required.</li></ul></li><li>damage_infrastructure_php<ul class="errorlist" id="id_damage_infrastructure_php_error"><li>This field is required.</li></ul></li><li>damage_agriculture_php<ul class="errorlist" id="id_damage_agriculture_php_error"><li>This field is required.</li></ul></li><li>damage_institutions_php<ul class="errorlist" id="id_damage_institutions_php_error"><li>This field is required.</li></ul></li><li>damage_private_commercial_php<ul class="errorlist" id="id_damage_private_commercial_php_error"><li>This field is required.</li></ul></li><li>damage_total_php<ul class="errorlist" id="id_damage_total_php_error"><li>This field is required.</li></ul></li></ul>
+INFO 2025-11-21 08:17:36 views 6052 1836 Flood record created: 9 - Flood
+INFO 2025-11-21 08:17:37 views 6052 1836 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-21 08:17:38 views 6052 1836 API returned - Rain: 0.0mm, Temp: 28.4°C, Humidity: 80%, Wind: 19.4km/h
+INFO 2025-11-21 08:17:38 views 6052 1836 Processed 7 days of weather forecast
+INFO 2025-11-21 08:17:39 views 6052 1836 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-21 08:17:40 views 6052 1836 API returned - Rain: 0.0mm, Temp: 28.4°C, Humidity: 80%, Wind: 19.4km/h
+INFO 2025-11-21 08:17:40 views 6052 1836 Processed 7 days of weather forecast
+INFO 2025-11-21 08:17:40 views 6052 1836 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-21 08:17:41 views 6052 1836 API returned - Rain: 0.0mm, Temp: 28.4°C, Humidity: 80%, Wind: 19.4km/h
+INFO 2025-11-21 08:17:41 views 6052 1836 Processed 7 days of weather forecast
+INFO 2025-11-21 08:17:43 views 6052 1836 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-21 08:17:43 views 6052 1836 API returned - Rain: 0.0mm, Temp: 28.4°C, Humidity: 80%, Wind: 19.4km/h
+INFO 2025-11-21 08:17:43 views 6052 1836 Processed 7 days of weather forecast
+INFO 2025-11-21 08:17:44 views 6052 1836 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-21 08:17:45 views 6052 1836 API returned - Rain: 0.0mm, Temp: 28.4°C, Humidity: 80%, Wind: 19.4km/h
+INFO 2025-11-21 08:17:45 views 6052 1836 Processed 7 days of weather forecast
+INFO 2025-11-21 08:17:46 views 6052 1836 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-21 08:17:46 views 6052 1836 API returned - Rain: 0.0mm, Temp: 28.4°C, Humidity: 80%, Wind: 19.4km/h
+INFO 2025-11-21 08:17:46 views 6052 1836 Processed 7 days of weather forecast
+WARNING 2025-11-21 08:19:04 log 22936 8380 Bad Request: /monitoring/api/trends/
+WARNING 2025-11-21 08:19:06 log 22936 8380 Not Found: /monitoring/flood-record/delete/99999/
+INFO 2025-11-21 08:19:07 views 22936 8380 Flood record deleted: 4 - Test Flood
+WARNING 2025-11-21 08:19:08 log 22936 8380 Not Found: /monitoring/flood-record/edit/99999/
+WARNING 2025-11-21 08:19:09 views 22936 8380 Form validation errors: <ul class="errorlist"><li>event<ul class="errorlist" id="id_event_error"><li>Select a valid choice. Updated Flood is not one of the available choices.</li></ul></li></ul>
+WARNING 2025-11-21 08:19:11 views 22936 8380 Form validation errors: <ul class="errorlist"><li>affected_barangays<ul class="errorlist" id="id_affected_barangays_error"><li>Please select at least one affected barangay.</li></ul></li><li>casualties_dead<ul class="errorlist" id="id_casualties_dead_error"><li>This field is required.</li></ul></li><li>casualties_injured<ul class="errorlist" id="id_casualties_injured_error"><li>This field is required.</li></ul></li><li>casualties_missing<ul class="errorlist" id="id_casualties_missing_error"><li>This field is required.</li></ul></li><li>affected_persons<ul class="errorlist" id="id_affected_persons_error"><li>This field is required.</li></ul></li><li>affected_families<ul class="errorlist" id="id_affected_families_error"><li>This field is required.</li></ul></li><li>houses_damaged_partially<ul class="errorlist" id="id_houses_damaged_partially_error"><li>This field is required.</li></ul></li><li>houses_damaged_totally<ul class="errorlist" id="id_houses_damaged_totally_error"><li>This field is required.</li></ul></li><li>damage_infrastructure_php<ul class="errorlist" id="id_damage_infrastructure_php_error"><li>This field is required.</li></ul></li><li>damage_agriculture_php<ul class="errorlist" id="id_damage_agriculture_php_error"><li>This field is required.</li></ul></li><li>damage_institutions_php<ul class="errorlist" id="id_damage_institutions_php_error"><li>This field is required.</li></ul></li><li>damage_private_commercial_php<ul class="errorlist" id="id_damage_private_commercial_php_error"><li>This field is required.</li></ul></li><li>damage_total_php<ul class="errorlist" id="id_damage_total_php_error"><li>This field is required.</li></ul></li></ul>
+INFO 2025-11-21 08:19:12 views 22936 8380 Flood record created: 9 - Flood
+INFO 2025-11-21 08:19:13 views 22936 8380 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-21 08:19:14 views 22936 8380 API returned - Rain: 0.0mm, Temp: 28.4°C, Humidity: 80%, Wind: 19.4km/h
+INFO 2025-11-21 08:19:14 views 22936 8380 Processed 7 days of weather forecast
+INFO 2025-11-21 08:19:15 views 22936 8380 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-21 08:19:16 views 22936 8380 API returned - Rain: 0.0mm, Temp: 28.4°C, Humidity: 80%, Wind: 19.4km/h
+INFO 2025-11-21 08:19:16 views 22936 8380 Processed 7 days of weather forecast
+INFO 2025-11-21 08:19:16 views 22936 8380 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-21 08:19:17 views 22936 8380 API returned - Rain: 0.0mm, Temp: 28.4°C, Humidity: 80%, Wind: 19.4km/h
+INFO 2025-11-21 08:19:17 views 22936 8380 Processed 7 days of weather forecast
+INFO 2025-11-21 08:19:18 views 22936 8380 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-21 08:19:19 views 22936 8380 API returned - Rain: 0.0mm, Temp: 28.4°C, Humidity: 80%, Wind: 19.4km/h
+INFO 2025-11-21 08:19:19 views 22936 8380 Processed 7 days of weather forecast
+INFO 2025-11-21 08:19:20 views 22936 8380 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-21 08:19:21 views 22936 8380 API returned - Rain: 0.0mm, Temp: 28.4°C, Humidity: 80%, Wind: 19.4km/h
+INFO 2025-11-21 08:19:21 views 22936 8380 Processed 7 days of weather forecast
+INFO 2025-11-21 08:19:21 views 22936 8380 Requesting Open-Meteo API for Silay City: https://api.open-meteo.com/v1/forecast
+INFO 2025-11-21 08:19:22 views 22936 8380 API returned - Rain: 0.0mm, Temp: 28.4°C, Humidity: 80%, Wind: 19.4km/h
+INFO 2025-11-21 08:19:22 views 22936 8380 Processed 7 days of weather forecast

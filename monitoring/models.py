@@ -60,6 +60,20 @@ class BenchmarkSettings(models.Model):
         help_text="Tide level threshold for High Risk (m) - High alert when tide reaches this level"
     )
     
+    # Combined risk calculation method
+    RISK_METHOD_CHOICES = [
+        ('max', 'Maximum (Highest of both)'),
+        ('rainfall_priority', 'Rainfall Priority (80% rainfall, 20% tide)'),
+        ('tide_priority', 'Tide Priority (20% rainfall, 80% tide)'),
+        ('equal', 'Equal Weight (50% rainfall, 50% tide)'),
+    ]
+    combined_risk_method = models.CharField(
+        max_length=20,
+        choices=RISK_METHOD_CHOICES,
+        default='max',
+        help_text='Method for calculating combined flood risk from rainfall and tide'
+    )
+    
     # Metadata
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

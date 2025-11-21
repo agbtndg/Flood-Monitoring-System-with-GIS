@@ -77,15 +77,21 @@
 
     .filters {
         display: flex;
-        gap: 12px;
+        gap: 20px;
         flex-wrap: wrap;
+        padding: 20px;
+        background: white;
+        border-radius: 12px;
+        border: 1px solid #e2e8f0;
+        margin-bottom: 20px;
     }
 
     .filter-group {
         display: flex;
         flex-direction: column;
-        gap: 6px;
-        min-width: 200px;
+        gap: 8px;
+        min-width: 220px;
+        flex: 1;
     }
 
     .filter-group label {
@@ -98,12 +104,13 @@
 
     .filter-group select,
     .filter-group input {
-        padding: 10px 12px;
+        padding: 12px 16px;
         border: 2px solid var(--border-gray);
-        border-radius: 8px;
+        border-radius: 10px;
         font-size: 14px;
         background: white;
-        transition: border-color 0.2s;
+        transition: all 0.2s;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     }
 
     .filter-group select:focus,
@@ -113,16 +120,17 @@
     }
 
     .filter-btn {
-        padding: 10px 20px;
+        padding: 12px 24px;
         background: linear-gradient(135deg, var(--secondary-blue), var(--primary-blue));
         color: white;
         border: none;
-        border-radius: 8px;
+        border-radius: 10px;
         font-size: 14px;
         font-weight: 600;
         cursor: pointer;
         transition: all 0.2s;
         display: flex;
+        box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);
         align-items: center;
         gap: 6px;
     }
@@ -503,6 +511,159 @@
         background: #fee2e2;
     }
 
+    /* Quick Filter Buttons */
+    .quick-filters {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-bottom: 24px;
+        align-items: center;
+        padding: 20px 28px;
+        background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+        border-radius: 12px;
+        border: 1px solid #e2e8f0;
+    }
+
+    .quick-filter-btn {
+        padding: 12px 24px;
+        background: white;
+        color: var(--text-dark);
+        border: 2px solid var(--border-gray);
+        border-radius: 10px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+        min-width: 140px;
+        justify-content: center;
+    }
+
+    .quick-filter-btn:hover {
+        background: var(--light-gray);
+        border-color: var(--secondary-blue);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
+    }
+
+    .quick-filter-btn.active {
+        background: linear-gradient(135deg, var(--secondary-blue), var(--primary-blue));
+        color: white;
+        border-color: var(--primary-blue);
+        box-shadow: 0 4px 16px rgba(37, 99, 235, 0.3);
+    }
+
+    .search-box {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+        padding: 20px;
+        background: white;
+        border-radius: 12px;
+        border: 1px solid #e2e8f0;
+    }
+
+    .search-input {
+        flex: 1;
+        min-width: 300px;
+        padding: 12px 16px;
+        border: 2px solid var(--border-gray);
+        border-radius: 10px;
+        font-size: 14px;
+        background: white;
+        transition: all 0.2s;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+
+    .search-input:focus {
+        border-color: var(--secondary-blue);
+        outline: none;
+    }
+
+    .filter-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 12px;
+        background: #dbeafe;
+        color: #1e40af;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 600;
+        border: 1px solid #93c5fd;
+    }
+
+    .filter-badge i {
+        cursor: pointer;
+    }
+
+    .filter-badge i:hover {
+        color: #991b1b;
+    }
+
+    .filters-summary {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-bottom: 12px;
+        align-items: center;
+    }
+
+    .showing-label {
+        font-size: 13px;
+        color: var(--text-muted);
+        font-weight: 500;
+    }
+
+    .per-page-selector {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 13px;
+        color: var(--text-muted);
+    }
+
+    .per-page-selector select {
+        padding: 6px 10px;
+        border: 2px solid var(--border-gray);
+        border-radius: 6px;
+        font-size: 13px;
+        background: white;
+        cursor: pointer;
+        transition: border-color 0.2s;
+    }
+
+    .per-page-selector select:focus {
+        border-color: var(--secondary-blue);
+        outline: none;
+    }
+
+    .view-all-btn {
+        padding: 8px 14px;
+        background: white;
+        color: var(--secondary-blue);
+        border: 2px solid var(--secondary-blue);
+        border-radius: 8px;
+        font-size: 13px;
+        font-weight: 600;
+        cursor: pointer;
+        text-decoration: none;
+        transition: all 0.2s;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .view-all-btn:hover {
+        background: var(--secondary-blue);
+        color: white;
+        transform: translateY(-1px);
+    }
+
     /* Override base template constraints for full-width content like other pages */
     .main-content {
         padding: 0 !important;
@@ -608,11 +769,43 @@
             </div>
         </div>
 
-        <form method="get" class="filters">
+        <!-- Quick Date Range Filters -->
+        <div class="quick-filters">
+            <span style="font-size: 13px; font-weight: 700; color: var(--primary-blue); display: flex; align-items: center; letter-spacing: 0.5px;">
+                <i class="fas fa-filter" style="margin-right: 8px;"></i> QUICK FILTERS:
+            </span>
+            <button type="button" class="quick-filter-btn {% if date_range == '7' %}active{% endif %}" onclick="applyQuickFilter('7')">
+                <i class="fas fa-calendar-day"></i> Last 7 Days
+            </button>
+            <button type="button" class="quick-filter-btn {% if date_range == '30' or not date_range and not filters_applied %}active{% endif %}" onclick="applyQuickFilter('30')">
+                <i class="fas fa-calendar-week"></i> Last 30 Days
+            </button>
+            <button type="button" class="quick-filter-btn {% if date_range == '90' %}active{% endif %}" onclick="applyQuickFilter('90')">
+                <i class="fas fa-calendar-alt"></i> Last 90 Days
+            </button>
+            <button type="button" class="quick-filter-btn {% if date_range == 'all' or not date_range and filters_applied %}active{% endif %}" onclick="applyQuickFilter('all')">
+                <i class="fas fa-infinity"></i> All Time
+            </button>
+        </div>
+
+        <!-- Search Box -->
+        <div class="search-box">
+            <input type="text" id="search_input" class="search-input" placeholder="🔍 Search by barangay, staff name, establishment, event type..." value="{{ search_query }}">
+            <button type="button" class="filter-btn" onclick="applySearch()">
+                <i class="fas fa-search"></i> Search
+            </button>
+        </div>
+
+        <!-- Advanced Filters Form -->
+        <form method="get" class="filters" id="filterForm">
             <input type="hidden" name="tab" id="active_tab" value="{{ active_tab|default:'assessments' }}">
+            <input type="hidden" name="date_range" id="date_range_input" value="{{ date_range }}">
+            <input type="hidden" name="search" id="search_hidden" value="{{ search_query }}">
+            <input type="hidden" name="per_page" id="per_page_hidden" value="{{ per_page }}">
+            
             <div class="filter-group">
                 <label>Filter by Staff</label>
-                <select name="user">
+                <select name="user" onchange="this.form.submit()">
                     <option value="">All Staff</option>
                     {% for staff in users %}
                     <option value="{{ staff.id }}" {% if filter_user == staff.id|stringformat:"s" %}selected{% endif %}>
@@ -622,45 +815,119 @@
                 </select>
             </div>
             <div class="filter-group">
-                <label>Filter by Date</label>
-                <input type="date" name="date" value="{{ filter_date }}">
+                <label>Specific Date</label>
+                <input type="date" name="date" value="{{ filter_date }}" onchange="this.form.submit()">
+            </div>
+            <div class="filter-group">
+                <label>Date From</label>
+                <input type="date" name="date_from" value="{{ date_from }}" onchange="this.form.submit()">
+            </div>
+            <div class="filter-group">
+                <label>Date To</label>
+                <input type="date" name="date_to" value="{{ date_to }}" onchange="this.form.submit()">
             </div>
             <div class="filter-group">
                 <label>Sort Order</label>
-                <select name="sort">
+                <select name="sort" onchange="this.form.submit()">
                     <option value="recent" {% if sort_order == 'recent' or not sort_order %}selected{% endif %}>Recent First</option>
                     <option value="oldest" {% if sort_order == 'oldest' %}selected{% endif %}>Oldest First</option>
                 </select>
             </div>
-            <button type="submit" class="filter-btn">
-                <i class="fas fa-filter"></i> Apply Filters
-            </button>
-            <button type="button" class="clear-btn" onclick="clearFilters()">
-                <i class="fas fa-times"></i> Clear
+            <button type="button" class="clear-btn" onclick="clearAllFilters()">
+                <i class="fas fa-times"></i> Clear All
             </button>
         </form>
+
+        <!-- Active Filters Summary -->
+        {% if filters_applied or date_range %}
+        <div class="filters-summary">
+            <span class="showing-label">
+                <i class="fas fa-filter"></i> Active Filters:
+            </span>
+            {% if date_range and date_range != 'all' %}
+                <span class="filter-badge">
+                    {% if date_range == '7' %}Last 7 Days{% elif date_range == '30' %}Last 30 Days{% elif date_range == '90' %}Last 90 Days{% endif %}
+                </span>
+            {% endif %}
+            {% if filter_user %}
+                <span class="filter-badge">
+                    Staff: {% for staff in users %}{% if staff.id|stringformat:"s" == filter_user %}{{ staff.get_full_name }}{% endif %}{% endfor %}
+                    <i class="fas fa-times" onclick="removeFilter('user')"></i>
+                </span>
+            {% endif %}
+            {% if filter_date %}
+                <span class="filter-badge">
+                    Date: {{ filter_date }}
+                    <i class="fas fa-times" onclick="removeFilter('date')"></i>
+                </span>
+            {% endif %}
+            {% if date_from %}
+                <span class="filter-badge">
+                    From: {{ date_from }}
+                    <i class="fas fa-times" onclick="removeFilter('date_from')"></i>
+                </span>
+            {% endif %}
+            {% if date_to %}
+                <span class="filter-badge">
+                    To: {{ date_to }}
+                    <i class="fas fa-times" onclick="removeFilter('date_to')"></i>
+                </span>
+            {% endif %}
+            {% if search_query %}
+                <span class="filter-badge">
+                    Search: "{{ search_query }}"
+                    <i class="fas fa-times" onclick="removeFilter('search')"></i>
+                </span>
+            {% endif %}
+        </div>
+        {% endif %}
     </div>
 
     <div class="stats-grid">
         <div class="stat-card">
             <h3><i class="fas fa-map-marked-alt"></i> Total Assessments</h3>
             <div class="value">{{ total_assessments }}</div>
+            {% if filters_applied and total_assessments != unfiltered_assessments %}
+            <p style="font-size: 12px; color: var(--text-muted); margin-top: 8px;">
+                of {{ unfiltered_assessments }} total
+            </p>
+            {% endif %}
         </div>
         <div class="stat-card">
             <h3><i class="fas fa-file-alt"></i> Reports Generated</h3>
             <div class="value">{{ total_reports }}</div>
+            {% if filters_applied and total_reports != unfiltered_reports %}
+            <p style="font-size: 12px; color: var(--text-muted); margin-top: 8px;">
+                of {{ unfiltered_reports }} total
+            </p>
+            {% endif %}
         </div>
         <div class="stat-card">
             <h3><i class="fas fa-certificate"></i> Certificates Issued</h3>
             <div class="value">{{ total_certificates }}</div>
+            {% if filters_applied and total_certificates != unfiltered_certificates %}
+            <p style="font-size: 12px; color: var(--text-muted); margin-top: 8px;">
+                of {{ unfiltered_certificates }} total
+            </p>
+            {% endif %}
         </div>
         <div class="stat-card">
             <h3><i class="fas fa-water"></i> Flood Records</h3>
             <div class="value">{{ total_flood_activities|default:0 }}</div>
+            {% if filters_applied and total_flood_activities != unfiltered_flood %}
+            <p style="font-size: 12px; color: var(--text-muted); margin-top: 8px;">
+                of {{ unfiltered_flood }} total
+            </p>
+            {% endif %}
         </div>
         <div class="stat-card">
             <h3><i class="fas fa-history"></i> User Activities</h3>
             <div class="value">{{ total_user_logs }}</div>
+            {% if filters_applied and total_user_logs != unfiltered_logs %}
+            <p style="font-size: 12px; color: var(--text-muted); margin-top: 8px;">
+                of {{ unfiltered_logs }} total
+            </p>
+            {% endif %}
         </div>
     </div>
 
@@ -683,13 +950,25 @@
     </div>
 
     <div id="assessments" class="content-section {% if active_tab == 'assessments' or not active_tab %}active{% endif %}">
-        <div class="export-buttons">
-            <a href="{% url 'export_activities' %}?type=csv&activity=assessments{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}&sort={{ sort_order }}" class="export-btn csv">
-                <i class="fas fa-file-csv"></i> Export CSV
-            </a>
-            <a href="{% url 'export_activities' %}?type=pdf&activity=assessments{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}&sort={{ sort_order }}" class="export-btn pdf">
-                <i class="fas fa-file-pdf"></i> Export PDF
-            </a>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 12px;">
+            <div class="export-buttons">
+                <a href="{% url 'export_activities' %}?type=csv&activity=assessments{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}{% if date_from %}&date_from={{ date_from }}{% endif %}{% if date_to %}&date_to={{ date_to }}{% endif %}{% if date_range %}&date_range={{ date_range }}{% endif %}{% if search_query %}&search={{ search_query }}{% endif %}&sort={{ sort_order }}" class="export-btn csv">
+                    <i class="fas fa-file-csv"></i> Export CSV
+                </a>
+                <a href="{% url 'export_activities' %}?type=pdf&activity=assessments{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}{% if date_from %}&date_from={{ date_from }}{% endif %}{% if date_to %}&date_to={{ date_to }}{% endif %}{% if date_range %}&date_range={{ date_range }}{% endif %}{% if search_query %}&search={{ search_query }}{% endif %}&sort={{ sort_order }}" class="export-btn pdf">
+                    <i class="fas fa-file-pdf"></i> Export PDF
+                </a>
+            </div>
+            <div class="per-page-selector">
+                <label for="per_page_select">Show:</label>
+                <select id="per_page_select" onchange="changePerPage(this.value)">
+                    <option value="10" {% if per_page == '10' %}selected{% endif %}>10</option>
+                    <option value="25" {% if per_page == '25' or not per_page %}selected{% endif %}>25</option>
+                    <option value="50" {% if per_page == '50' %}selected{% endif %}>50</option>
+                    <option value="100" {% if per_page == '100' %}selected{% endif %}>100</option>
+                </select>
+                <span>per page</span>
+            </div>
         </div>
         {% if assessments %}
             {% for assessment in assessments %}
@@ -740,23 +1019,23 @@
             {% if assessments.has_other_pages %}
                 <div class="pagination">
                     {% if assessments.has_previous %}
-                        <a href="?tab=assessments&assessments_page=1{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}&sort={{ sort_order }}">First</a>
-                        <a href="?tab=assessments&assessments_page={{ assessments.previous_page_number }}{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}&sort={{ sort_order }}">Previous</a>
+                        <a href="?tab=assessments&assessments_page=1{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}{% if date_from %}&date_from={{ date_from }}{% endif %}{% if date_to %}&date_to={{ date_to }}{% endif %}{% if date_range %}&date_range={{ date_range }}{% endif %}{% if search_query %}&search={{ search_query }}{% endif %}&sort={{ sort_order }}&per_page={{ per_page }}">First</a>
+                        <a href="?tab=assessments&assessments_page={{ assessments.previous_page_number }}{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}{% if date_from %}&date_from={{ date_from }}{% endif %}{% if date_to %}&date_to={{ date_to }}{% endif %}{% if date_range %}&date_range={{ date_range }}{% endif %}{% if search_query %}&search={{ search_query }}{% endif %}&sort={{ sort_order }}&per_page={{ per_page }}">Previous</a>
                     {% endif %}
                     {% for num in assessments.paginator.page_range %}
                         {% if assessments.number == num %}
                             <span class="page-numbers current">{{ num }}</span>
                         {% elif num > assessments.number|add:'-3' and num < assessments.number|add:'3' %}
-                            <a href="?tab=assessments&assessments_page={{ num }}{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}&sort={{ sort_order }}" class="page-numbers">{{ num }}</a>
+                            <a href="?tab=assessments&assessments_page={{ num }}{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}{% if date_from %}&date_from={{ date_from }}{% endif %}{% if date_to %}&date_to={{ date_to }}{% endif %}{% if date_range %}&date_range={{ date_range }}{% endif %}{% if search_query %}&search={{ search_query }}{% endif %}&sort={{ sort_order }}&per_page={{ per_page }}" class="page-numbers">{{ num }}</a>
                         {% endif %}
                     {% endfor %}
                     {% if assessments.has_next %}
-                        <a href="?tab=assessments&assessments_page={{ assessments.next_page_number }}{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}&sort={{ sort_order }}">Next</a>
-                        <a href="?tab=assessments&assessments_page={{ assessments.paginator.num_pages }}{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}&sort={{ sort_order }}">Last</a>
+                        <a href="?tab=assessments&assessments_page={{ assessments.next_page_number }}{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}{% if date_from %}&date_from={{ date_from }}{% endif %}{% if date_to %}&date_to={{ date_to }}{% endif %}{% if date_range %}&date_range={{ date_range }}{% endif %}{% if search_query %}&search={{ search_query }}{% endif %}&sort={{ sort_order }}&per_page={{ per_page }}">Next</a>
+                        <a href="?tab=assessments&assessments_page={{ assessments.paginator.num_pages }}{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}{% if date_from %}&date_from={{ date_from }}{% endif %}{% if date_to %}&date_to={{ date_to }}{% endif %}{% if date_range %}&date_range={{ date_range }}{% endif %}{% if search_query %}&search={{ search_query }}{% endif %}&sort={{ sort_order }}&per_page={{ per_page }}">Last</a>
                     {% endif %}
                 </div>
                 <div class="pagination-info">
-                    Page {{ assessments.number }} of {{ assessments.paginator.num_pages }} ({{ total_assessments }} total records)
+                    Page {{ assessments.number }} of {{ assessments.paginator.num_pages }} ({{ total_assessments }} total records{% if filters_applied %}, filtered from {{ unfiltered_assessments }}{% endif %})
                 </div>
             {% endif %}
         {% else %}
@@ -769,13 +1048,25 @@
     </div>
 
     <div id="reports" class="content-section {% if active_tab == 'reports' %}active{% endif %}">
-        <div class="export-buttons">
-            <a href="{% url 'export_activities' %}?type=csv&activity=reports{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}&sort={{ sort_order }}" class="export-btn csv">
-                <i class="fas fa-file-csv"></i> Export CSV
-            </a>
-            <a href="{% url 'export_activities' %}?type=pdf&activity=reports{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}&sort={{ sort_order }}" class="export-btn pdf">
-                <i class="fas fa-file-pdf"></i> Export PDF
-            </a>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 12px;">
+            <div class="export-buttons">
+                <a href="{% url 'export_activities' %}?type=csv&activity=reports{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}{% if date_from %}&date_from={{ date_from }}{% endif %}{% if date_to %}&date_to={{ date_to }}{% endif %}{% if date_range %}&date_range={{ date_range }}{% endif %}{% if search_query %}&search={{ search_query }}{% endif %}&sort={{ sort_order }}" class="export-btn csv">
+                    <i class="fas fa-file-csv"></i> Export CSV
+                </a>
+                <a href="{% url 'export_activities' %}?type=pdf&activity=reports{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}{% if date_from %}&date_from={{ date_from }}{% endif %}{% if date_to %}&date_to={{ date_to }}{% endif %}{% if date_range %}&date_range={{ date_range }}{% endif %}{% if search_query %}&search={{ search_query }}{% endif %}&sort={{ sort_order }}" class="export-btn pdf">
+                    <i class="fas fa-file-pdf"></i> Export PDF
+                </a>
+            </div>
+            <div class="per-page-selector">
+                <label for="per_page_select_reports">Show:</label>
+                <select id="per_page_select_reports" onchange="changePerPage(this.value)">
+                    <option value="10" {% if per_page == '10' %}selected{% endif %}>10</option>
+                    <option value="25" {% if per_page == '25' or not per_page %}selected{% endif %}>25</option>
+                    <option value="50" {% if per_page == '50' %}selected{% endif %}>50</option>
+                    <option value="100" {% if per_page == '100' %}selected{% endif %}>100</option>
+                </select>
+                <span>per page</span>
+            </div>
         </div>
         {% if reports %}
             {% for report in reports %}
@@ -826,23 +1117,23 @@
             {% if reports.has_other_pages %}
                 <div class="pagination">
                     {% if reports.has_previous %}
-                        <a href="?tab=reports&reports_page=1{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}&sort={{ sort_order }}">First</a>
-                        <a href="?tab=reports&reports_page={{ reports.previous_page_number }}{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}&sort={{ sort_order }}">Previous</a>
+                        <a href="?tab=reports&reports_page=1{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}{% if date_from %}&date_from={{ date_from }}{% endif %}{% if date_to %}&date_to={{ date_to }}{% endif %}{% if date_range %}&date_range={{ date_range }}{% endif %}{% if search_query %}&search={{ search_query }}{% endif %}&sort={{ sort_order }}&per_page={{ per_page }}">First</a>
+                        <a href="?tab=reports&reports_page={{ reports.previous_page_number }}{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}{% if date_from %}&date_from={{ date_from }}{% endif %}{% if date_to %}&date_to={{ date_to }}{% endif %}{% if date_range %}&date_range={{ date_range }}{% endif %}{% if search_query %}&search={{ search_query }}{% endif %}&sort={{ sort_order }}&per_page={{ per_page }}">Previous</a>
                     {% endif %}
                     {% for num in reports.paginator.page_range %}
                         {% if reports.number == num %}
                             <span class="page-numbers current">{{ num }}</span>
                         {% elif num > reports.number|add:'-3' and num < reports.number|add:'3' %}
-                            <a href="?tab=reports&reports_page={{ num }}{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}&sort={{ sort_order }}" class="page-numbers">{{ num }}</a>
+                            <a href="?tab=reports&reports_page={{ num }}{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}{% if date_from %}&date_from={{ date_from }}{% endif %}{% if date_to %}&date_to={{ date_to }}{% endif %}{% if date_range %}&date_range={{ date_range }}{% endif %}{% if search_query %}&search={{ search_query }}{% endif %}&sort={{ sort_order }}&per_page={{ per_page }}" class="page-numbers">{{ num }}</a>
                         {% endif %}
                     {% endfor %}
                     {% if reports.has_next %}
-                        <a href="?tab=reports&reports_page={{ reports.next_page_number }}{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}&sort={{ sort_order }}">Next</a>
-                        <a href="?tab=reports&reports_page={{ reports.paginator.num_pages }}{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}&sort={{ sort_order }}">Last</a>
+                        <a href="?tab=reports&reports_page={{ reports.next_page_number }}{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}{% if date_from %}&date_from={{ date_from }}{% endif %}{% if date_to %}&date_to={{ date_to }}{% endif %}{% if date_range %}&date_range={{ date_range }}{% endif %}{% if search_query %}&search={{ search_query }}{% endif %}&sort={{ sort_order }}&per_page={{ per_page }}">Next</a>
+                        <a href="?tab=reports&reports_page={{ reports.paginator.num_pages }}{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}{% if date_from %}&date_from={{ date_from }}{% endif %}{% if date_to %}&date_to={{ date_to }}{% endif %}{% if date_range %}&date_range={{ date_range }}{% endif %}{% if search_query %}&search={{ search_query }}{% endif %}&sort={{ sort_order }}&per_page={{ per_page }}">Last</a>
                     {% endif %}
                 </div>
                 <div class="pagination-info">
-                    Page {{ reports.number }} of {{ reports.paginator.num_pages }} ({{ total_reports }} total records)
+                    Page {{ reports.number }} of {{ reports.paginator.num_pages }} ({{ total_reports }} total records{% if filters_applied %}, filtered from {{ unfiltered_reports }}{% endif %})
                 </div>
             {% endif %}
         {% else %}
@@ -855,13 +1146,25 @@
     </div>
 
     <div id="certificates" class="content-section {% if active_tab == 'certificates' %}active{% endif %}">
-        <div class="export-buttons">
-            <a href="{% url 'export_activities' %}?type=csv&activity=certificates{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}&sort={{ sort_order }}" class="export-btn csv">
-                <i class="fas fa-file-csv"></i> Export CSV
-            </a>
-            <a href="{% url 'export_activities' %}?type=pdf&activity=certificates{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}&sort={{ sort_order }}" class="export-btn pdf">
-                <i class="fas fa-file-pdf"></i> Export PDF
-            </a>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 12px;">
+            <div class="export-buttons">
+                <a href="{% url 'export_activities' %}?type=csv&activity=certificates{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}{% if date_from %}&date_from={{ date_from }}{% endif %}{% if date_to %}&date_to={{ date_to }}{% endif %}{% if date_range %}&date_range={{ date_range }}{% endif %}{% if search_query %}&search={{ search_query }}{% endif %}&sort={{ sort_order }}" class="export-btn csv">
+                    <i class="fas fa-file-csv"></i> Export CSV
+                </a>
+                <a href="{% url 'export_activities' %}?type=pdf&activity=certificates{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}{% if date_from %}&date_from={{ date_from }}{% endif %}{% if date_to %}&date_to={{ date_to }}{% endif %}{% if date_range %}&date_range={{ date_range }}{% endif %}{% if search_query %}&search={{ search_query }}{% endif %}&sort={{ sort_order }}" class="export-btn pdf">
+                    <i class="fas fa-file-pdf"></i> Export PDF
+                </a>
+            </div>
+            <div class="per-page-selector">
+                <label for="per_page_select_certs">Show:</label>
+                <select id="per_page_select_certs" onchange="changePerPage(this.value)">
+                    <option value="10" {% if per_page == '10' %}selected{% endif %}>10</option>
+                    <option value="25" {% if per_page == '25' or not per_page %}selected{% endif %}>25</option>
+                    <option value="50" {% if per_page == '50' %}selected{% endif %}>50</option>
+                    <option value="100" {% if per_page == '100' %}selected{% endif %}>100</option>
+                </select>
+                <span>per page</span>
+            </div>
         </div>
         {% if certificates %}
             {% for cert in certificates %}
@@ -908,23 +1211,23 @@
             {% if certificates.has_other_pages %}
                 <div class="pagination">
                     {% if certificates.has_previous %}
-                        <a href="?tab=certificates&certificates_page=1{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}&sort={{ sort_order }}">First</a>
-                        <a href="?tab=certificates&certificates_page={{ certificates.previous_page_number }}{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}&sort={{ sort_order }}">Previous</a>
+                        <a href="?tab=certificates&certificates_page=1{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}{% if date_from %}&date_from={{ date_from }}{% endif %}{% if date_to %}&date_to={{ date_to }}{% endif %}{% if date_range %}&date_range={{ date_range }}{% endif %}{% if search_query %}&search={{ search_query }}{% endif %}&sort={{ sort_order }}&per_page={{ per_page }}">First</a>
+                        <a href="?tab=certificates&certificates_page={{ certificates.previous_page_number }}{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}{% if date_from %}&date_from={{ date_from }}{% endif %}{% if date_to %}&date_to={{ date_to }}{% endif %}{% if date_range %}&date_range={{ date_range }}{% endif %}{% if search_query %}&search={{ search_query }}{% endif %}&sort={{ sort_order }}&per_page={{ per_page }}">Previous</a>
                     {% endif %}
                     {% for num in certificates.paginator.page_range %}
                         {% if certificates.number == num %}
                             <span class="page-numbers current">{{ num }}</span>
                         {% elif num > certificates.number|add:'-3' and num < certificates.number|add:'3' %}
-                            <a href="?tab=certificates&certificates_page={{ num }}{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}&sort={{ sort_order }}" class="page-numbers">{{ num }}</a>
+                            <a href="?tab=certificates&certificates_page={{ num }}{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}{% if date_from %}&date_from={{ date_from }}{% endif %}{% if date_to %}&date_to={{ date_to }}{% endif %}{% if date_range %}&date_range={{ date_range }}{% endif %}{% if search_query %}&search={{ search_query }}{% endif %}&sort={{ sort_order }}&per_page={{ per_page }}" class="page-numbers">{{ num }}</a>
                         {% endif %}
                     {% endfor %}
                     {% if certificates.has_next %}
-                        <a href="?tab=certificates&certificates_page={{ certificates.next_page_number }}{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}&sort={{ sort_order }}">Next</a>
-                        <a href="?tab=certificates&certificates_page={{ certificates.paginator.num_pages }}{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}&sort={{ sort_order }}">Last</a>
+                        <a href="?tab=certificates&certificates_page={{ certificates.next_page_number }}{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}{% if date_from %}&date_from={{ date_from }}{% endif %}{% if date_to %}&date_to={{ date_to }}{% endif %}{% if date_range %}&date_range={{ date_range }}{% endif %}{% if search_query %}&search={{ search_query }}{% endif %}&sort={{ sort_order }}&per_page={{ per_page }}">Next</a>
+                        <a href="?tab=certificates&certificates_page={{ certificates.paginator.num_pages }}{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}{% if date_from %}&date_from={{ date_from }}{% endif %}{% if date_to %}&date_to={{ date_to }}{% endif %}{% if date_range %}&date_range={{ date_range }}{% endif %}{% if search_query %}&search={{ search_query }}{% endif %}&sort={{ sort_order }}&per_page={{ per_page }}">Last</a>
                     {% endif %}
                 </div>
                 <div class="pagination-info">
-                    Page {{ certificates.number }} of {{ certificates.paginator.num_pages }} ({{ total_certificates }} total records)
+                    Page {{ certificates.number }} of {{ certificates.paginator.num_pages }} ({{ total_certificates }} total records{% if filters_applied %}, filtered from {{ unfiltered_certificates }}{% endif %})
                 </div>
             {% endif %}
         {% else %}
@@ -937,13 +1240,25 @@
     </div>
 
     <div id="flood-records" class="content-section {% if active_tab == 'flood-records' %}active{% endif %}">
-        <div class="export-buttons">
-            <a href="{% url 'export_activities' %}?type=csv&activity=flood-records{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}&sort={{ sort_order }}" class="export-btn csv">
-                <i class="fas fa-file-csv"></i> Export CSV
-            </a>
-            <a href="{% url 'export_activities' %}?type=pdf&activity=flood-records{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}&sort={{ sort_order }}" class="export-btn pdf">
-                <i class="fas fa-file-pdf"></i> Export PDF
-            </a>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 12px;">
+            <div class="export-buttons">
+                <a href="{% url 'export_activities' %}?type=csv&activity=flood-records{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}{% if date_from %}&date_from={{ date_from }}{% endif %}{% if date_to %}&date_to={{ date_to }}{% endif %}{% if date_range %}&date_range={{ date_range }}{% endif %}{% if search_query %}&search={{ search_query }}{% endif %}&sort={{ sort_order }}" class="export-btn csv">
+                    <i class="fas fa-file-csv"></i> Export CSV
+                </a>
+                <a href="{% url 'export_activities' %}?type=pdf&activity=flood-records{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}{% if date_from %}&date_from={{ date_from }}{% endif %}{% if date_to %}&date_to={{ date_to }}{% endif %}{% if date_range %}&date_range={{ date_range }}{% endif %}{% if search_query %}&search={{ search_query }}{% endif %}&sort={{ sort_order }}" class="export-btn pdf">
+                    <i class="fas fa-file-pdf"></i> Export PDF
+                </a>
+            </div>
+            <div class="per-page-selector">
+                <label for="per_page_select_flood">Show:</label>
+                <select id="per_page_select_flood" onchange="changePerPage(this.value)">
+                    <option value="10" {% if per_page == '10' %}selected{% endif %}>10</option>
+                    <option value="25" {% if per_page == '25' or not per_page %}selected{% endif %}>25</option>
+                    <option value="50" {% if per_page == '50' %}selected{% endif %}>50</option>
+                    <option value="100" {% if per_page == '100' %}selected{% endif %}>100</option>
+                </select>
+                <span>per page</span>
+            </div>
         </div>
         {% if flood_activities %}
             {% for activity in flood_activities %}
@@ -1000,23 +1315,23 @@
             {% if flood_activities.has_other_pages %}
                 <div class="pagination">
                     {% if flood_activities.has_previous %}
-                        <a href="?tab=flood-records&flood_page=1{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}&sort={{ sort_order }}">First</a>
-                        <a href="?tab=flood-records&flood_page={{ flood_activities.previous_page_number }}{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}&sort={{ sort_order }}">Previous</a>
+                        <a href="?tab=flood-records&flood_page=1{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}{% if date_from %}&date_from={{ date_from }}{% endif %}{% if date_to %}&date_to={{ date_to }}{% endif %}{% if date_range %}&date_range={{ date_range }}{% endif %}{% if search_query %}&search={{ search_query }}{% endif %}&sort={{ sort_order }}&per_page={{ per_page }}">First</a>
+                        <a href="?tab=flood-records&flood_page={{ flood_activities.previous_page_number }}{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}{% if date_from %}&date_from={{ date_from }}{% endif %}{% if date_to %}&date_to={{ date_to }}{% endif %}{% if date_range %}&date_range={{ date_range }}{% endif %}{% if search_query %}&search={{ search_query }}{% endif %}&sort={{ sort_order }}&per_page={{ per_page }}">Previous</a>
                     {% endif %}
                     {% for num in flood_activities.paginator.page_range %}
                         {% if flood_activities.number == num %}
                             <span class="page-numbers current">{{ num }}</span>
                         {% elif num > flood_activities.number|add:'-3' and num < flood_activities.number|add:'3' %}
-                            <a href="?tab=flood-records&flood_page={{ num }}{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}&sort={{ sort_order }}" class="page-numbers">{{ num }}</a>
+                            <a href="?tab=flood-records&flood_page={{ num }}{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}{% if date_from %}&date_from={{ date_from }}{% endif %}{% if date_to %}&date_to={{ date_to }}{% endif %}{% if date_range %}&date_range={{ date_range }}{% endif %}{% if search_query %}&search={{ search_query }}{% endif %}&sort={{ sort_order }}&per_page={{ per_page }}" class="page-numbers">{{ num }}</a>
                         {% endif %}
                     {% endfor %}
                     {% if flood_activities.has_next %}
-                        <a href="?tab=flood-records&flood_page={{ flood_activities.next_page_number }}{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}&sort={{ sort_order }}">Next</a>
-                        <a href="?tab=flood-records&flood_page={{ flood_activities.paginator.num_pages }}{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}&sort={{ sort_order }}">Last</a>
+                        <a href="?tab=flood-records&flood_page={{ flood_activities.next_page_number }}{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}{% if date_from %}&date_from={{ date_from }}{% endif %}{% if date_to %}&date_to={{ date_to }}{% endif %}{% if date_range %}&date_range={{ date_range }}{% endif %}{% if search_query %}&search={{ search_query }}{% endif %}&sort={{ sort_order }}&per_page={{ per_page }}">Next</a>
+                        <a href="?tab=flood-records&flood_page={{ flood_activities.paginator.num_pages }}{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}{% if date_from %}&date_from={{ date_from }}{% endif %}{% if date_to %}&date_to={{ date_to }}{% endif %}{% if date_range %}&date_range={{ date_range }}{% endif %}{% if search_query %}&search={{ search_query }}{% endif %}&sort={{ sort_order }}&per_page={{ per_page }}">Last</a>
                     {% endif %}
                 </div>
                 <div class="pagination-info">
-                    Page {{ flood_activities.number }} of {{ flood_activities.paginator.num_pages }} ({{ total_flood_activities }} total records)
+                    Page {{ flood_activities.number }} of {{ flood_activities.paginator.num_pages }} ({{ total_flood_activities }} total records{% if filters_applied %}, filtered from {{ unfiltered_flood }}{% endif %})
                 </div>
             {% endif %}
         {% else %}
@@ -1029,13 +1344,25 @@
     </div>
 
     <div id="user-logs" class="content-section {% if active_tab == 'user-logs' %}active{% endif %}">
-        <div class="export-buttons">
-            <a href="{% url 'export_activities' %}?type=csv&activity=user-logs{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}&sort={{ sort_order }}" class="export-btn csv">
-                <i class="fas fa-file-csv"></i> Export CSV
-            </a>
-            <a href="{% url 'export_activities' %}?type=pdf&activity=user-logs{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}&sort={{ sort_order }}" class="export-btn pdf">
-                <i class="fas fa-file-pdf"></i> Export PDF
-            </a>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 12px;">
+            <div class="export-buttons">
+                <a href="{% url 'export_activities' %}?type=csv&activity=user-logs{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}{% if date_from %}&date_from={{ date_from }}{% endif %}{% if date_to %}&date_to={{ date_to }}{% endif %}{% if date_range %}&date_range={{ date_range }}{% endif %}{% if search_query %}&search={{ search_query }}{% endif %}&sort={{ sort_order }}" class="export-btn csv">
+                    <i class="fas fa-file-csv"></i> Export CSV
+                </a>
+                <a href="{% url 'export_activities' %}?type=pdf&activity=user-logs{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}{% if date_from %}&date_from={{ date_from }}{% endif %}{% if date_to %}&date_to={{ date_to }}{% endif %}{% if date_range %}&date_range={{ date_range }}{% endif %}{% if search_query %}&search={{ search_query }}{% endif %}&sort={{ sort_order }}" class="export-btn pdf">
+                    <i class="fas fa-file-pdf"></i> Export PDF
+                </a>
+            </div>
+            <div class="per-page-selector">
+                <label for="per_page_select_logs">Show:</label>
+                <select id="per_page_select_logs" onchange="changePerPage(this.value)">
+                    <option value="10" {% if per_page == '10' %}selected{% endif %}>10</option>
+                    <option value="25" {% if per_page == '25' or not per_page %}selected{% endif %}>25</option>
+                    <option value="50" {% if per_page == '50' %}selected{% endif %}>50</option>
+                    <option value="100" {% if per_page == '100' %}selected{% endif %}>100</option>
+                </select>
+                <span>per page</span>
+            </div>
         </div>
         {% if user_logs %}
             {% for log in user_logs %}
@@ -1087,23 +1414,23 @@
             {% if user_logs.has_other_pages %}
                 <div class="pagination">
                     {% if user_logs.has_previous %}
-                        <a href="?tab=user-logs&logs_page=1{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}&sort={{ sort_order }}">First</a>
-                        <a href="?tab=user-logs&logs_page={{ user_logs.previous_page_number }}{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}&sort={{ sort_order }}">Previous</a>
+                        <a href="?tab=user-logs&logs_page=1{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}{% if date_from %}&date_from={{ date_from }}{% endif %}{% if date_to %}&date_to={{ date_to }}{% endif %}{% if date_range %}&date_range={{ date_range }}{% endif %}{% if search_query %}&search={{ search_query }}{% endif %}&sort={{ sort_order }}&per_page={{ per_page }}">First</a>
+                        <a href="?tab=user-logs&logs_page={{ user_logs.previous_page_number }}{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}{% if date_from %}&date_from={{ date_from }}{% endif %}{% if date_to %}&date_to={{ date_to }}{% endif %}{% if date_range %}&date_range={{ date_range }}{% endif %}{% if search_query %}&search={{ search_query }}{% endif %}&sort={{ sort_order }}&per_page={{ per_page }}">Previous</a>
                     {% endif %}
                     {% for num in user_logs.paginator.page_range %}
                         {% if user_logs.number == num %}
                             <span class="page-numbers current">{{ num }}</span>
                         {% elif num > user_logs.number|add:'-3' and num < user_logs.number|add:'3' %}
-                            <a href="?tab=user-logs&logs_page={{ num }}{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}&sort={{ sort_order }}" class="page-numbers">{{ num }}</a>
+                            <a href="?tab=user-logs&logs_page={{ num }}{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}{% if date_from %}&date_from={{ date_from }}{% endif %}{% if date_to %}&date_to={{ date_to }}{% endif %}{% if date_range %}&date_range={{ date_range }}{% endif %}{% if search_query %}&search={{ search_query }}{% endif %}&sort={{ sort_order }}&per_page={{ per_page }}" class="page-numbers">{{ num }}</a>
                         {% endif %}
                     {% endfor %}
                     {% if user_logs.has_next %}
-                        <a href="?tab=user-logs&logs_page={{ user_logs.next_page_number }}{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}&sort={{ sort_order }}">Next</a>
-                        <a href="?tab=user-logs&logs_page={{ user_logs.paginator.num_pages }}{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}&sort={{ sort_order }}">Last</a>
+                        <a href="?tab=user-logs&logs_page={{ user_logs.next_page_number }}{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}{% if date_from %}&date_from={{ date_from }}{% endif %}{% if date_to %}&date_to={{ date_to }}{% endif %}{% if date_range %}&date_range={{ date_range }}{% endif %}{% if search_query %}&search={{ search_query }}{% endif %}&sort={{ sort_order }}&per_page={{ per_page }}">Next</a>
+                        <a href="?tab=user-logs&logs_page={{ user_logs.paginator.num_pages }}{% if filter_user %}&user={{ filter_user }}{% endif %}{% if filter_date %}&date={{ filter_date }}{% endif %}{% if date_from %}&date_from={{ date_from }}{% endif %}{% if date_to %}&date_to={{ date_to }}{% endif %}{% if date_range %}&date_range={{ date_range }}{% endif %}{% if search_query %}&search={{ search_query }}{% endif %}&sort={{ sort_order }}&per_page={{ per_page }}">Last</a>
                     {% endif %}
                 </div>
                 <div class="pagination-info">
-                    Page {{ user_logs.number }} of {{ user_logs.paginator.num_pages }} ({{ total_user_logs }} total records)
+                    Page {{ user_logs.number }} of {{ user_logs.paginator.num_pages }} ({{ total_user_logs }} total records{% if filters_applied %}, filtered from {{ unfiltered_logs }}{% endif %})
                 </div>
             {% endif %}
         {% else %}
@@ -1138,17 +1465,128 @@
         document.getElementById('active_tab').value = tabName;
     }
 
+    function applyQuickFilter(days) {
+        const urlParams = new URLSearchParams(window.location.search);
+        
+        // Remove conflicting date filters
+        urlParams.delete('date');
+        urlParams.delete('date_from');
+        urlParams.delete('date_to');
+        
+        // Set the date range
+        if (days === 'all') {
+            urlParams.delete('date_range');
+            urlParams.set('show_all', '1');
+        } else {
+            urlParams.set('date_range', days);
+            urlParams.delete('show_all');
+        }
+        
+        // Keep current tab
+        const currentTab = document.getElementById('active_tab').value;
+        urlParams.set('tab', currentTab);
+        
+        // Reset to first page
+        urlParams.delete('assessments_page');
+        urlParams.delete('reports_page');
+        urlParams.delete('certificates_page');
+        urlParams.delete('flood_page');
+        urlParams.delete('logs_page');
+        
+        window.location.search = urlParams.toString();
+    }
+
+    function applySearch() {
+        const searchValue = document.getElementById('search_input').value.trim();
+        const urlParams = new URLSearchParams(window.location.search);
+        
+        if (searchValue) {
+            urlParams.set('search', searchValue);
+        } else {
+            urlParams.delete('search');
+        }
+        
+        // Keep current tab
+        const currentTab = document.getElementById('active_tab').value;
+        urlParams.set('tab', currentTab);
+        
+        // Reset to first page
+        urlParams.delete('assessments_page');
+        urlParams.delete('reports_page');
+        urlParams.delete('certificates_page');
+        urlParams.delete('flood_page');
+        urlParams.delete('logs_page');
+        
+        window.location.search = urlParams.toString();
+    }
+
+    // Allow search on Enter key
+    document.getElementById('search_input').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            applySearch();
+        }
+    });
+
+    function changePerPage(value) {
+        const urlParams = new URLSearchParams(window.location.search);
+        urlParams.set('per_page', value);
+        
+        // Keep current tab
+        const currentTab = document.getElementById('active_tab').value;
+        urlParams.set('tab', currentTab);
+        
+        // Reset to first page when changing items per page
+        urlParams.delete('assessments_page');
+        urlParams.delete('reports_page');
+        urlParams.delete('certificates_page');
+        urlParams.delete('flood_page');
+        urlParams.delete('logs_page');
+        
+        window.location.search = urlParams.toString();
+    }
+
+    function removeFilter(filterName) {
+        const urlParams = new URLSearchParams(window.location.search);
+        urlParams.delete(filterName);
+        
+        // Keep current tab
+        const currentTab = document.getElementById('active_tab').value;
+        urlParams.set('tab', currentTab);
+        
+        // Reset to first page
+        urlParams.delete('assessments_page');
+        urlParams.delete('reports_page');
+        urlParams.delete('certificates_page');
+        urlParams.delete('flood_page');
+        urlParams.delete('logs_page');
+        
+        window.location.search = urlParams.toString();
+    }
+
+    function clearAllFilters() {
+        const currentTab = document.getElementById('active_tab').value;
+        const perPage = document.getElementById('per_page_hidden').value || '25';
+        window.location.href = `?tab=${currentTab}&per_page=${perPage}&date_range=30`;
+    }
+
     function clearFilters() {
-        // Clear all filter inputs
-        document.querySelector('select[name="user"]').value = '';
-        document.querySelector('input[name="date"]').value = '';
-        document.querySelector('select[name="sort"]').value = 'recent';
+        clearAllFilters();
+    }
+
+    // Helper function to build URL with all current filters
+    function buildFilterURL(baseParams) {
+        const urlParams = new URLSearchParams(window.location.search);
+        const newParams = new URLSearchParams(baseParams);
         
-        // Keep the current tab active
-        // The hidden tab field already has the current value
+        // Preserve existing filters
+        const filtersToPreserve = ['user', 'date', 'date_from', 'date_to', 'date_range', 'search', 'sort', 'per_page', 'tab'];
+        filtersToPreserve.forEach(filter => {
+            if (urlParams.has(filter) && !newParams.has(filter)) {
+                newParams.set(filter, urlParams.get(filter));
+            }
+        });
         
-        // Submit the form
-        document.querySelector('.filters').submit();
+        return '?' + newParams.toString();
     }
 </script>
 {% endblock %}

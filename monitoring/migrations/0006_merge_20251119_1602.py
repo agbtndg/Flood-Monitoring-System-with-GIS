@@ -6,7 +6,7 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('monitoring', '0004_alter_benchmarksettings_alert_heavy_rain_threshold_and_more'),
+        ('monitoring', '0003_benchmarksettings'),
         ('monitoring', '0005_combined_risk_method'),
     ]
 

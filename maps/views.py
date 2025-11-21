@@ -271,11 +271,12 @@ def my_activity(request):
     # Accept both for compatibility.
     sort_order = request.GET.get('sort') or request.GET.get('sort_order') or 'recent'
     
-    assessments = AssessmentRecord.objects.filter(user=request.user)
-    reports = ReportRecord.objects.filter(user=request.user)
-    certificates = CertificateRecord.objects.filter(user=request.user)
-    flood_activities = FloodRecordActivity.objects.filter(user=request.user)
-    user_logs = UserLog.objects.filter(user=request.user)
+    # Exclude archived records from normal views
+    assessments = AssessmentRecord.objects.filter(user=request.user, is_archived=False)
+    reports = ReportRecord.objects.filter(user=request.user, is_archived=False)
+    certificates = CertificateRecord.objects.filter(user=request.user, is_archived=False)
+    flood_activities = FloodRecordActivity.objects.filter(user=request.user, is_archived=False)
+    user_logs = UserLog.objects.filter(user=request.user, is_archived=False)
     
     # Apply ordering based on sort parameter
     if sort_order == 'oldest':
@@ -315,6 +316,8 @@ def all_activities(request):
     from django.contrib.admin.views.decorators import staff_member_required
     from django.core.exceptions import PermissionDenied
     from django.core.paginator import Paginator
+    from django.db.models import Q
+    from datetime import datetime, timedelta
     
     if not request.user.is_staff:
         raise PermissionDenied
@@ -330,11 +333,12 @@ def all_activities(request):
     flood_page = request.GET.get('flood_page', 1)
     logs_page = request.GET.get('logs_page', 1)
     
-    assessments = AssessmentRecord.objects.all().select_related('user')
-    reports = ReportRecord.objects.all().select_related('user')
-    certificates = CertificateRecord.objects.all().select_related('user')
-    flood_activities = FloodRecordActivity.objects.all().select_related('user')
-    user_logs = UserLog.objects.all().select_related('user')
+    # Exclude archived records from normal views
+    assessments = AssessmentRecord.objects.filter(is_archived=False).select_related('user')
+    reports = ReportRecord.objects.filter(is_archived=False).select_related('user')
+    certificates = CertificateRecord.objects.filter(is_archived=False).select_related('user')
+    flood_activities = FloodRecordActivity.objects.filter(is_archived=False).select_related('user')
+    user_logs = UserLog.objects.filter(is_archived=False).select_related('user')
     
     # Apply ordering based on sort parameter
     if sort_order == 'oldest':
@@ -353,8 +357,55 @@ def all_activities(request):
     # Get filter parameters
     filter_user = request.GET.get('user', None)
     filter_date = request.GET.get('date', None)
+    date_from = request.GET.get('date_from', None)
+    date_to = request.GET.get('date_to', None)
+    date_range = request.GET.get('date_range', None)  # Quick filter: 7, 30, 90, all
+    search_query = request.GET.get('search', '').strip()
     active_tab = request.GET.get('tab', 'assessments')  # Default to assessments
+    per_page = request.GET.get('per_page', '25')  # Items per page
     
+    # Default to last 30 days if no filters applied
+    show_all = request.GET.get('show_all', '')
+    if not any([filter_user, filter_date, date_from, date_to, date_range, search_query, show_all]):
+        date_range = '30'  # Default to last 30 days
+    
+    # Apply date range quick filters
+    if date_range and date_range != 'all':
+        try:
+            days = int(date_range)
+            start_date = datetime.now() - timedelta(days=days)
+            assessments = assessments.filter(timestamp__gte=start_date)
+            reports = reports.filter(timestamp__gte=start_date)
+            certificates = certificates.filter(timestamp__gte=start_date)
+            flood_activities = flood_activities.filter(timestamp__gte=start_date)
+            user_logs = user_logs.filter(timestamp__gte=start_date)
+        except ValueError:
+            pass
+    
+    # Apply custom date range
+    if date_from:
+        try:
+            start_date = datetime.strptime(date_from, '%Y-%m-%d')
+            assessments = assessments.filter(timestamp__date__gte=start_date)
+            reports = reports.filter(timestamp__date__gte=start_date)
+            certificates = certificates.filter(timestamp__date__gte=start_date)
+            flood_activities = flood_activities.filter(timestamp__date__gte=start_date)
+            user_logs = user_logs.filter(timestamp__date__gte=start_date)
+        except ValueError:
+            pass
+    
+    if date_to:
+        try:
+            end_date = datetime.strptime(date_to, '%Y-%m-%d')
+            assessments = assessments.filter(timestamp__date__lte=end_date)
+            reports = reports.filter(timestamp__date__lte=end_date)
+            certificates = certificates.filter(timestamp__date__lte=end_date)
+            flood_activities = flood_activities.filter(timestamp__date__lte=end_date)
+            user_logs = user_logs.filter(timestamp__date__lte=end_date)
+        except ValueError:
+            pass
+    
+    # Apply user filter
     if filter_user:
         assessments = assessments.filter(user__id=filter_user)
         reports = reports.filter(user__id=filter_user)
@@ -362,12 +413,63 @@ def all_activities(request):
         flood_activities = flood_activities.filter(user__id=filter_user)
         user_logs = user_logs.filter(user__id=filter_user)
     
+    # Apply single date filter (exact date)
     if filter_date:
         assessments = assessments.filter(timestamp__date=filter_date)
         reports = reports.filter(timestamp__date=filter_date)
         certificates = certificates.filter(timestamp__date=filter_date)
         flood_activities = flood_activities.filter(timestamp__date=filter_date)
         user_logs = user_logs.filter(timestamp__date=filter_date)
+    
+    # Apply search filter
+    if search_query:
+        # Search in assessments (barangay, risk code, risk description)
+        assessments = assessments.filter(
+            Q(barangay__icontains=search_query) |
+            Q(flood_risk_code__icontains=search_query) |
+            Q(flood_risk_description__icontains=search_query) |
+            Q(user__username__icontains=search_query) |
+            Q(user__first_name__icontains=search_query) |
+            Q(user__last_name__icontains=search_query)
+        )
+        
+        # Search in reports (barangay, risk code, risk label)
+        reports = reports.filter(
+            Q(barangay__icontains=search_query) |
+            Q(flood_risk_code__icontains=search_query) |
+            Q(flood_risk_label__icontains=search_query) |
+            Q(user__username__icontains=search_query) |
+            Q(user__first_name__icontains=search_query) |
+            Q(user__last_name__icontains=search_query)
+        )
+        
+        # Search in certificates (establishment name, owner, barangay, location)
+        certificates = certificates.filter(
+            Q(establishment_name__icontains=search_query) |
+            Q(owner_name__icontains=search_query) |
+            Q(barangay__icontains=search_query) |
+            Q(location__icontains=search_query) |
+            Q(user__username__icontains=search_query) |
+            Q(user__first_name__icontains=search_query) |
+            Q(user__last_name__icontains=search_query)
+        )
+        
+        # Search in flood activities (event type, affected barangays)
+        flood_activities = flood_activities.filter(
+            Q(event_type__icontains=search_query) |
+            Q(affected_barangays__icontains=search_query) |
+            Q(user__username__icontains=search_query) |
+            Q(user__first_name__icontains=search_query) |
+            Q(user__last_name__icontains=search_query)
+        )
+        
+        # Search in user logs (action, username)
+        user_logs = user_logs.filter(
+            Q(action__icontains=search_query) |
+            Q(user__username__icontains=search_query) |
+            Q(user__first_name__icontains=search_query) |
+            Q(user__last_name__icontains=search_query)
+        )
     
     # Get total counts before pagination
     total_assessments = assessments.count()
@@ -376,8 +478,20 @@ def all_activities(request):
     total_flood_activities = flood_activities.count()
     total_user_logs = user_logs.count()
     
-    # Apply pagination (25 records per page)
-    paginator_size = 25
+    # Get unfiltered totals for statistics (excluding archived)
+    unfiltered_assessments = AssessmentRecord.objects.filter(is_archived=False).count()
+    unfiltered_reports = ReportRecord.objects.filter(is_archived=False).count()
+    unfiltered_certificates = CertificateRecord.objects.filter(is_archived=False).count()
+    unfiltered_flood = FloodRecordActivity.objects.filter(is_archived=False).count()
+    unfiltered_logs = UserLog.objects.filter(is_archived=False).count()
+    
+    # Apply pagination with configurable page size
+    try:
+        paginator_size = int(per_page)
+        if paginator_size not in [10, 25, 50, 100]:
+            paginator_size = 25
+    except ValueError:
+        paginator_size = 25
     
     assessments_paginator = Paginator(assessments, paginator_size)
     assessments = assessments_paginator.get_page(assessments_page)
@@ -408,18 +522,29 @@ def all_activities(request):
         'users': users,
         'filter_user': filter_user,
         'filter_date': filter_date,
+        'date_from': date_from,
+        'date_to': date_to,
+        'date_range': date_range,
+        'search_query': search_query,
         'sort_order': sort_order,
         'active_tab': active_tab,
+        'per_page': per_page,
         'total_assessments': total_assessments,
         'total_reports': total_reports,
         'total_certificates': total_certificates,
         'total_flood_activities': total_flood_activities,
         'total_user_logs': total_user_logs,
+        'unfiltered_assessments': unfiltered_assessments,
+        'unfiltered_reports': unfiltered_reports,
+        'unfiltered_certificates': unfiltered_certificates,
+        'unfiltered_flood': unfiltered_flood,
+        'unfiltered_logs': unfiltered_logs,
         'assessments_paginator': assessments_paginator,
         'reports_paginator': reports_paginator,
         'certificates_paginator': certificates_paginator,
         'flood_paginator': flood_paginator,
         'logs_paginator': logs_paginator,
+        'filters_applied': bool(filter_user or filter_date or date_from or date_to or date_range or search_query),
     }
     
     return render(request, 'maps/all_activities.html', context)
@@ -447,14 +572,43 @@ def export_activities(request):
     # Get filter parameters
     filter_user = request.GET.get('user', None)
     filter_date = request.GET.get('date', None)
+    date_from = request.GET.get('date_from', None)
+    date_to = request.GET.get('date_to', None)
+    date_range = request.GET.get('date_range', None)
+    search_query = request.GET.get('search', '').strip()
     sort_order = request.GET.get('sort', 'recent')
     
-    # Prepare base querysets
-    assessments = AssessmentRecord.objects.all().select_related('user')
-    reports = ReportRecord.objects.all().select_related('user')
-    certificates = CertificateRecord.objects.all().select_related('user')
-    flood_activities = FloodRecordActivity.objects.all().select_related('user')
-    user_logs = UserLog.objects.all().select_related('user')
+    # Build filter_info dictionary
+    from datetime import datetime, timedelta
+    filter_info = {}
+    if filter_user:
+        from users.models import CustomUser
+        try:
+            user = CustomUser.objects.get(id=filter_user)
+            filter_info['Staff Filter'] = f"{user.get_full_name()} ({user.username})"
+        except CustomUser.DoesNotExist:
+            pass
+    if filter_date:
+        filter_info['Date Filter'] = filter_date
+    if date_from and date_to:
+        filter_info['Date Range'] = f"{date_from} to {date_to}"
+    elif date_from:
+        filter_info['Date From'] = date_from
+    elif date_to:
+        filter_info['Date To'] = date_to
+    if date_range and date_range != 'all':
+        range_labels = {'7': 'Last 7 Days', '30': 'Last 30 Days', '90': 'Last 90 Days'}
+        filter_info['Quick Filter'] = range_labels.get(date_range, f'Last {date_range} Days')
+    if search_query:
+        filter_info['Search Query'] = search_query
+    filter_info['Sort Order'] = 'Oldest First' if sort_order == 'oldest' else 'Recent First'
+    
+    # Prepare base querysets (excluding archived records)
+    assessments = AssessmentRecord.objects.filter(is_archived=False).select_related('user')
+    reports = ReportRecord.objects.filter(is_archived=False).select_related('user')
+    certificates = CertificateRecord.objects.filter(is_archived=False).select_related('user')
+    flood_activities = FloodRecordActivity.objects.filter(is_archived=False).select_related('user')
+    user_logs = UserLog.objects.filter(is_archived=False).select_related('user')
     
     # Apply ordering
     if sort_order == 'oldest':
@@ -469,6 +623,42 @@ def export_activities(request):
         certificates = certificates.order_by('-timestamp')
         flood_activities = flood_activities.order_by('-timestamp')
         user_logs = user_logs.order_by('-timestamp')
+    
+    # Apply date range quick filters
+    if date_range and date_range != 'all':
+        try:
+            days = int(date_range)
+            start_date = datetime.now() - timedelta(days=days)
+            assessments = assessments.filter(timestamp__gte=start_date)
+            reports = reports.filter(timestamp__gte=start_date)
+            certificates = certificates.filter(timestamp__gte=start_date)
+            flood_activities = flood_activities.filter(timestamp__gte=start_date)
+            user_logs = user_logs.filter(timestamp__gte=start_date)
+        except ValueError:
+            pass
+    
+    # Apply custom date range
+    if date_from:
+        try:
+            start_date = datetime.strptime(date_from, '%Y-%m-%d')
+            assessments = assessments.filter(timestamp__date__gte=start_date)
+            reports = reports.filter(timestamp__date__gte=start_date)
+            certificates = certificates.filter(timestamp__date__gte=start_date)
+            flood_activities = flood_activities.filter(timestamp__date__gte=start_date)
+            user_logs = user_logs.filter(timestamp__date__gte=start_date)
+        except ValueError:
+            pass
+    
+    if date_to:
+        try:
+            end_date = datetime.strptime(date_to, '%Y-%m-%d')
+            assessments = assessments.filter(timestamp__date__lte=end_date)
+            reports = reports.filter(timestamp__date__lte=end_date)
+            certificates = certificates.filter(timestamp__date__lte=end_date)
+            flood_activities = flood_activities.filter(timestamp__date__lte=end_date)
+            user_logs = user_logs.filter(timestamp__date__lte=end_date)
+        except ValueError:
+            pass
     
     # Apply filters
     if filter_user:
@@ -485,34 +675,76 @@ def export_activities(request):
         flood_activities = flood_activities.filter(timestamp__date=filter_date)
         user_logs = user_logs.filter(timestamp__date=filter_date)
     
+    # Apply search filter
+    if search_query:
+        from django.db.models import Q
+        assessments = assessments.filter(
+            Q(barangay__icontains=search_query) |
+            Q(flood_risk_code__icontains=search_query) |
+            Q(flood_risk_description__icontains=search_query) |
+            Q(user__username__icontains=search_query) |
+            Q(user__first_name__icontains=search_query) |
+            Q(user__last_name__icontains=search_query)
+        )
+        reports = reports.filter(
+            Q(barangay__icontains=search_query) |
+            Q(flood_risk_code__icontains=search_query) |
+            Q(flood_risk_label__icontains=search_query) |
+            Q(user__username__icontains=search_query) |
+            Q(user__first_name__icontains=search_query) |
+            Q(user__last_name__icontains=search_query)
+        )
+        certificates = certificates.filter(
+            Q(establishment_name__icontains=search_query) |
+            Q(owner_name__icontains=search_query) |
+            Q(barangay__icontains=search_query) |
+            Q(location__icontains=search_query) |
+            Q(user__username__icontains=search_query) |
+            Q(user__first_name__icontains=search_query) |
+            Q(user__last_name__icontains=search_query)
+        )
+        flood_activities = flood_activities.filter(
+            Q(event_type__icontains=search_query) |
+            Q(affected_barangays__icontains=search_query) |
+            Q(user__username__icontains=search_query) |
+            Q(user__first_name__icontains=search_query) |
+            Q(user__last_name__icontains=search_query)
+        )
+        user_logs = user_logs.filter(
+            Q(action__icontains=search_query) |
+            Q(user__username__icontains=search_query) |
+            Q(user__first_name__icontains=search_query) |
+            Q(user__last_name__icontains=search_query)
+        )
+    
     # Export based on type and activity
     if export_type == 'pdf':
         if activity_type == 'assessments':
             headers, data = export_utils.prepare_assessments_data(assessments)
-            return export_utils.export_to_pdf('Flood Risk Assessment Records', headers, data, 'assessments')
+            return export_utils.export_to_pdf('Flood Risk Assessment Records', headers, data, 'assessments', filter_info=filter_info, summary_stats={'total': len(data), 'filtered': bool(filter_user or filter_date)})
         elif activity_type == 'reports':
             headers, data = export_utils.prepare_reports_data(reports)
-            return export_utils.export_to_pdf('Flood Risk Reports', headers, data, 'reports')
+            return export_utils.export_to_pdf('Flood Risk Reports', headers, data, 'reports', filter_info=filter_info, summary_stats={'total': len(data), 'filtered': bool(filter_user or filter_date)})
         elif activity_type == 'certificates':
             headers, data = export_utils.prepare_certificates_data(certificates)
-            return export_utils.export_to_pdf('Flood Risk Certificates', headers, data, 'certificates')
+            return export_utils.export_to_pdf('Flood Risk Certificates', headers, data, 'certificates', filter_info=filter_info, summary_stats={'total': len(data), 'filtered': bool(filter_user or filter_date)})
         elif activity_type == 'flood-records':
             headers, data = export_utils.prepare_flood_activities_data(flood_activities)
-            return export_utils.export_to_pdf('Flood Activity Records', headers, data, 'flood_activities')
+            return export_utils.export_to_pdf('Flood Activity Records', headers, data, 'flood_activities', filter_info=filter_info, summary_stats={'total': len(data), 'filtered': bool(filter_user or filter_date)})
         elif activity_type == 'user-logs':
             headers, data = export_utils.prepare_user_logs_data(user_logs)
-            return export_utils.export_to_pdf('User Activity Logs', headers, data, 'user_logs')
+            return export_utils.export_to_pdf('User Activity Logs', headers, data, 'user_logs', filter_info=filter_info, summary_stats={'total': len(data), 'filtered': bool(filter_user or filter_date)})
     else:  # CSV
         if activity_type == 'assessments':
-            return export_utils.export_assessments_to_csv(assessments)
+            return export_utils.export_assessments_to_csv(assessments, filter_info=filter_info)
         elif activity_type == 'reports':
-            return export_utils.export_reports_to_csv(reports)
+            return export_utils.export_reports_to_csv(reports, filter_info=filter_info)
         elif activity_type == 'certificates':
-            return export_utils.export_certificates_to_csv(certificates)
+            return export_utils.export_certificates_to_csv(certificates, filter_info=filter_info)
         elif activity_type == 'flood-records':
-            return export_utils.export_flood_activities_to_csv(flood_activities)
+            return export_utils.export_flood_activities_to_csv(flood_activities, filter_info=filter_info)
         elif activity_type == 'user-logs':
-            return export_utils.export_user_logs_to_csv(user_logs)
+            return export_utils.export_user_logs_to_csv(user_logs, filter_info=filter_info)
     
     # Default fallback
-    return export_utils.export_assessments_to_csv(assessments)
+    return export_utils.export_assessments_to_csv(assessments, filter_info=filter_info)

@@ -37,6 +37,7 @@ from monitoring.views import (
     get_flood_risk_level, get_tide_risk_level, 
     get_combined_risk_level, generate_flood_insights
 )
+from maps.models import AssessmentRecord, ReportRecord, CertificateRecord, FloodRecordActivity
 from users.models import UserLog
 from users.forms import CustomUserCreationForm, ProfileEditForm
 
@@ -130,6 +131,7 @@ Components Tested:
   ✓ Business Logic (Flood insights generation, threshold validation)
   ✓ Database Operations (CRUD operations, query optimization)
   ✓ Security Features (Password validation, file upload restrictions)
+  ✓ Archiving System (Soft-delete pattern, filtering, restoration)
 
 Testing Methodology:
   - White-box testing with full code knowledge
@@ -137,6 +139,7 @@ Testing Methodology:
   - Branch coverage for conditional logic
   - Boundary value analysis for thresholds
   - Equivalence partitioning for risk levels
+  - Integration testing for archiving workflows
         """)
         
         print("\n" + "="*80)
@@ -144,7 +147,7 @@ Testing Methodology:
         print("="*80)
         if self.failed_tests == 0:
             print("\n✓ ALL TESTS PASSED - System is functioning correctly")
-            print("  All internal logic, calculations, and validations working as expected.")
+            print("  All internal logic, calculations, validations, and archiving working as expected.")
         else:
             print(f"\n⚠ {self.failed_tests} TEST(S) FAILED - Review required")
             print("  Please check the detailed results above for failure information.")
@@ -179,6 +182,7 @@ def run_all_tests():
     test_form_validation()
     test_business_logic()
     test_database_operations()
+    test_archiving_system()  # New test category
     
     results.end()
     results.print_report()
@@ -744,6 +748,272 @@ def test_database_operations():
         results.add_test(category, "UserLog Activity Tracking", "FAIL", str(e))
     except Exception as e:
         results.add_test(category, "UserLog Activity Tracking", "FAIL", f"Exception: {str(e)}")
+
+# ============================================================================
+# TEST CATEGORY 7: ARCHIVING SYSTEM
+# ============================================================================
+def test_archiving_system():
+    """Test the hybrid archiving system functionality"""
+    category = "Archiving System"
+    
+    # Test 1: Default archiving flags on new records
+    try:
+        user = User.objects.get(username='testuser_whitebox')
+        
+        # Create new assessment record
+        assessment = AssessmentRecord.objects.create(
+            user=user,
+            barangay='Test Barangay',
+            latitude='10.123',
+            longitude='122.456',
+            flood_risk_code='LF',
+            flood_risk_description='Low Flood Susceptibility'
+        )
+        
+        # Verify default values
+        assert assessment.is_archived == False, "New records should default to is_archived=False"
+        assert assessment.archived_at is None, "New records should have archived_at=None"
+        
+        results.add_test(category, "Default Archiving Flags", "PASS",
+                        "New records correctly default to active (not archived)",
+                        f"is_archived={assessment.is_archived}, archived_at={assessment.archived_at}")
+        
+        # Cleanup
+        assessment.delete()
+        
+    except AssertionError as e:
+        results.add_test(category, "Default Archiving Flags", "FAIL", str(e))
+    except Exception as e:
+        results.add_test(category, "Default Archiving Flags", "FAIL", f"Exception: {str(e)}")
+    
+    # Test 2: Archive a record
+    try:
+        user = User.objects.get(username='testuser_whitebox')
+        
+        # Create and archive a record
+        report = ReportRecord.objects.create(
+            user=user,
+            barangay='Archive Test',
+            latitude='10.234',
+            longitude='122.567',
+            flood_risk_code='HF',
+            flood_risk_label='High Flood Susceptibility'
+        )
+        
+        # Archive it
+        archive_time = timezone.now()
+        report.is_archived = True
+        report.archived_at = archive_time
+        report.save()
+        
+        # Verify archiving
+        report.refresh_from_db()
+        assert report.is_archived == True, "Record should be marked as archived"
+        assert report.archived_at is not None, "archived_at should be set"
+        
+        results.add_test(category, "Archive Record", "PASS",
+                        "Record successfully archived with timestamp",
+                        f"is_archived={report.is_archived}, archived_at={report.archived_at}")
+        
+        # Cleanup
+        report.delete()
+        
+    except AssertionError as e:
+        results.add_test(category, "Archive Record", "FAIL", str(e))
+    except Exception as e:
+        results.add_test(category, "Archive Record", "FAIL", f"Exception: {str(e)}")
+    
+    # Test 3: Filter active records (exclude archived)
+    try:
+        user = User.objects.get(username='testuser_whitebox')
+        
+        # Create active record
+        active_cert = CertificateRecord.objects.create(
+            user=user,
+            establishment_name='Active Establishment',
+            owner_name='Active Owner',
+            barangay='Active Barangay',
+            latitude='10.345',
+            longitude='122.678',
+            flood_susceptibility='LOW FLOOD SUSCEPTIBILITY',
+            zone_status='SAFE ZONE',
+            issue_date='21st of November 2025'
+        )
+        
+        # Create archived record
+        archived_cert = CertificateRecord.objects.create(
+            user=user,
+            establishment_name='Archived Establishment',
+            owner_name='Archived Owner',
+            barangay='Archived Barangay',
+            latitude='10.456',
+            longitude='122.789',
+            flood_susceptibility='MODERATE FLOOD SUSCEPTIBILITY',
+            zone_status='CONTROLLED ZONE',
+            issue_date='1st of January 2020',
+            is_archived=True,
+            archived_at=timezone.now()
+        )
+        
+        # Query only active records
+        active_records = CertificateRecord.objects.filter(
+            user=user,
+            is_archived=False
+        ).filter(
+            establishment_name__in=['Active Establishment', 'Archived Establishment']
+        )
+        
+        # Verify filtering
+        assert active_cert in active_records, "Active record should be in query results"
+        assert archived_cert not in active_records, "Archived record should be excluded"
+        
+        # Query archived records
+        archived_records = CertificateRecord.objects.filter(
+            user=user,
+            is_archived=True
+        ).filter(
+            establishment_name__in=['Active Establishment', 'Archived Establishment']
+        )
+        
+        assert archived_cert in archived_records, "Archived record should be in archived query"
+        assert active_cert not in archived_records, "Active record should be excluded from archived query"
+        
+        results.add_test(category, "Filter Active/Archived Records", "PASS",
+                        f"Active records: {active_records.count()}, Archived records: {archived_records.count()}",
+                        "Query filtering correctly separates active and archived records")
+        
+        # Cleanup
+        active_cert.delete()
+        archived_cert.delete()
+        
+    except AssertionError as e:
+        results.add_test(category, "Filter Active/Archived Records", "FAIL", str(e))
+    except Exception as e:
+        results.add_test(category, "Filter Active/Archived Records", "FAIL", f"Exception: {str(e)}")
+    
+    # Test 4: Restore archived record
+    try:
+        user = User.objects.get(username='testuser_whitebox')
+        
+        # Create archived record
+        flood_activity = FloodRecordActivity.objects.create(
+            user=user,
+            action='CREATE',
+            event_type='Heavy Rainfall',
+            event_date=timezone.now(),
+            affected_barangays='Test Barangay 1, Test Barangay 2',
+            casualties_dead=0,
+            casualties_injured=0,
+            casualties_missing=0,
+            affected_persons=100,
+            affected_families=25,
+            damage_total_php=50000.00,
+            is_archived=True,
+            archived_at=timezone.now()
+        )
+        
+        # Verify it's archived
+        assert flood_activity.is_archived == True, "Record should be archived initially"
+        
+        # Restore it
+        flood_activity.is_archived = False
+        flood_activity.archived_at = None
+        flood_activity.save()
+        
+        # Verify restoration
+        flood_activity.refresh_from_db()
+        assert flood_activity.is_archived == False, "Record should be restored to active"
+        assert flood_activity.archived_at is None, "archived_at should be cleared"
+        
+        results.add_test(category, "Restore Archived Record", "PASS",
+                        "Archived record successfully restored to active status",
+                        f"is_archived={flood_activity.is_archived}, archived_at={flood_activity.archived_at}")
+        
+        # Cleanup
+        flood_activity.delete()
+        
+    except AssertionError as e:
+        results.add_test(category, "Restore Archived Record", "FAIL", str(e))
+    except Exception as e:
+        results.add_test(category, "Restore Archived Record", "FAIL", f"Exception: {str(e)}")
+    
+    # Test 5: UserLog archiving
+    try:
+        user = User.objects.get(username='testuser_whitebox')
+        
+        # Create user log
+        log = UserLog.objects.create(
+            user=user,
+            action='Test archiving action'
+        )
+        
+        # Verify default state
+        assert log.is_archived == False, "New log should not be archived"
+        assert log.archived_at is None, "archived_at should be None initially"
+        
+        # Archive the log
+        log.is_archived = True
+        log.archived_at = timezone.now()
+        log.save()
+        
+        # Verify archiving
+        log.refresh_from_db()
+        assert log.is_archived == True, "Log should be archived"
+        
+        # Query active logs only
+        active_logs = UserLog.objects.filter(user=user, is_archived=False)
+        archived_logs = UserLog.objects.filter(user=user, is_archived=True)
+        
+        assert log not in active_logs, "Archived log should not appear in active logs"
+        assert log in archived_logs, "Archived log should appear in archived logs query"
+        
+        results.add_test(category, "UserLog Archiving", "PASS",
+                        "UserLog archiving system working correctly",
+                        f"Active logs: {active_logs.count()}, Archived logs: {archived_logs.count()}")
+        
+        # Cleanup
+        log.delete()
+        
+    except AssertionError as e:
+        results.add_test(category, "UserLog Archiving", "FAIL", str(e))
+    except Exception as e:
+        results.add_test(category, "UserLog Archiving", "FAIL", f"Exception: {str(e)}")
+    
+    # Test 6: Database indexes exist
+    try:
+        # Verify that the models have the archiving fields
+        from django.db import connection
+        
+        # Check AssessmentRecord table
+        with connection.cursor() as cursor:
+            cursor.execute("""
+                SELECT column_name, data_type 
+                FROM information_schema.columns 
+                WHERE table_name = 'maps_assessmentrecord' 
+                AND column_name IN ('is_archived', 'archived_at')
+            """)
+            columns = cursor.fetchall()
+        
+        assert len(columns) == 2, f"Should have 2 archiving columns, found {len(columns)}"
+        
+        results.add_test(category, "Database Schema - Archiving Fields", "PASS",
+                        "All archiving fields exist in database schema",
+                        f"Found {len(columns)} archiving columns (is_archived, archived_at)")
+        
+    except AssertionError as e:
+        results.add_test(category, "Database Schema - Archiving Fields", "FAIL", str(e))
+    except Exception as e:
+        # If it fails (e.g., SQLite doesn't support information_schema), just verify model fields exist
+        try:
+            # Verify model fields exist by checking model _meta (AssessmentRecord already imported at top)
+            field_names = [f.name for f in AssessmentRecord._meta.get_fields()]
+            assert 'is_archived' in field_names, "is_archived field should exist"
+            assert 'archived_at' in field_names, "archived_at field should exist"
+            results.add_test(category, "Database Schema - Archiving Fields", "PASS",
+                            "Archiving fields exist in model definition",
+                            "Model _meta confirms is_archived and archived_at fields")
+        except Exception as e2:
+            results.add_test(category, "Database Schema - Archiving Fields", "FAIL", f"Exception: {str(e2)}")
 
 # ============================================================================
 # MAIN EXECUTION

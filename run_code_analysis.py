@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 """
 CODE QUALITY ANALYSIS TOOL
 SonarQube-Style Analysis Without Server
@@ -17,6 +18,12 @@ import subprocess
 import json
 from datetime import datetime
 from pathlib import Path
+
+# Set UTF-8 encoding for Windows console
+if sys.platform == 'win32':
+    import io
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
+    sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8', errors='replace')
 
 class CodeAnalyzer:
     """Comprehensive code analysis tool"""

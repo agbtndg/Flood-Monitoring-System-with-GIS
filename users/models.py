@@ -64,6 +64,14 @@ class UserLog(models.Model):
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, verbose_name="User")
     action = models.CharField(max_length=100, verbose_name="Action")
     timestamp = models.DateTimeField(auto_now_add=True, verbose_name="Timestamp")
+    is_archived = models.BooleanField(default=False, verbose_name="Archived", db_index=True)
+    archived_at = models.DateTimeField(null=True, blank=True, verbose_name="Archived Date/Time")
+
+    class Meta:
+        indexes = [
+            models.Index(fields=['-timestamp']),
+            models.Index(fields=['is_archived', '-timestamp']),
+        ]
 
     def __str__(self):
         return f"{self.user.username} - {self.action} at {self.timestamp}"

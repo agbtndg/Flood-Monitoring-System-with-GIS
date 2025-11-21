@@ -786,6 +786,7 @@ class UserRegisterViewTest(TestCase):
                 'first_name': 'New',
                 'last_name': 'User',
                 'position': 'others',
+                'custom_position': 'Custom Position',
                 'contact_number': '09123456789',
                 'date_of_birth': '1990-01-01',
                 'password1': 'SecurePass123!',
@@ -806,6 +807,7 @@ class UserRegisterViewTest(TestCase):
                 'first_name': 'New',
                 'last_name': 'User',
                 'position': 'others',
+                'custom_position': 'Custom Position',
                 'contact_number': '09123456789',
                 'date_of_birth': '1990-01-01',
                 'password1': 'SecurePass123!',
@@ -827,6 +829,7 @@ class UserRegisterViewTest(TestCase):
                 'first_name': 'Seq',
                 'last_name': 'One',
                 'position': 'others',
+                'custom_position': 'Custom Position',
                 'contact_number': '09123456789',
                 'date_of_birth': '1990-01-01',
                 'password1': 'SecurePass123!',
@@ -844,7 +847,8 @@ class UserRegisterViewTest(TestCase):
                 'first_name': 'Seq',
                 'last_name': 'Two',
                 'position': 'others',
-                'contact_number': '09123456789',
+                'custom_position': 'Custom Position',
+                'contact_number': '09123456790',
                 'date_of_birth': '1990-01-01',
                 'password1': 'SecurePass123!',
                 'password2': 'SecurePass123!',
@@ -1151,7 +1155,7 @@ class ViewProfileViewTest(TestCase):
         """Test profile update creates a UserLog entry."""
         self.client.login(username='profileuser', password='TestPass123!')
         # Must include all required fields
-        self.client.post(
+        response = self.client.post(
             reverse('view_profile'),
             {
                 'first_name': 'Updated',
@@ -1159,6 +1163,7 @@ class ViewProfileViewTest(TestCase):
                 'email': 'updated2@example.com',
                 'contact_number': '09987654321',
                 'position': 'others',
+                'custom_position': 'Custom Position',
             }
         )
         
